@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 400px;
+            height: 400px;
+            margin: 100px auto;
+            outline: 1px solid red;
+            position: relative;
+        }
+
+        .box>div {
+            float: left;
+        }
+
+        .xian {
+            height: 190px;
+            width: 1px;
+            background: black;
+            transform: translate(9.5px);
+        }
+
+        .smelqiu {
+            height: 20px;
+            width: 20px;
+            background: black;
+            border-radius: 50%;
+
+        }
+
+        .qius>.smelqiu {
+            float: left;
+        }
+
+        .qius {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .qiuxian {
+            /* background: cadetblue; */
+            transform-origin: 10px 0;
+            /* transform: rotate(30deg);s */
+        }
+
+        .qiuxian.one {
+            position: absolute;
+            left: 120px;
+            animation: yaobai1 2s linear infinite;
+        }
+
+        .qiuxian.two {
+            position: absolute;
+            left: 260px;
+            animation: yaobai2 2s linear infinite;
+        }
+
+        @keyframes yaobai1 {
+            0% {
+                transform: rotate(30deg);
+            }
+
+            25% {
+                transform: rotate(0deg);
+            }
+
+            75% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(30deg);
+            }
+        }
+
+        @keyframes yaobai2 {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            25% {
+                transform: rotate(00deg);
+            }
+
+            50% {
+                transform: rotate(-30deg);
+            }
+
+            75% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="qiuxian one">
+            <div class="xian"></div>
+            <div class="smelqiu"></div>
+        </div>
+        <div class="qius">
+            <div class="smelqiu"></div>
+            <div class="smelqiu"></div>
+            <div class="smelqiu"></div>
+            <div class="smelqiu"></div>
+            <div class="smelqiu"></div>
+            <div class="smelqiu"></div>
+        </div>
+        <div class="qiuxian two">
+            <div class="xian"></div>
+            <div class="smelqiu"></div>
+        </div>
+    </div>
+</body>
+
+</html>

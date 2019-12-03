@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .bigbox {
+            height: 200px;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .smellbox {
+            margin: 10px 0;
+            height: 100px;
+            width: 100px;
+            background-color: black;
+            display: inline-block;
+            transition: 1s !important;
+            opacity: 1;
+        }
+
+        .boxwidth {
+            width: 200px !important;
+        }
+
+        .boxheight {
+            height: 200px !important;
+        }
+
+        .boxbackgroundcolor {
+            background-color: red !important;
+        }
+
+        .boxdisplaynone {
+            opacity: 0 !important;
+        }
+
+        .boxTwo {
+            margin: 0 auto;
+            border: 1px solid #57646E;
+            min-width: 200px;
+            display: inline-block;
+            text-align: left;
+            position: relative;
+        }
+
+        .boxTwo .open {
+            cursor: pointer;
+            margin: 0;
+            padding-left: 10px;
+            background-color: #ced3d7;
+            background-image: url("ico.gif");
+            background-repeat: no-repeat;
+            background-position: 180px 15px;
+            color: #57646E;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 30px;
+            border: 1px solid whitesmoke;
+        }
+
+        .boxTwo .open.xia {
+            background-position: 180px -13px !important;
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            font-size: 12px;
+        }
+
+        .opens>li {
+            line-height: 25px;
+            cursor: pointer;
+        }
+
+        .opens>li a {
+            display: block;
+            padding: 0 10px;
+            text-decoration: none;
+            background: #e9edf2;
+            color: #6b7980;
+        }
+
+        .opens {
+            position: absolute;
+            top: 32px;
+            left: 0;
+            /* display: block; */
+            transform: scaleY(1);
+            /* overflow: hidden; */
+            /* height: 0; */
+            transition: 1s;
+            transform-origin: 0 0;
+            /* height: auto; */
+            z-index: -1;
+        }
+
+        .clo {
+
+            transform: translateY(-100%);
+            /* height: 0; */
+            /* transform: ; */
+            /* display: none !important; */
+        }
+
+        .opens>li a:hover {
+            background: #ffffff;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bigbox">
+        <div>
+            <button id="btn-width">变高</button>
+            <button id="btn-height">变宽</button>
+            <button id="btn-background-color">变色</button>
+            <button id="btn-display-none">隐藏</button>
+            <button id="btn-resetting">重置</button>
+        </div>
+        <div class="smellbox"></div>
+        <div>
+            <div class="boxTwo">
+                <h2 class="open">播放列表...</h2>
+                <ul class="opens">
+                    <li><a href="">玩家之徒 - 蔡依林</a></li>
+                    <li><a href="">原谅我就是这样的女生 - 戴佩妮</a></li>
+                    <li><a href="">猜不透 - 丁当</a></li>
+                    <li><a href="">自导自演 - 周杰伦</a></li>
+                    <li><a href="">浪漫窝 - 弦子</a></li>
+                    <li><a href="">流年 - 王菲</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        // //网页练习，完成以下网页
+        // http://www.fgm.cc/learn/lesson1/01.html
+
+        var btn_width = document.getElementById('btn-width');
+        var btn_height = document.getElementById('btn-height');
+        var btn_background_color = document.getElementById('btn-background-color');
+        var btn_display_none = document.getElementById('btn-display-none');
+        var btn_resetting = document.getElementById('btn-resetting');
+        var smellbox = document.querySelector('.smellbox');
+        btn_width.onclick = () => {
+            smellbox.classList.add('boxwidth');
+        }
+        btn_height.onclick = () => {
+            smellbox.classList.add('boxheight');
+        }
+        btn_background_color.onclick = () => {
+            smellbox.classList.add('boxbackgroundcolor');
+        }
+        btn_display_none.onclick = () => {
+            smellbox.classList.add('boxdisplaynone');
+        }
+        btn_resetting.onclick = () => {
+            var classarr = ['boxwidth', 'boxheight', 'boxbackgroundcolor', 'boxdisplaynone'];
+            for (var itme of classarr) {
+                smellbox.classList.remove(itme);
+            }
+        }
+        // http://www.fgm.cc/learn/lesson2/09.html
+        var open = document.querySelector('.open');
+        var opens = document.querySelector('.opens');
+        open.onclick = () => {
+            if (opens.classList.contains('clo')) {
+                opens.classList.remove('clo');
+            }
+            else {
+                opens.classList.add('clo');
+            }
+            if (open.classList.contains('xia')) {
+                open.classList.remove('xia');
+            }
+            else {
+                open.classList.add('xia');
+            }
+        }
+        // 第一题:封装一个输入半径求圆的面积的函数,提示:prompt(),pi = Math.PI，结果保留2位有小数。
+        function HomeWorkOne() {
+            function StrCirArea(r) {
+                var pi = Math.PI;
+                var Area = (pi * (r ** 2)).toFixed(2);
+                console.log(`圆半径为${r}的面积是${Area}`);
+                // return Area;
+            }
+            var radius = prompt("输入半径求圆面积");
+            StrCirArea(radius);
+        }
+        console.log('HomeWorkOne()');
+        // 第二题：封装一个函数，输入一个参数age，如果age>18则打印"你可以浏览此网站了"，否则打印"还是去看葫芦娃吧！"
+        function HomeWorkTwo() {
+            function IsAdult(age) {
+                if (age >= 18) {
+                    console.log(`你已经${age}岁了，可以浏览此网站了！`);
+                }
+                else {
+                    console.log(`你现在才${age}岁呀，还是去看葫芦娃吧！`);
+                }
+            }
+            var ZsAge = prompt("输入你的真实年龄：");
+            IsAdult(ZsAge);
+        }
+        console.log('HomeWorkTwo()');
+        // 第三题：封装一个函数，函数接收2个参数，参数为正整数，返回两个数之间的随机整数。如f(10,20)，返回10-20之间的整数。
+        function HomeWorkThree() {
+            function randomNum(startNum, endNum) {
+                var NewNumber = Math.round(Math.random() * (endNum - startNum) + startNum);
+                console.log(`${startNum}到${endNum}之间的随机数：${NewNumber}`);
+            }
+            var oneNum = Number(prompt("开始数："));
+            var TwoNum = Number(prompt("结束数："));
+            // var oneNum = 1;
+            // var TwoNum = 3;
+            randomNum(oneNum, TwoNum);
+        }
+        console.log('HomeWorkThree()');
+        // 第四题：封装一个函数，函数可以接收0-2个参数，如果接收一个参数，则返回0到这个参数之间一个随机整数，如果接收两个参数则返回则两个参数之间的一个随机整数。
+        function HomeWorkFour() {
+            function randomNum(NumOne = 0, NumTwo = 0) {
+                var NewNumber = Math.round(Math.random() * (NumTwo - NumOne) + NumOne);
+                console.log(`${NumOne}到${NumTwo}之间的随机数：${NewNumber}`);
+            }
+            var oneNum = Number(prompt("开始数："));
+            var TwoNum = Number(prompt("结束数："));
+            randomNum(oneNum, TwoNum);
+        }
+        console.log('HomeWorkFour()');
+        // 第五题：封装一个函数，函数可以接收0-3个参数，返回一个固定长度的随机数组。如f(len,start,end),len代表数组的长度，形参len默认值为5可省略，start代表数组随机的最小值默认值为0，end代表随机数最大值默认值为100。
+        // 例如 f(),返回一个长度为5的数组，数组元素随机分布在0-100之间；
+        // f(4),返回一个长度为4的数组，数组元素随机分布在0-100之间;
+        // f(8,10),返回一个长度为8的数组，数组元素随机分布在10-100之间;
+        // f(20,10,40),返回一个长度为20的数组，数组元素随机分布在10-40之间;
+        function HomeWorkFive() {
+            function randomNum(len = 5, NumOne = 0, NumTwo = 100) {
+                var arr = [];
+                for (var i = 0; i < len; i++) {
+                    var NewNumber = Math.round(Math.random() * (NumTwo - NumOne) + NumOne);
+                    arr.push(NewNumber);
+                }
+                console.log(arr);
+            }
+            var lenth = Number(prompt("数组长度："));
+            var oneNum = Number(prompt("数组元素随机分布开始数："));
+            var TwoNum = Number(prompt("数组元素随机分布结束数："));
+            randomNum(lenth, oneNum, TwoNum);
+        }
+        console.log('HomeWorkFive()');
+        // 第六题：封装一个函数，输入一个数组，返回一个包含数组中的最大值和最小值得函数,如输入[2,4,6,9,3] 返回 [9,2]。
+        function HomeWorkSix() {
+            function arrayMaxMin(arrays) {
+                // console.log(arrays);
+                var MaxToMin = [];
+                var max = arrays.sort(function (a, b) {
+                    return a - b;
+                })
+                MaxToMin.length
+                MaxToMin.push(max[max.length - 1]);
+                MaxToMin.push(max[0]);
+                console.log(MaxToMin);
+            }
+            var soArray = prompt("数组：");
+            console.log(soArray);
+            soArray = soArray.slice(1, -1).split(',');
+            // soArray = soArray.replace(soArray[0], "");
+            // soArray = soArray.replace(soArray[soArray.length - 1], "").split(',');
+            for (var key in soArray) {
+                soArray[key] = Number(soArray[key]);
+            }
+            console.log(soArray);
+            arrayMaxMin(soArray);
+        }
+        console.log('HomeWorkSix()');
+
+
+
+    </script>
+</body>
+
+</html>

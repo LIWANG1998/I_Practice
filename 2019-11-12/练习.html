@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //如果他扫了15元人民币以上，早餐就买两份面包+牛奶（吃一份扔一份，尽显土豪风范）。
+        // 如果他扫了8-15元，早餐就买一份面包+牛奶（刚刚够吃，土豪不起来啊，真忧伤）。
+        // 如果他扫了8元人民币以下，早餐就买个馒头+牛奶吧（穷人一枚，面包是吃不起了，还是继续吃我的馒头吧）。
+        // 请使用以下几种方式分别实现出此条件选择逻辑
+        // ①　纯粹的if实现
+        function one() {
+            var money = prompt("早饭钱：");
+            if (money >= 15) {
+                alert("吃一份扔一份，尽显土豪风范");
+            }
+            if (money >= 8 && money < 15) {
+                alert("刚刚够吃，土豪不起来啊，真忧伤");
+            }
+            if (money < 8) {
+                alert("穷人一枚，面包是吃不起了");
+            }
+        }
+        // ②　if-else实现
+
+        function two() {
+            var money = prompt("早饭钱：");
+            if (money >= 15) {
+                alert("吃一份扔一份，尽显土豪风范");
+            }
+            else {
+                if (money >= 8) {
+                    alert("刚刚够吃，土豪不起来啊，真忧伤");
+                }
+                else {
+                    alert("穷人一枚，面包是吃不起了");
+                }
+            }
+
+        }
+        // ③　if--else-if---else
+        function three() {
+            var money = prompt("早饭钱：");
+            if (money >= 15) {
+                alert("吃一份扔一份，尽显土豪风范");
+            }
+            else if (money >= 8) {
+                alert("刚刚够吃，土豪不起来啊，真忧伤");
+            }
+            else {
+                alert("穷人一枚，面包是吃不起了");
+            }
+        }
+        // ④　三目运算符
+        function four() {
+            var money = prompt("早饭钱：");
+            money >= 15 ? alert("吃一份扔一份，尽显土豪风范") :
+                money >= 8 ? alert("刚刚够吃，土豪不起来啊，真忧伤") :
+                    alert("穷人一枚，面包是吃不起了");
+        }
+        // ⑤　switch-case
+        function five() {
+            var money = prompt("早饭钱：");
+            switch (true) {
+                case money >= 15:
+                    alert("吃一份扔一份，尽显土豪风范");
+                    break;
+                case money >= 8:
+                    alert("刚刚够吃，土豪不起来啊，真忧伤");
+                    break;
+                default:
+                    alert("穷人一枚，面包是吃不起了");
+                    break;
+            }
+        }
+    </script>
+</body>
+
+</html>

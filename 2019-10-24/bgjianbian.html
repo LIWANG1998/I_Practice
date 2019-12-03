@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            background: linear-gradient(to right bottom,);
+        }
+        .box {
+            width: 500px;
+            height: 500px;
+            /* to 是指到什么位置结束 */
+            /* 0-360deg */
+            /* background: linear-gradient(to right top, rgb(204, 0, 255),rgb(2, 175, 255)); */
+            /* background: linear-gradient(60deg, rgb(204, 0, 255),rgb(2, 175, 255)); */
+            /* 颜色渐变开始的位置 */
+            background: linear-gradient(to right, rgb(204, 0, 255), rgb(2, 175, 255), rgb(145, 255, 0), rgb(255, 80, 80));
+            /* px 或者 百分比 */
+            /* background: linear-gradient(to right, rgb(204, 0, 255) 0px, rgb(2, 175, 255) 250px, rgb(145, 255, 0) 375px, rgb(255, 80, 80) 500px); */
+            /* background: linear-gradient(to right, rgb(204, 0, 255) 10%, rgb(2, 175, 255) 35%, rgb(145, 255, 0) 65%, rgb(255, 80, 80) 95%); */
+        }
+
+        .box2 {
+            margin-top: 20px;
+            width: 500px;
+            height: 10px;
+            border-radius: 5px;
+            background: linear-gradient(to right, #67D3F2, #C73A44 79%, #0B0B0B 79%);
+        }
+
+        .box3 {
+            margin-top: 20px;
+            width: 30px;
+            height: 300px;
+
+            background: linear-gradient(#EFE234 20%, #C73A44 20%, #C73A44 80%, #EFE234 80%);
+
+        }
+
+        .box4 {
+            margin-top: 20px;
+            width: 30px;
+            height: 300px;
+            /* background: linear-gradient(#EFE234 20%, #C73A44 20%, #C73A44 80%, #EFE234 80%); */
+            /* 重复性渐变 */
+            background: repeating-linear-gradient(#EFE234 20px, #C73A44 80px);
+
+        }
+
+        .jgb {
+            /* width: 500px; */
+            /* height: 800px; */
+            background: cornflowerblue;
+            padding: 100px;
+        }
+
+        .tou {
+            margin: 0 auto;
+            height: 100px;
+            width: 15px;
+            background: linear-gradient(to right, #F5E56E, #F8E3B0 5px, #C4BA18);
+        }
+
+        .zhong {
+            margin: auto;
+            height: 300px;
+            width: 15px;
+            background: linear-gradient(to right, #EC6A6A, #FAD9D9 5px, #E83232);
+        }
+
+        .wei {
+            margin: auto;
+            height: 100px;
+            width: 15px;
+            background: linear-gradient(to right, #F5E56E, #F8E3B0 5px, #C4BA18);
+        }
+
+        .paper {
+            width: 500px;
+            height: 800px;
+            border: 1px solid red;
+            background: repeating-linear-gradient(to bottom, #F4F4F4, #F4F4F4 5%, #A6A6A6 5%, #A6A6A6 6%);
+        }
+
+        .paper1 {
+            width: 500px;
+            height: 800px;
+            border: 1px solid red;
+            background: repeating-linear-gradient(to bottom, #F4F4F4, #F4F4F4 5%, #A6A6A6 5%, #A6A6A6 10%);
+        }
+
+        .paper2 {
+            width: 300px;
+            height: 500px;
+            /* background: radial-gradient(circle farthest-side at top, rgb(1, 252, 231), rgb(2, 175, 255), rgb(205, 5, 255), rgb(179, 255, 0), rgb(255, 0, 106)); */
+            background: repeating-radial-gradient(circle farthest-side at top, rgb(1, 252, 231) 1%, rgb(2, 175, 255) 2%, rgb(205, 5, 255) 3%, rgb(179, 255, 0) 4%, rgb(255, 0, 106) 5%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+    </div>
+
+    <div class="box2"> </div>
+
+    <div class="box3"> </div>
+    <div class="box4"> </div>
+    <div class="jgb">
+        <div class="tou"></div>
+        <div class="zhong"></div>
+        <div class="wei"></div>
+    </div>
+    <div class="paper">
+
+    </div>
+    <div class="paper1">
+
+    </div>
+    <div class="paper2">
+
+    </div>
+</body>
+
+</html>

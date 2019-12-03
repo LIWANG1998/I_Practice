@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .bigbox {
+            width: 1000px;
+            /* height: 100px; */
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            /* background: royalblue; */
+            display: flex;
+            margin: 0 auto;
+        }
+
+        .stars {
+            display: flex;
+            list-style: none;
+            margin: 0 20px;
+            padding: 0;
+        }
+
+        .stars>li {
+            margin-top: 4px;
+            width: 23px;
+            /* padding: 2px; */
+            background-image: url("star.png");
+            background-position: top;
+            background-repeat: no-repeat;
+            background-size: 80%;
+
+        }
+
+        .selected {
+            margin-top: 5px;
+            background-position: bottom !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bigbox">
+        <span>点击星星就能打分</span>
+        <ul class="stars">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <span></span>
+    </div>
+    <script>
+        let stars = document.querySelectorAll(".stars li");
+        var a = document.querySelectorAll(".stars li.selected").length;
+        for (let i = 0; i < stars.length; i++) {
+            stars[i].onmouseenter = function () {
+                starsselect(i + 1);
+            }
+            stars[i].onmouseleave = function () {
+                starsselect(a);
+            }
+            stars[i].onclick = function () {
+                a = i + 1;
+                starsselect(a);
+            }
+        }
+        //星星 onmouseenter onmouseleave onclick 都调用这个方法，意思都是一样的，
+        //只用传一个参数  starsselect(参数)；
+        function starsselect(scort) {
+            for (let i = 0; i < stars.length; i++) {
+                if (i < scort) {
+                    stars[i].classList.add('selected');
+                }
+                else {
+                    stars[i].classList.remove('selected');
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

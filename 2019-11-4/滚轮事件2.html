@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+    <div align="center" style="height: 1200px;">
+        请往下滚动！
+    </div>
+    <div id="imgDiv" align="center">
+        <img alt="滚动出现的图片" src="lolloginlogo.png" />
+    </div>
+    <script type="text/javascript">
+
+        $(window).scroll(function () {
+            var winHeight = $(this).height();
+            var winWidth = $(this).width();
+            var imgDiv = $("#imgDiv");
+            var sTop = $(this).scrollTop();
+            var imgTop = $(imgDiv).offset().top;
+            if ((sTop + winHeight) > imgTop) {
+                $(imgDiv).animate({ "position": "absolute", "margin-top": -(winHeight + $(imgDiv).height()) / 2, "margin-left": (winWidth - $(imgDiv).width()) / 2 }, 50);
+            }
+        })
+
+    </script>
+</body>
+
+</html>

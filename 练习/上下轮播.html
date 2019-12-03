@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        .bigbox {
+            width: 490px;
+            height: 170px;
+            border-radius: 5px;
+            margin: 0 auto;
+            border: 10px solid red;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .imgul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            transition: 1s;
+        }
+
+        .imgul>li {
+            width: 490px;
+            height: 170px;
+        }
+
+        .btns {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            position: absolute;
+            bottom: 5px;
+            right: 20px;
+        }
+
+        .btns>li {
+            border-radius: 100%;
+            width: 20px;
+            height: 20px;
+            float: left;
+            background: yellowgreen;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 3px;
+            color: white;
+            font-size: 14px;
+            opacity: 0.7;
+            cursor: pointer;
+        }
+
+        .btns>li.btnba {
+            background: rgb(253, 80, 0);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bigbox">
+        <ul class="imgul">
+            <li><img src="img/01.jpg" alt=""></li>
+            <li><img src="img/02.jpg" alt=""></li>
+            <li><img src="img/03.jpg" alt=""></li>
+            <li><img src="img/04.jpg" alt=""></li>
+            <li><img src="img/05.jpg" alt=""></li>
+        </ul>
+        <ul class="btns">
+            <li class="btnba">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+    </div>
+    <script>
+        var v = 1;
+        var ft = true;
+        var imgul = document.querySelector('.imgul');
+        var imgulli = document.querySelectorAll('.imgul>li');
+        function play() {
+            imgc(v);
+            console.log("sss");
+            console.log(v);
+            if (ft == false) {
+                v = v - 1;
+            }
+            else {
+                v = v + 1;
+            }
+
+        };
+        function imgc(s) {
+            console.log(s)
+            if (s == 4) {
+                ft = false;
+            }
+            if (s == 0) {
+                ft = true;
+            }
+            btnon(s);
+            // imgul.setAttribute('style', `transform: translateY(-${s * 170}px);`);
+        }
+        var playimg = setInterval(play, 3000);
+        for (let k = 0; k < 5; k++) {
+            imgulli[k].onmouseover = function () {
+                clearInterval(playimg);
+            }
+            imgulli[k].onmouseout = function () {
+                playimg = setInterval(play, 3000);
+            }
+        }
+        var btnsli = document.querySelectorAll('.btns>li');
+        for (let i = 0; i < 5; i++) {
+            btnsli[i].onmouseenter = function () {
+                btnon(i);
+                clearInterval(playimg);
+            }
+            btnsli[i].onmouseout = function () {
+                playimg = setInterval(play, 3000);
+            }
+        }
+        function btnon(s) {
+            v = s;
+            for (var j = 0; j < btnsli.length; j++) {
+                if (j == s) {
+                    btnsli[j].classList.add('btnba');
+                }
+                else {
+                    btnsli[j].classList.remove('btnba');
+                }
+            }
+            // imgul.style.transform = `translateY(-${s * 170}px);`;
+            imgul.setAttribute('style', `transform: translateY(-${s * 170}px);`);
+        }
+    </script>
+</body>
+
+</html>

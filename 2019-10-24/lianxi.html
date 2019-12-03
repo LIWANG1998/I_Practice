@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .box {
+            height: 300px;
+            width: 500px;
+            /* 背景颜色 */
+            background-color: cadetblue;
+            /* 背景图片 */
+            /* background-image: url("./lolloginlogo.png"); */
+            /* 背景图片重复 默认值repeat repeat-x repeat-y no-repeat  */
+            background-repeat: no-repeat;
+            /* 背景图片定位 */
+            background-position: left top;
+            /* background-position:50px 100px; */
+            /* background-position:50% 10%; */
+            /* 背景图片固定 */
+            background-attachment: scroll;
+            /* 背景图片大小 图片原大小 627x485*/
+            /* background-size:900px auto; */
+            /* background-size: 80% auto; */
+
+            border: 40px solid rgba(255, 0, 0,.4);
+            padding: 40px;
+            /* 规定背景颜色裁剪终点 border-box 默认border开始覆盖 */
+            /* background-clip: padding-box; */
+            /* background-clip: content-box; */
+            /* background-clip: border-box; */
+            /* 背景图片的开始位置 */
+            /* background-origin: content-box; */
+            /* background-origin: padding-box; */
+            /* background-origin: border-box; */
+            /* 组合值 */
+            background: cyan url("./lolloginlogo.png") no-repeat left top/cover padding-box border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+
+    </div>
+</body>
+
+</html>

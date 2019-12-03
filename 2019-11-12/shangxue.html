@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var age = prompt("年龄");
+        // switch (true) {
+        //     case age < 3:
+        //         alert("你还没上学");
+        //         break;
+        //     case age < 8:
+        //         alert("你在上幼儿园");
+        //         break;
+        //     case age < 12:
+        //         alert("你在上小学");
+        //         break;
+        //     case age < 16:
+        //         alert("你在上初中");
+        //         break;
+        //     case age < 20:
+        //         alert("你在上高中");
+        //         break;
+        //     case age < 24:
+        //         alert("你在上大学");
+        //         break;
+        //     default:
+        //         alert("输入错误");
+        //         break;
+        // }
+
+
+
+        // var sel = prompt("输入选择");
+        // 1)纯粹的if实现
+        // if (sel == "1") {
+        //     alert("上交警察叔叔");
+        // }
+        // if (sel == "2") {
+        //     alert("捐献给慈善机构");
+        // }
+        // if (sel == "3") {
+        //     alert("收入自己的怀中从此一辈子衣食不愁");
+        // }
+        // if (sel == "4") {
+        //     alert("又或者独自寻找到失主还给他");
+        // }
+        // if (sel != "1" && sel !== "2" && sel != "3" && sel != "4") {
+        //     alert("对不起你没有别的选择");
+        // }
+
+        // if-else实现 
+        // if (sel == "1" || sel == "2" || sel == "3" || sel == "4") {
+        //     if (sel == "1") {
+        //         alert("上交警察叔叔");
+        //     }
+        //     if (sel == "2") {
+        //         alert("捐献给慈善机构");
+        //     }
+        //     if (sel == "3") {
+        //         alert("收入自己的怀中从此一辈子衣食不愁");
+        //     }
+        //     if (sel == "4") {
+        //         alert("又或者独自寻找到失主还给他");
+        //     }
+        // } else {
+        //     alert("对不起你没有别的选择");
+        // }
+
+        // 3) if--else -if---else
+        // if (sel == "1") {
+        //     alert("上交警察叔叔");
+        // }
+        // else if (sel == "2") {
+        //     alert("捐献给慈善机构");
+        // }
+        // else if (sel == "3") {
+        //     alert("收入自己的怀中从此一辈子衣食不愁");
+        // }
+        // else if (sel == "4") {
+        //     alert("又或者独自寻找到失主还给他");
+        // } else {
+        //     alert("对不起你没有别的选择");
+        // }
+        var sell = function () {
+            var sel = prompt("输入选择");
+            if (sel == "1") {
+                alert("上交警察叔叔");
+            }
+            else if (sel == "2") {
+                alert("捐献给慈善机构");
+            }
+            else if (sel == "3") {
+                alert("收入自己的怀中从此一辈子衣食不愁");
+            }
+            else if (sel == "4") {
+                alert("又或者独自寻找到失主还给他");
+            } else {
+                alert("对不起你没有别的选择");
+            }
+        }
+        // 2.将第二题使用三目运算符改写实现
+        function test() {
+            var sel = prompt("输入选择");
+            sel == "1" ? alert("上交警察叔叔") :
+                sel == "2" ? alert("捐献给慈善机构") :
+                    sel == "3" ? alert("收入自己的怀中从此一辈子衣食不愁") :
+                        sel == "4" ? alert("又或者独自寻找到失主还给他") :
+                            alert("对不起你没有别的选择");
+        }
+
+    </script>
+</body>
+
+</html>

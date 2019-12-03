@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .forst {
+            width: 420px;
+            border: 1px solid blue;
+            margin: auto;
+        }
+
+        .row {
+            font-size: 0px;
+        }
+
+        .cell {
+            font-size: 16px;
+            width: 100px;
+            height: 30px;
+            background: #F9F9F9;
+            border: 1px solid #EBEBEB;
+            display: inline-block;
+            text-align: center;
+            line-height: 30px;
+        }
+
+        .divcolor {
+            background: #FFFFFF;
+        }
+
+        .colorfont {
+            color: #FD8647;
+        }
+
+        .row :first-child {
+            border-left: none;
+        }
+
+        .row :last-child {
+            border-right: none;
+        }
+
+        .celllast {
+            border-bottom: none;
+        }
+
+        .tops {
+            width: 406px;
+            margin: 0 auto;
+        }
+
+        .top {
+            margin-top: 100px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="forst">
+        <div class="tops">
+            <div class="row top">
+                <div class="cell colorfont">(</div>
+                <div class="cell colorfont">)</div>
+                <div class="cell colorfont">%</div>
+                <div class="cell">C</div>
+            </div>
+            <div class="row">
+                <div class="cell divcolor">7</div>
+                <div class="cell divcolor">8</div>
+                <div class="cell divcolor">9</div>
+                <div class="cell colorfont">÷</div>
+            </div>
+            <div class="row">
+                <div class="cell divcolor">4</div>
+                <div class="cell divcolor">5</div>
+                <div class="cell divcolor">6</div>
+                <div class="cell colorfont">×</div>
+            </div>
+            <div class="row">
+                <div class="cell divcolor">1</div>
+                <div class="cell divcolor">2</div>
+                <div class="cell divcolor">3</div>
+                <div class="cell colorfont">-</div>
+            </div>
+            <div class="row">
+                <div class="cell divcolor celllast">0</div>
+                <div class="cell divcolor celllast">.</div>
+                <div class="cell divcolor celllast">=</div>
+                <div class="cell colorfont celllast">+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function add(x, y) {
+            return x + y;
+        }
+        var add1 = function (x, y) {
+            return x + y;
+        }
+        var add2 = (x, y) => {
+            return x + y;
+        }
+
+        // 三元表达 参数默认值
+        function showInfo(x) {
+            x = x == undefined ? "差无耻人" : x;
+            console.log(x);
+        }
+        // ES6表达 参数默认值
+        function showInfo2(x = "差无耻人") {
+            console.log(x);
+        }
+
+
+        function showUser(obj) {
+            console.log(obj.name);
+            console.log(obj.age);
+        }
+        var obj = { name: "ma", age: 55 };
+        showUser(obj);
+
+        // arguments 对象
+        function sum() {
+            var html = 0;
+            // for (var i = 0; i < arguments.length; i++) {
+            //     html += arguments[i];
+            //     console.log(arguments[i]);
+            // }
+            Array.from(arguments).forEach((item) => {
+                html += item;
+            })
+            return html;
+        }
+        console.log(sum(1, 2, 3));
+        function baz(x, y) {
+            var res = x ** y;
+            console.log(arguments);
+            for (var i = 2; i < arguments.length; i++) {
+                res += arguments[i];
+            }
+            return res;
+            // Array.from(arguments).reduce((pre, item) => {
+
+            // })
+        }
+
+        var fn = function (n) {
+            return [n ** 2, n ** 3];
+        }
+        function fn1(n) {
+            var v = {};
+            v[`${n}的二次方`] = n ** 2;
+            v[`${n}的三次方`] = n ** 3;
+            return v;
+        }
+        var fn2 = new Function("n", "return [n**2,n**3]");
+    </script>
+</body>
+
+</html>

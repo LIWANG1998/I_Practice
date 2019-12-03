@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .contered {
+            width: 800px;
+            height: 500px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /* background-color: blanchedalmond; */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+        .cellstyle {
+            height: 50px;
+            /* background-color: cornflowerblue; */
+            display: flex;
+        }
+
+        .cellnodetyle {
+            width: 80px;
+            background: linear-gradient(30deg, rgb(0, 173, 253), rgb(0, 238, 127));
+            margin-left: 2px;
+            transition: .3s;
+            border: 1px solid white;
+        }
+
+        .cellnodetyle:hover {
+            box-shadow: 0 15px 30px rgba(0, 0, 0, .2);
+            /* transform: translate3d(0, -4px, 0); */
+            transform: scale(1.3);
+            transition-duration: .2s;
+        }
+
+        .fontalign {
+            line-height: 50px;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="bigbox" class="red lued"></div>
+    <script>
+        //找到bigbox 添加 class
+        var bigbox = document.querySelector('#bigbox');
+        bigbox.classList.add("contered");
+        // bigbox.classList.remove("red");
+        // //循环添加9行 div
+        // for (var i = 1; i < 10; i++) {
+        //     //创建没行的div
+        //     var el = document.createElement("div");
+        //     el.classList.add("cellstyle");
+        //     //加入元素
+        //     bigbox.append(el);
+        //     for (var j = 1; j < i + 1; j++) {
+        //         var els = document.createElement("div");
+        //         els.classList.add("cellnodetyle");
+        //         els.classList.add("fontalign");
+        //         //加入元素
+        //         el.append(els);
+        //         var sum = i * j;
+        //         var htmls = `${i}x${j}=${sum}`;
+        //         els.innerText = htmls;
+        //     }
+        // }
+        var html = "";
+        for (var i = 1; i < 10; i++) {
+            var rowHtml = "";
+            for (var j = 1; j < i + 1; j++) {
+                var sum = i * j;
+                var cellHtml = `<div class="cellnodetyle fontalign">${i}x${j}=${sum}</div>`;
+                rowHtml += cellHtml;
+            }
+            console.log(rowHtml);
+            var rowHtmls = `<div class="cellstyle">${rowHtml}</div>`;
+            html += rowHtmls;
+        }
+        bigbox.innerHTML = html;
+    </script>
+</body>
+
+</html>

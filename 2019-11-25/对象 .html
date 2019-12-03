@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Student(name, age) {
+            this.name = name;
+            this.age = age;
+            this.say = function () {
+                console.log(`大家好我叫${this.name},今年${this.age}`);
+            }
+        }
+        Student.prototype.ha = function () {
+            console.log(this.name);
+        }
+
+        var Heros = {
+            Hero_name: '奇亚娜',
+            Base_mana: 320,//基础法力值
+            Growth_mana: 50,//成长法力值
+            Basic_health: 590,//基础生命值
+            Growth_health: 90,//成长生命值
+            Basic_attack: 64,//基础攻击力
+            Growth_attack: 3,//成长攻击力
+            Skills: {
+                Q: {
+                    Consumption: 35,
+                    Hurt: 85 + 64
+                },
+                W: {
+                    Consumption: 25,
+                    Hurt: 8 + 70
+                },
+                E: {
+                    Consumption: 40,
+                    Hurt: 70 + 43
+                },
+                R: {
+                    Consumption: 100,
+                    Hurt: 100 + 101
+                }
+            }
+        }
+
+        function ErgodicHeros(HeroObj) {
+            for (key in HeroObj) {
+                this[key] = HeroObj[key];
+            }
+        }
+
+        var qiyana = new ErgodicHeros(Heros);
+    </script>
+</body>
+
+</html>

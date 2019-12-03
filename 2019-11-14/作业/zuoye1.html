@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            text-align: center;
+        } */
+
+        table tr {
+            text-align: center;
+        }
+
+        table td {
+            padding: 15px 20px;
+        }
+
+        thead {
+
+            background-color: rgb(39, 211, 211);
+        }
+
+        thead>tr {
+            height: 40px;
+        }
+
+        tbody>tr {
+            margin: 2px;
+            padding: 10px;
+            transition: transform .5s;
+            cursor: pointer;
+        }
+
+        tbody>:nth-child(2n+1) {
+            background: linear-gradient(30deg, rgb(0, 247, 255), rgb(194, 5, 252));
+        }
+
+        tbody>:nth-child(2n) {
+            background: linear-gradient(30deg, rgb(65, 255, 122), rgb(252, 5, 219));
+        }
+
+        tbody>tr:hover {
+            transform: scale(1.1);
+            transition-duration: .3s;
+            /* background: 0 0; */
+            background: rgba(146, 29, 255, 0.904);
+            box-shadow: 0 5px 10px rgba(48, 48, 48, 0.692);
+        }
+
+        .caodan ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-align: center;
+        }
+
+        .caodan a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .rjcd {
+            display: none;
+        }
+
+        .rjcd li {
+            line-height: 30px;
+        }
+
+        .yjcd {
+            box-sizing: border-box;
+            float: left;
+            background-color: rgb(0, 247, 255);
+            padding: 10px;
+            margin: 0 5px;
+        }
+
+        .yjcd:hover .rjcd {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <table id="biaoge">
+            <thead>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    <div class="libiao">
+    </div>
+    <div class="caodan"></div>
+    <script>
+        var users = [
+            {
+                "id": 1,
+                "name": "钱秀英",
+                "phone": "16153658896",
+                "email": "i.swoqfifm@hcpydc.tk",
+                "age": 26,
+                "companyId": 4
+            },
+            {
+                "id": 2,
+                "name": "汤刚",
+                "phone": "18686238114",
+                "email": "v.wdprtl@vkiply.md",
+                "age": 44,
+                "companyId": 4
+            },
+            {
+                "id": 3,
+                "name": "薛芳",
+                "phone": "16128785652",
+                "email": "c.gjt@xjcvwue.mn",
+                "age": 33,
+                "companyId": 4
+            },
+            {
+                "id": 4,
+                "name": "魏娜",
+                "phone": "18782160773",
+                "email": "k.yncvnd@tblulhs.sr",
+                "age": 40,
+                "companyId": 4
+            },
+            {
+                "id": 5,
+                "name": "贺强",
+                "phone": "17527781553",
+                "email": "r.lgcgl@kyuskxku.fr",
+                "age": 38,
+                "companyId": 8
+            },
+            {
+                "id": 6,
+                "name": "郑丽",
+                "phone": "15764758850",
+                "email": "v.hpf@ytawhuhz.ev",
+                "age": 22,
+                "companyId": 4
+            },
+            {
+                "id": 7,
+                "name": "梁超",
+                "phone": "15793616023",
+                "email": "c.pdqwc@cgsneeji.nr",
+                "age": 40,
+                "companyId": 6
+            },
+            {
+                "id": 8,
+                "name": "袁秀英",
+                "phone": "18388787880",
+                "email": "g.rac@lrjcnr.at",
+                "age": 25,
+                "companyId": 3
+            }
+        ]
+        //第一题
+        // 把数据渲染到一个表格里面，表格要求
+        // 1.奇偶行颜色不一样
+        // 2.当鼠标指针指到一行显示，次行高亮显示
+        var html = "";
+        var tbody = document.querySelector("#biaoge tbody");
+        var biaoge = document.querySelector("#biaoge");
+        var thead = biaoge.children[0];//所有子节点children
+        // ---------------------- 动态加标题 --------------------------------
+        var th = "";
+        for (var key in users[0]) {
+            th += `<th>${key}</th>`;
+        }
+        var trth = `<tr>${th}</tr>`;
+        console.log(trth);
+        thead.innerHTML = trth;
+        // ---------------------- 动态加标题 --------------------------------
+        for (var iterator of users) {
+            // console.log(iterator);
+            var tr = "";
+            for (var key in iterator) {
+                var td = `<td>iterator${iterator[key]}</td>`;
+                tr += td;
+            }
+            // console.log(tr);
+            html = html + `<tr>${tr}</tr>`;
+        }
+
+        tbody.innerHTML = html;
+        // ----------------------------------------------------------------------------------
+        //第二题
+        //把以上数据动态加载在网页，可以通过表格形式，列表形式等
+        var data = [
+            {
+                "name": "李白",
+                "position": "刺客",
+                "skill": "青莲剑歌",
+                "exp": 500
+            },
+            {
+                "name": "貂蝉",
+                "position": "刺客/法师",
+                "skill": "绽·风华",
+                "exp": 350
+            },
+            {
+                "name": "鲁班",
+                "position": "射手",
+                "skill": "空中支援",
+                "exp": 800
+            }
+        ];
+        var libiao = document.querySelector(".libiao");
+        // <ul>
+        //     <li></li>
+        //     <li></li>
+        //     <li></li>
+        // </ul>
+        var uls = "";
+        for (var iterator of data) {
+            var ul = "";
+            for (var key in iterator) {
+                if (key == "name")
+                    ul += iterator[key];
+                else
+                    ul += `<li>${iterator[key]}</li>`;
+            }
+            // console.log(ul);
+            uls += `<ul>${ul}</ul>`;
+        }
+
+        libiao.innerHTML = uls;
+        //---------------------------------------
+        //第三题
+        //动态制作菜单
+        var menuData = [
+            {
+                name: "主页",
+                link: '/home'
+            },
+            {
+                name: "产品中心",
+                link: "/product",
+                submenu: [
+                    {
+                        name: "电脑",
+                        link: '/computer'
+                    },
+                    {
+                        name: "手机",
+                        link: '/phone'
+                    },
+                    {
+                        name: "家电",
+                        link: '/jiadian'
+                    }
+                ]
+            },
+            {
+                name: "关于我们",
+                link: '/about'
+            },
+            {
+                name: "联系我们",
+                link: '/contact',
+                submenu: [
+                    {
+                        name: "电话",
+                        link: '/contact/p'
+                    },
+                    {
+                        name: "邮箱",
+                        link: '/contact/e'
+                    },
+                    {
+                        name: "微信",
+                        link: '/contact/we'
+                    },
+                ]
+            }
+        ]
+        // <ul>
+        //     <li></li>
+        //     <li></li>
+        //     <li></li>
+        // </ul>
+        var caodan = document.querySelector(".caodan");
+        var caodanuls = "";
+        for (var iterator of menuData) {
+            // console.log(iterator);
+            var erjiul = "";
+            if (iterator.submenu != undefined) {
+                for (var nerji of iterator.submenu) {
+                    erjiul += `<li><a href="${nerji.link}">${nerji.name}</a></li>`
+                }
+                erjiul = `<ul class="rjcd">${erjiul}</ul>`;
+                // console.log(erjiul);
+            }
+            var li = `<li class="yjcd"><a href="${iterator.link}">${iterator.name}</a>${erjiul}</li>`;
+            caodanuls += li;
+        }
+        // console.log(caodanuls);
+        caodanuls = `<ul>${caodanuls}</ul>`;
+        caodan.innerHTML = caodanuls;
+
+
+        // var datas = menuData;
+        // var caodanuls = "";
+        // function pinjie(data) {
+        //     var li = "";
+        //     for (var iterator of data) {
+        //         li += `<li><a href="${iterator.link}">${iterator.name}</a></li>`;
+        //     }
+        //     return caodanuls = `<ul>${li}</ul>`;
+        // }
+        // if (Boolean(datas)) {
+        //     pinjie(datas);
+        // }
+        // caodan.innerHTML = caodanuls;
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>属性选择器</title>
+    <style>
+        [title] {
+            color: red;
+        }
+
+        [title='thisishao'] {
+            color: black;
+        }
+
+        [title^='http'] {
+            color: blue;
+        }
+
+        [title$='sss'] {
+            border: 2px red solid;
+            border-radius: 5px;
+        }
+
+        [title*='is'] {
+            background: rgb(57, 199, 255);
+        }
+
+        [title~='a'] {
+            border: 3px red dashed;
+        }
+
+        [title|="this"] {
+            color: white;
+            font-size: 30px;
+        }
+
+        /*
+        行列样式：1000
+        Id选择器： 100
+        Class选择器：10   【属性选择器】
+        标签选择器：1
+        *任意符选择器：0 （大于默认样式与继承验样式） 
+        */
+        body * {
+            font-weight: bold;
+        }
+
+
+        div{
+            font-weight: normal;
+            color: red;
+        }
+
+        P + div {
+            color: blueviolet;
+            font-style: italic;
+        }
+
+        .cla1 {
+            font-style: normal;
+            border: 1px solid red;
+        }
+
+        #div1 {
+            border: 2px dashed royalblue;
+            font-size: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <span title="thisishao">你还啊1</span>
+    <span title="thisishaosss">你还啊2</span>
+    <span title="ttshttpsss">你还啊3</span>
+    <span title="jiu is hao a d">你还啊4</span>
+    <span title="jius is wo hao a d">你还啊5</span>
+    <span title="this">你还啊5</span>
+    <span id="spans" title="this-wode">你还啊5</span>
+
+    <P>SAD</P>
+    <div id="div1" class="cla1" style="font-size: 50px;">
+        wo de jiu shi ni de
+    </div>
+</body>
+
+</html>

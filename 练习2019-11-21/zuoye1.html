@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .bigbox {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            border: 1px solid black;
+            max-width: 712px;
+            display: flex;
+            flex-wrap: wrap;
+            padding-left: 10px;
+            padding-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        .cells {
+            border: 1px solid rgb(206, 206, 206);
+            width: 130px;
+            height: 130px;
+            margin-top: 10px;
+            margin-right: 10px;
+            box-sizing: border-box;
+        }
+
+        .cells_img {
+            opacity: 0.3;
+        }
+
+        .cells_img:hover {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bigbox">
+    </div>
+    <script>
+        var bigbox = document.querySelector(".bigbox");
+        var html = "";
+        for (var i = 0; i < 10; i++) {
+            html += `<div class="cells"></div>`;
+        }
+        bigbox.innerHTML = html;
+        var cellsArray = document.querySelectorAll(".cells");
+        for (var i in cellsArray) {
+            cellsArray[i].innerHTML = `<img class="cells_img" src="img/${Number(i) + 1}.jpg" alt="">`;
+        }
+    </script>
+</body>
+
+</html>

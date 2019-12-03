@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+        }
+
+        header {
+            height: 9.5vh;
+            background: chocolate;
+        }
+
+        .box1 {
+            margin: 0 auto;
+            margin-top: 1.5vh;
+            height: 8.5vh;
+            width: 90vw;
+            background: cyan;
+        }
+
+        .box3 {
+            width: 90vw;
+            margin: 0 auto;
+            margin-top: 1.5vh;
+            height: 69vh;
+            /* background: rosybrown; */
+            vertical-align: top;
+            font-size: 0px;
+        }
+
+        .box3>* {
+            display: inline-block;
+
+        }
+
+        footer {
+            margin-top: 1.5vh;
+            height: 8.5vh;
+            background: chocolate;
+        }
+
+        aside {
+            width: 30%;
+            height: 69vh;
+            background: royalblue;
+            vertical-align: top;
+        }
+
+        main {
+            margin-left: 2%;
+            width: 68%;
+            height: 100%;
+            background: royalblue;
+            vertical-align: top;
+        }
+
+        aside>ul {
+            padding: 0;
+            margin: 0;
+            height: 64vh;
+            text-align: center;
+            /* border:1px solid red; */
+            background: chartreuse;
+            font-size: 16px;
+            list-style: none;
+        }
+
+        .cse {
+            height: 5vh;
+            background: crimson;
+        }
+
+        li {
+            display: inline-block;
+            margin: 5vh 0 0 0;
+            width: 80%;
+            height: 15vh;
+            background: skyblue;
+            /* border: 1px solid red; */
+        }
+        section{
+            margin: 2vh;
+            height: 14.5vh;
+            background: darkmagenta;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav></nav>
+    </header>
+    <div class="box1"></div>
+    <div class="box3">
+        <aside>
+            <div class="cse"></div>
+            <ul>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+            </ul>
+        </aside>
+        <main>
+            <section></section>
+            <section></section>
+            <section></section>
+            <section></section>
+        </main>
+    </div>
+    <footer></footer>
+</body>
+
+</html>

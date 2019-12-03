@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .bigbox {
+            background: yellowgreen;
+        }
+
+        p {
+            /* margin: 0;
+            padding: 0; */
+            background: rgb(231, 110, 110);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bigbox"></div>
+    <form action="">
+        <input type="text" class="hol" value="" placeholder="请输入hello"><button onclick="hello()">点击</button>
+    </form>
+    <div class="tables">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>School</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+    <script>
+        // (1) 使用For循环添加10个p标签到div中。【练习innerHTML】
+        var bigbox = document.querySelector(".bigbox");
+        var pTag = "";
+        for (var i = 0; i < 10; i++) {
+            pTag += `<p>${i + 1}</p>`;
+        }
+        bigbox.innerHTML = pTag;
+
+        // (1) 获取起点小说网/360图书馆不可复制页面的文字。【练习innerText】
+
+        // (2) 创建一个表单，表单中一个input,一个按钮，当用户在input中输入内
+        // 容并且点击按钮后验证输入的值是否为hello,并弹框提示结果是否正确【练习获
+        // 取input的value】
+        function hello() {
+            var values = document.querySelector('.hol');
+            if (values.value == "hello") {
+                alert(values.value + "输入正确");
+            }
+            else {
+                alert(`你输入的不是hello而是${values.value}`);
+            }
+        }
+
+        var tbody = document.querySelector(".tables>table>tbody");
+        var users = [{
+            name: 'liwang1',
+            age: 13,
+            gender: '男1',
+            school: '水校1'
+        }, {
+            name: 'liwang2',
+            age: 14,
+            gender: '男2',
+            school: '水校2'
+        }, {
+            name: 'liwang3',
+            age: 15,
+            gender: '男3',
+            school: '水校3'
+        }, {
+            name: 'liwang4',
+            age: 17,
+            gender: '男4',
+            school: '水校4'
+        }, {
+            name: 'liwang5',
+            age: 19,
+            gender: '男5',
+            school: '水校5'
+        }];
+        var trs = ""
+        for (var i = 0; i < users.length; i++) {
+            var tds = "";
+            var user = users[i];
+            for (var key in user) {
+                console.log(key);
+                var uservalue = user[key];
+                var td = `<td>${uservalue}</td>`;
+                tds += td;
+            }
+            var tr = `<tr>${tds}</tr>`;
+            trs += tr
+        }
+
+
+        tbody.innerHTML = trs;
+        // for of  只能遍历一个数组
+        // for in 都可以遍历 数组或者对象
+        for (var iterator of users) {
+            console.log(iterator);
+            for (var key in iterator) {
+                console.log(iterator[key]);
+            }
+        }
+        // for (var key in users) {
+        //     // var user = users[key]
+        //     console.log(user);
+        //     for (var keys in users[key]) {
+        //         console.log(users[key][keys]);
+        //     }
+        // }
+    </script>
+</body>
+
+</html>

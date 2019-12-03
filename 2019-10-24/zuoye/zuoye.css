@@ -1,0 +1,104 @@
+body {
+    margin: 0;
+}
+
+/* 版心公共类 */
+
+.middle {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.line {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 16px;
+}
+
+ul, ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* 头部内容 */
+
+header {
+    height: 50px;
+    background: rgb(0, 174, 197);
+}
+
+.head {
+    height: 100%;
+    background: rosybrown;
+    font-size: 0;
+}
+
+.logo {
+    width: 50px;
+    height: 100%;
+    background: violet;
+    margin-right: 15px;
+}
+
+.head nav {
+    width: 800px;
+    height: 100%;
+    background: yellowgreen;
+}
+
+/* userinfo 用户信息 */
+
+.userinfo {
+    height: 100px;
+    margin-top: 15px;
+    background: royalblue;
+}
+
+/* 主要内容区域 */
+
+.contentbox {
+    font-size: 0;
+    /* height: 500px; */
+    /* background: salmon; */
+    margin-top: 15px;
+}
+
+.contentbox aside {
+    width: 300px;
+    height: 100%;
+    background: skyblue;
+    margin-right: 15px
+}
+
+.contentbox aside .aside-item {
+    height: 285px;
+    width: 260px;
+    background: orange;
+    margin: 15px auto;
+}
+
+.contentbox main {
+    height: 100%;
+    width: 885px;
+    background: teal;
+}
+
+.contentbox main section {
+    margin: 15px auto;
+    height: 210px;
+    width: 845px;
+    background: orangered;
+}
+
+/* 脚步内容部分 */
+
+footer {
+    margin-top:15px;
+    height: 70px;
+    background: paleturquoise;
+}
+footer .foot{
+    height: 100%;
+    background: peachpuff;
+}

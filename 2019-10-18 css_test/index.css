@@ -1,0 +1,12 @@
+div{
+    color: white;
+    font-size: 40px;;
+    text-shadow:5px 5px 10px red;
+
+}
+.div1{
+    display: inline-block;;
+    border: 2px solid red;
+}
+
+

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        body {
+            text-align: center;
+        }
+
+        @keyframes xuanzhuan {
+            50% {
+                transform: rotate(180deg);
+                background-color: rgb(223, 26, 207);
+            }
+
+            100% {
+                transform: rotate(360deg);
+                background-color: rgb(26, 223, 223);
+            }
+
+        }
+
+        .box {
+            height: 200px;
+            width: 200px;
+            outline: 1px solid rgb(13, 37, 141);
+            margin: 50px auto;
+            border: 1px solid red;
+            border-radius: 50%;
+            box-sizing: border-box;
+            position: relative;
+
+        }
+
+        .box>.circle {
+            height: 50px;
+            width: 50px;
+            background-color: rgb(26, 223, 223);
+            border-radius: 50%;
+            position: absolute;
+            /* border: 1px solid red; */
+            top: -25px;
+            left: 75px;
+            transform-origin: 25px 125px;
+            animation: xuanzhuan 3s linear infinite paused;
+        }
+
+        .box:hover .circle {
+            animation-play-state: running;
+        }
+
+        /* -------------------------------------------------------------------- */
+
+        @keyframes yaobaiz {
+            0% {
+                transform: rotate(30deg);
+            }
+
+            25% {
+                transform: rotate(0deg);
+            }
+
+            75% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(30deg);
+            }
+        }
+
+        @keyframes yaobaif {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            25% {
+                transform: rotate(0deg);
+            }
+
+            50% {
+                transform: rotate(-30deg);
+            }
+
+            75% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+
+        .box1 {
+            height: 400px;
+            width: 400px;
+            outline: 1px solid rgb(13, 37, 141);
+            margin: 50px auto;
+            box-sizing: border-box;
+            position: relative;
+
+        }
+
+        .cirs {
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%)
+        }
+
+        .qiu {
+            width: 20px;
+            height: 20px;
+            border-radius: 10px;
+            background-color: black;
+            float: left;
+            transform-origin: 0 -190PX;
+        }
+
+        .qiu:nth-child(1) {
+            animation: yaobaiz 10s linear infinite;
+        }
+
+        .qiu:nth-child(8) {
+            animation: yaobaif 10s linear infinite;
+        }
+
+
+        .xian {
+            width: 1px;
+            height: 200px;
+            background: black;
+            float: left;
+        }
+
+        .box1 .xian:nth-child(1) {
+            position: absolute;
+            left: 129px;
+            transform-origin: 0 0;
+            animation: yaobaiz 10s linear infinite;
+        }
+
+        .box1 .xian:nth-child(2) {
+            position: absolute;
+            left: 269px;
+            transform-origin: 0 0;
+            animation: yaobaif 10s linear infinite;
+        }
+
+
+        /* ---------------------------加载动画------------------------ */
+        .box2 {
+            height: 400px;
+            width: 400px;
+            outline: 1px solid rgb(13, 37, 141);
+            margin: 50px auto;
+            box-sizing: border-box;
+            position: relative;
+            background: black;
+
+        }
+
+        .jzs {
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+        }
+
+        .jz {
+            /* transform-origin: 100px 0; */
+            height: 5px;
+            width: 10px;
+            background-color: rgb(255, 255, 255);
+            float: left;
+            /* margin-left: 8px; */
+            animation: jzdh 1.5s ease-in-out infinite;
+            position: absolute;
+            bottom: 0;
+
+
+        }
+
+        .jz:nth-child(1) {
+            left: 0;
+            animation-delay: .1s;
+        }
+
+        .jz:nth-child(2) {
+            left: 18px;
+            animation-delay: .2s;
+        }
+
+        .jz:nth-child(3) {
+            left: 36px;
+            animation-delay: .3s;
+        }
+
+        .jz:nth-child(4) {
+            left: 54px;
+            animation-delay: .4s;
+        }
+
+        .jz:nth-child(5) {
+            left: 72px;
+            animation-delay: .5s;
+        }
+
+        .jz:nth-child(6) {
+            left: 90px;
+            animation-delay: .6s;
+        }
+
+        .jz:nth-child(7) {
+            left: 108px;
+            animation-delay: .7s;
+        }
+
+        .jz:nth-child(8) {
+            left: 126px;
+            animation-delay: .8s;
+        }
+
+        @keyframes jzdh {
+            0% {
+                height: 5px;
+                background-color: black;
+            }
+
+            50% {
+                height: 100px;
+                background-color: chartreuse;
+            }
+
+            100% {
+                height: 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>旋转小球</h1>
+    <div class="box">
+        <div class="circle"></div>
+    </div>
+    <hr>
+    <h1>摇摆小球</h1>
+    <div class="box1">
+        <div class="xian"></div>
+        <div class="xian"></div>
+        <ul class="cirs">
+            <li class="qiu"></li>
+            <li class="qiu"></li>
+            <li class="qiu"></li>
+            <li class="qiu"></li>
+            <li class="qiu"></li>
+            <li class="qiu"></li>
+            <li class="qiu"></li>
+            <li class="qiu"></li>
+        </ul>
+    </div>
+    <hr>
+    <h1>加载动画</h1>
+    <div class="box2">
+        <ul class="jzs">
+            <li class="jz"></li>
+            <li class="jz"></li>
+            <li class="jz"></li>
+            <li class="jz"></li>
+            <li class="jz"></li>
+            <li class="jz"></li>
+            <li class="jz"></li>
+            <li class="jz"></li>
+        </ul>
+    </div>
+</body>
+
+</html>

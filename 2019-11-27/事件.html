@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>事件</title>
+    <style>
+        .box {
+            padding: 40px 0 0 40px;
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+            background-color: rgb(209, 230, 162);
+            width: 600px;
+        }
+
+        .b1 {
+            width: 400px;
+            height: 400px;
+            background-color: rgb(160, 131, 131);
+        }
+
+        .b2 {
+            width: 300px;
+            height: 300px;
+            background-color: rgb(102, 129, 52);
+        }
+
+        .b3 {
+            width: 200px;
+            height: 200px;
+            background-color: rgb(98, 216, 108);
+        }
+
+        .b4 {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(125, 107, 206);
+        }
+
+        .red {
+            background-color: red !important;
+        }
+
+        .a {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(155, 148, 224);
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="b1 box" data-msg="i am b1">
+        B1
+        <div class="b2 box" data-msg="i am b2">
+            B2
+            <div class="b3 box" data-msg="i am b3">
+                B3
+                <div class="b4 box" data-msg="i am b4">
+                    B4
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="box boxa">
+        <div class="a">1</div>
+        <div class="a">2</div>
+        <div class="a">3</div>
+    </div>
+    <script>
+        let b4 = document.querySelector('.b4')
+        let b3 = document.querySelector('.b3')
+        let b2 = document.querySelector('.b2')
+        let b1 = document.querySelector('.b1')
+        // b4.onclick = function(event){
+        //     console.log(this.dataset.msg)
+        // }
+        // b3.onclick = function(event){
+        //     console.log(this.dataset.msg)
+        // }
+        // b2.onclick = function(event){
+        //     console.log(this.dataset.msg)
+        // }
+        // b1.onclick = function(event){
+        //     console.log(this.dataset.msg)
+        // }
+        b4.addEventListener('click', function (e) {
+            console.log('捕获')
+            console.log(this.dataset.msg)
+        }, true)
+
+        b3.addEventListener('click', function () {
+            console.log('捕获')
+            console.log(this.dataset.msg)
+        }, true)
+
+        b2.addEventListener('click', function () {
+            console.log('捕获')
+            console.log(this.dataset.msg)
+        }, true)
+        b1.addEventListener('click', function () {
+            console.log('捕获')
+            console.log(this.dataset.msg)
+        }, true)
+
+        b4.addEventListener('click', function (e) {
+            console.log('冒泡')
+            console.log(this.dataset.msg)
+            // 事件阻止向上冒泡
+            e.stopPropagation();
+        })
+        b3.addEventListener('click', function () {
+            console.log('冒泡')
+            console.log(this.dataset.msg)
+        })
+
+        let as = document.querySelectorAll('.a')
+        let boxa = document.querySelector('.boxa')
+        // as.forEach(function(el){
+        //     el.addEventListener('click',function(){
+        //         this.classList.add('red')
+        //     })
+        // })
+
+        boxa.addEventListener('click', function (e) {
+            let curEle = e.target;
+            if (!curEle.classList.contains('a')) {
+                return;
+            }
+            if (curEle.classList.contains('red')) {
+                curEle.classList.remove('red')
+            }
+            else {
+                curEle.classList.add('red')
+            }
+
+        })
+        // as.forEach(function(el){
+        //     el.addEventListener('mouseenter',function(){
+        //         this.classList.add('red')
+        //     })
+        // })
+        // boxa.addEventListener('mouseenter', function (e) {
+        //     let curEle = e.target
+        //     console.log('mouseenter')
+        //     curEle.classList.add('red')
+        // })
+        // boxa.onmousemove = function (e) {
+        //     console.log(e)
+        // }
+    </script>
+</body>
+
+</html>

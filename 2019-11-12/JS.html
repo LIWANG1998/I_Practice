@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //100>=x>=90 优秀 >90不错
+        var age = prompt("你的年龄");
+        var lr = age >= 50;
+        var znr = age >= 30 && age < 50;
+        var nqr = age >= 18 && age < 30;
+        var wcn = age >= 0 && age < 18;
+        if (lr) {
+            console.log(age + "岁的你是，老年人");
+        } else if (znr) {
+            console.log(age + "岁的你是，中年人");
+        } else if (nqr) {
+            console.log(age + "岁的你是，年轻人");
+        } else {
+            console.log(age + "岁的你是，未成年");
+        }
+    </script>
+</body>
+    
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body * {
+            border: red 1px solid;
+            margin: 10px;
+            border-radius: 5px ;/* 边框的圆角半径*/
+            
+        }
+
+        header {
+            height: 70px;
+        }
+
+        nav {
+            height: 30px;
+        }
+
+        main {
+            height: 300px;
+        }
+        
+        main>*{
+            display: inline-block;
+        }
+        main>article{
+            width: 60%;
+            height: 90% ;
+        }
+        main>aside{
+            width: 30%;
+            height: 90%;
+        }
+        footer {
+            height: 50px;
+        }
+        aside{
+            vertical-align: top;
+        }
+    </style>
+</head>
+
+<body>
+    <header>头部</header>
+    <nav>导航</nav>
+    <main>
+        <article>
+            <section>左边内容</section>
+            <section>左边内容</section>
+            <section>左边内容</section>
+        </article>
+        <aside>侧边内容</aside>
+    </main>
+    <footer>尾部</footer>
+</body>
+
+</html>

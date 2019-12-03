@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .bigbox {
+            height: 200px;
+            width: 200px;
+            background: rgb(167, 167, 167);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+        }
+
+        .smllebox {
+            height: 176px;
+            width: 176px;
+            background: rgb(240, 240, 240);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            font-size: 24px;
+            color: rgb(255, 123, 0);
+        }
+
+        .calis {
+            background: black;
+            height: 4px;
+            width: 200px;
+            position: absolute;
+            top: 50%;
+            /* transform: translateY(-50%); */
+        }
+
+        .calis:nth-child(1) {
+            transform: translateY(-50%) rotate(30deg);
+        }
+
+        .calis:nth-child(2) {
+            transform: translateY(-50%) rotate(60deg);
+        }
+
+        .calis:nth-child(3) {
+            transform: translateY(-50%) rotate(90deg);
+        }
+
+        .calis:nth-child(4) {
+            transform: translateY(-50%) rotate(120deg);
+        }
+
+        .calis:nth-child(5) {
+            transform: translateY(-50%) rotate(150deg);
+        }
+
+        .calis:nth-child(6) {
+            transform: translateY(-50%);
+        }
+
+        .center {
+            width: 10px;
+            height: 10px;
+            background: black;
+            border-radius: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+
+        .hand {
+            border-radius: 4px;
+            position: absolute;
+            left: 50%;
+            transform-origin: bottom center;
+        }
+
+        .Senhand {
+            height: 88px;
+            width: 2px;
+            background: red;
+            transform: translateX(-50%) rotate(0deg);
+        }
+
+        .Minhand {
+            height: 80px;
+            width: 3px;
+            transform: translate(-50%, 8px) rotate(0deg);
+            background: rgb(0, 0, 0);
+        }
+
+        .Houhand {
+            height: 74px;
+            width: 4px;
+            transform: translate(-50%, 14px) rotate(0deg);
+            background: rgb(0, 0, 0);
+        }
+
+        #time {
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class='bigbox'>
+        <div class="calis"></div>
+        <div class="calis"></div>
+        <div class="calis"></div>
+        <div class="calis"></div>
+        <div class="calis"></div>
+        <div class="calis"></div>
+        <div class='smllebox'>
+            <div class="center"></div>
+            <div class="hand Houhand"></div>
+            <div class="hand Minhand"></div>
+            <div class="hand Senhand"></div>
+            <label for="" id="time"></label>
+        </div>
+    </div>
+
+    <script>
+        let time = document.querySelector('#time');
+        let Houhand = document.querySelector('.Houhand');
+        let Minhand = document.querySelector('.Minhand');
+        let Senhand = document.querySelector('.Senhand');
+        function timeChange() {
+            let nowTime = new Date();
+            let Hours = nowTime.getHours();
+            let Minutes = nowTime.getMinutes();
+            let Seconds = nowTime.getSeconds();
+            // .toString().padStart(2, '0');
+            let Senhands = Seconds / 60 * 360;
+            let Minhands = ((Seconds / 60) + Minutes) / 60 * 360;
+            let Houhands = (((Seconds / 60) + Minutes) / 60 + Hours) / 12 * 360;
+            // toLocaleTimeString();
+            time.innerHTML = `${Hours.toString().padStart(2, '0')}:${Minutes.toString().padStart(2, '0')}:${Seconds.toString().padStart(2, '0')}`;
+            // time.innerHTML = `${nowTime.toLocaleTimeString()}`;
+            Senhand.setAttribute('style', `transform: translateX(-50%) rotate(${Senhands}deg);`);
+            Minhand.setAttribute('style', `transform: translate(-50%, 8px) rotate(${Minhands}deg);`);
+            Houhand.setAttribute('style', `transform: translate(-50%, 14px) rotate(${Houhands}deg);`);
+        }
+        setInterval(timeChange, 1000);
+    </script>
+</body>
+
+</html>

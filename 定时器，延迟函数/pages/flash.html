@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>原生js实现轮播图</title>
+    <style>
+        .container {
+            position: relative;
+        }
+
+        .container img {
+            width: 100%;
+            opacity: 0;
+            transition: all .5s linear;
+        }
+
+        .container img.show {
+            opacity: 1;
+        }
+
+        .container img:not(:first-child) {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .container .btn {
+            width: 45px;
+            height: 30px;
+            /* background: pink; */
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            /* background-repeat: no-repeat; */
+            background-size: contain !important;
+
+        }
+
+        .container .btn.prev {
+            left: 10px;
+            background: url("../images/arr_left.png") no-repeat center center;
+        }
+
+        .container .btn.next {
+            right: 10px;
+            background: url("../images/arr_right.png") no-repeat center center;
+        }
+
+        .container .idots {
+            position: absolute;
+            left: 50%;
+            bottom: 20px;
+            transform: translateX(-50%);
+            opacity: .75;
+            cursor: pointer;
+        }
+
+        .container .idot {
+            width: 12px;
+            height: 12px;
+            background: purple;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 0 8px;
+        }
+
+        .container .idot.sel {
+            background: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 轮播图容器 -->
+    <div class="container">
+        <!-- 图片显示区域 -->
+        <div class="imgs">
+            <!-- img[src="../images/$$.jpg" alt=""]*6 -->
+            <img src="../images/01.jpg" alt="" class="show">
+            <img src="../images/02.jpg" alt="">
+            <img src="../images/03.jpg" alt="">
+            <img src="../images/04.jpg" alt="">
+            <img src="../images/05.jpg" alt="">
+            <img src="../images/06.jpg" alt="">
+        </div>
+        <!-- 按钮显示区域 -->
+        <div class="btns">
+            <section class="btn prev"></section>
+            <section class="btn next"></section>
+        </div>
+        <!-- 小圆点显示区域 -->
+        <div class="idots">
+            <section class="idot sel"></section>
+            <section class="idot "></section>
+            <section class="idot "></section>
+            <section class="idot "></section>
+            <section class="idot "></section>
+            <section class="idot "></section>
+        </div>
+    </div>
+    <script>
+        //1.获取元素
+        //转化给数组
+        // Array.prototype.slice.call();
+        // Array.from();
+        // let imgs = [...document.querySelectorAll('img')];
+        let imgs = $('.container img', true);
+        let prev = $('.prev');
+        let next = $('.next');
+        let idots = $('.idots .idot', true);
+        let _curIndex = 0;//记录当前显示图片的下标
+        let _lastIndex = 0;//记录上一张图片的下标
+        let _timer = null;//定时器；
+        // 2.点击下一页
+        next.onclick = function () {
+            _curIndex = _curIndex == 5 ? 0 : ++_curIndex;
+            tab();
+            // console.log(_curIndex);
+        }
+        //3.点击上一页
+        prev.onclick = function () {
+            _curIndex = _curIndex == 0 ? 5 : --_curIndex;
+            tab();
+            // console.log(_curIndex);
+        }
+        //4.点击小圆点
+        idots.forEach(function (item, index) {
+            item.onclick = function () {
+                _curIndex = index;
+                tab();
+            }
+        });
+        //5.自动播放
+        play();
+        //6.用户体验
+        let container = $('.container');
+        container.onmouseenter = stop;
+        container.onmouseleave = play;
+
+        //=>封装函数
+        //启动定时器
+        function play() {
+            _timer = setInterval(function () {
+                next.onclick();
+            }, 3000)
+        }
+        //暂停定时器
+        function stop() {
+            clearInterval(_timer);
+        }
+        function $(se, isAll) {
+            if (isAll) {
+                return [...document.querySelectorAll(se)];
+            }
+            return document.querySelector(se);
+        }
+        function tab() {
+            //切换图片
+            imgs[_lastIndex].classList.remove("show");
+            imgs[_curIndex].classList.add("show");
+            //切换小圆点
+            idots[_lastIndex].classList.remove("sel");
+            idots[_curIndex].classList.add("sel");
+            _lastIndex = _curIndex;
+        }
+    </script>
+</body>
+
+</html>

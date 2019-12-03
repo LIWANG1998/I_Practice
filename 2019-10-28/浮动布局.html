@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        header {
+            height: 100px;
+            background: rgb(54, 164, 255);
+        }
+
+        footer {
+            height: 100px;
+            background: rgb(14, 255, 243);
+        }
+
+        .navbox {
+            height: 30px;
+            background: pink;
+            width: 1600px;
+            margin: 0 auto;
+            /* text-align: center; */
+        }
+
+        main {
+            background: rgb(150, 74, 236);
+            border: 1px solid red;
+        }
+
+        nav {
+            background: pink;
+            float: left;
+            width: 20%;
+        }
+
+        ul {
+            margin: 0 ;
+            padding: 0;
+            list-style: none;
+            background: purple;
+            line-height: 30px;
+            text-align: center;
+            /* display: inline-block;/ */
+        }
+
+        li {
+            float: left;
+            width: 100px;
+            background: cornflowerblue;
+            margin-right: 10px;
+        }
+
+        aside {
+            margin-left: 1%;
+            width: 79%;
+            height: 100px;
+            background: orchid;
+            float: left;
+        }
+
+        .clearflaot::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <header></header>
+    <div class="navbox">
+        <ul class="clearflaot">
+            <li>首页</li>
+            <li>我的喜好</li>
+            <li>你的爱好</li>
+        </ul>
+    </div>
+    <main class="clearflaot">
+        <nav>
+            <section>1</section>
+            <section>3</section>
+            <section>5</section>
+        </nav>
+        <aside>
+            <section>1</section>
+            <section>3</section>
+            <section>5</section>
+        </aside>
+    </main>
+    <footer></footer>
+</body>
+
+</html>

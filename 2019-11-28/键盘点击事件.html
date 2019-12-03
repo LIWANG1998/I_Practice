@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .bix {
+            width: 800px;
+            height: 800px;
+            background: cadetblue;
+        }
+
+        .se {
+            width: 20px;
+            height: 20px;
+            background: brown;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+
+        .bigbox {
+            z-index: 1;
+        }
+
+        .box {
+            width: 20px;
+            height: 20px;
+            background: rgb(115, 255, 0);
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            border-radius: 100%;
+            /* transform: translate(0px, 0px); */
+        }
+
+        .shiwu {
+            width: 20px;
+            height: 20px;
+            background: rgb(55, 129, 40);
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            transform: translate(100px, 300px);
+        }
+    </style>
+</head>
+<div class="bix">
+    <div class="bigbox">
+        <div class='se box'></div>
+    </div>
+    <!-- <div class="shiwu"></div> -->
+</div>
+
+<body>
+    <script>
+        let x = 120;
+        let y = 20;
+        let z = 20;
+        let stop = true;
+        let type = 'Right';
+        let movetime = 200;
+        var timer;
+        let bigbox = document.querySelector('.bigbox');
+        let box = document.querySelector('.box');
+        let shiwu;
+        let bix = document.querySelector('.bix');
+
+        //随机数 
+        function randomNum(x, y) {
+            return Math.round(Math.random() * (y - x) + x);
+        }
+
+        //开始游戏时头部初始位置
+        function startHead() {
+            let Xcoor = randomNum(0, 800 / z) * z;
+            let Ycoor = randomNum(0, 800 / z) * z;
+            box.style.transform = `translate(${Xcoor}px, ${Ycoor}px)`;
+        }
+
+        //-------------------------- 开始游戏时头部初始位置 ------------------------------------
+        startHead();
+        // box.style.transform = `translate(${x}px, ${y}px)`;
+        // box.style.transform = `matrix(1, 0, 0, 1, ${x}, ${y})`;
+        //-------------------------- 开始游戏时头部初始位置 ------------------------------------
+
+
+
+
+
+
+        function shiwuc() {
+            //食物随机出现的方法
+            var el = document.createElement("div");
+            el.classList.add("shiwu");
+            var sjx = Math.round(Math.random() * (800 / z - 1));
+            var sjy = Math.round(Math.random() * (800 / z - 1));
+            bix.append(el);
+            shiwu = document.querySelector('.shiwu');
+            shiwu.style.transform = `translate(${sjx * 20}px, ${sjy * 20}px)`;
+        }
+        shiwuc();
+        //这个是时间定时器方法
+        function moves(c) {
+            let se = document.querySelectorAll('.se');
+            if (c == "Right") {
+                x += z;
+            }
+            if (c == "Left") {
+                x -= z;
+            }
+            if (c == "Top") {
+                y -= z;
+            }
+            if (c == "Bottom") {
+                y += z;
+            }
+            //获取蛇的所有点位的位置，以后要用在后面一个身子位置移到前面一个位置；
+            let seshen = [];
+            for (let sea = 0; sea < se.length; sea++) {
+                let shetrans = getComputedStyle(se[sea]).transform;
+                seshen.push(shetrans);
+            }
+            //头部移动方法
+            se[0].style.transform = `translate(${x}px, ${y}px)`;
+            //这个是食物和头部是否在同一个位置上，在的话就删除食物，然后再调用 生产食物；
+            if (getComputedStyle(shiwu).transform == getComputedStyle(box).transform) {
+                shiwu.remove();
+                //创造一个新的尾巴，放在最后面；
+                var el = document.createElement("div");
+                el.classList.add("se");
+                el.style.transform = seshen[seshen.length - 1];
+                bigbox.append(el);
+                //然后重新在获取一次蛇的所有点位的位置；
+                for (let sea = 0; sea < se.length; sea++) {
+                    let shetrans = getComputedStyle(se[sea]).transform;
+                    seshen.push(shetrans);
+                }
+                //重新在获取蛇
+                se = document.querySelectorAll('.se');
+                shiwuc();
+            }
+            //这里就是蛇身移动的方法
+            for (let ws = 0; ws < se.length; ws++) {
+                if (ws != 0) {
+                    se[ws].style.transform = seshen[ws - 1];
+                }
+            }
+        }
+
+        //键盘按下的事件
+        window.onkeydown = function (e) {
+            if (e.keyCode == 38) {
+                // 上
+                type = "Top";
+                // y = y - z;
+                // movebox();
+            }
+            if (e.keyCode == 40) {
+                //下
+                type = "Bottom";
+                // y = y + z;
+                // movebox();
+            }
+            if (e.keyCode == 37) {
+                //左
+                type = "Left";
+                // x = x - z;
+                // movebox();
+            }
+            if (e.keyCode == 39) {
+                //右
+                type = "Right";
+                // x = x + z;
+                // movebox();
+            }
+            if (e.keyCode == 81 && e.ctrlKey) {
+                box.style.background = `red`;
+            }
+            //开始或者暂停按键
+            if (e.keyCode == 32) {
+                if (stop) {
+                    console.log("开始");
+                    timer = setInterval(function () {
+                        moves(type);
+                    }, movetime);
+                }
+                else {
+                    console.log("暂停");
+                    clearInterval(timer);
+                }
+                stop = !stop;
+            }
+        }
+    </script>
+</body>
+
+</html>

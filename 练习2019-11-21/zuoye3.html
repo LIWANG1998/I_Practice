@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .digbox {
+            width: 700px;
+            margin: 10px auto;
+            text-align: left;
+        }
+
+        .stars {
+
+            list-style: none;
+            display: inline-block;
+            padding: 0;
+            margin: 0;
+            vertical-align: top;
+            margin: 0 20px;
+        }
+
+        .stars li {
+            float: left;
+            width: 24px;
+            height: 19px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .star {
+            background-image: url("img/star.png");
+            background-repeat: no-repeat;
+            background-size: 80% auto;
+            background-position: top;
+        }
+
+        .staron {
+            background-position: bottom !important;
+        }
+
+        .on {
+            /* background-position: bottom; */
+        }
+
+        .Stitle {
+            font-size: 12px;
+            position: absolute;
+            top: 35px;
+            left: -65px;
+            background-color: rgb(226, 226, 226);
+            width: 150px;
+            text-align: left;
+            z-index: -1;
+            display: none;
+            border: 1px solid rgb(182, 182, 182);
+            border-radius: 3px;
+            padding: 5px;
+        }
+
+        .Stitle::before {
+            content: "";
+            display: inline-block;
+            border: 10px solid rgb(226, 226, 226);
+            border-right-color: transparent;
+            border-left-color: transparent;
+            border-top: 0;
+            position: absolute;
+            top: -10px;
+            left: 65px;
+        }
+
+        .star:hover .Stitle {
+            display: block;
+        }
+
+        .font_color {
+            color: red;
+            font-weight: 400;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="digbox"><span>点击星星就能打分</span>
+        <ul class="stars">
+            <!-- <li class="star">
+                <div class="Stitle"></div>
+            </li>
+            <li class="star">
+                <div class="Stitle"><span class="font_color">1分 很不满意 </span><span>差得太离谱，与卖家描述的严重不符，非常不满</span></div>
+            </li>
+            <li class="star">
+                <div class="Stitle"></div>
+            </li>
+            <li class="star">
+                <div class="Stitle"></div>
+            </li>
+            <li class="star">
+                <div class="Stitle"></div>
+            </li> -->
+        </ul>
+        <span class="spantwo"></span>
+    </div>
+    <script>
+        var Sarray = [
+            { "socre": 1, "describe": '差得太离谱，与卖家描述的严重不符，非常不满', "head": "很不满意" },
+            { "socre": 2, "describe": '部分有破损，与卖家描述的不符，不满意', "head": "不满意" },
+            { "socre": 3, "describe": '质量一般，没有卖家描述的那么好', "head": "一般" },
+            { "socre": 4, "describe": '质量不错，与卖家描述的基本一致，还是挺满意的', "head": "满意" },
+            { "socre": 5, "describe": '质量非常好，与卖家描述的完全一致，非常满意', "head": "非常满意" }
+        ]
+
+        var stars = document.querySelector('.stars');
+        var star = document.getElementsByClassName('star');
+        var on = document.querySelectorAll('.on');
+        var Stitle = document.getElementsByClassName('Stitle');
+        var spantwo = document.querySelector('.spantwo');
+        var starshtml = "";
+        for (var i = 0; i < 5; i++) {
+            starshtml += `<li class="star"><div class="Stitle"></div></li>`;
+        }
+        stars.innerHTML = starshtml;
+        console.log();
+        for (var i = 0; i < Stitle.length; i++) {
+            console.log(i);
+            var Stitlehtml = '';
+            Stitlehtml = `<span class="font_color">${Sarray[i]['socre']}分 ${Sarray[i]['head']}</span><br><span>${Sarray[i]['describe']}</span >`;
+            Stitle[i].innerHTML = Stitlehtml;
+        }
+        for (var i = 0; i < star.length; i++) {
+            star[i].setAttribute("indexs", i + 1);
+            star[i].onmouseover = function () {
+                var num = Number(this.getAttribute("indexs"));
+                for (var j = 0; j < num; j++) {
+                    star[j].classList.add('staron');
+                }
+                for (var k = num; k < 5; k++) {
+                    star[k].classList.remove('staron');
+                }
+            }
+            star[i].onmouseout = function () {
+                for (var item of star) {
+                    var istf = item.classList.contains('on');
+                    if (!item.classList.contains('on')) {
+                        item.classList.remove('staron');
+                    }
+                    if (item.classList.contains('on')) {
+                        item.classList.add('staron');
+                    }
+                }
+            }
+            star[i].onclick = function () {
+                var spanhtml = '';
+                var index = this.getAttribute("indexs");
+                for (var i = 0; i < index; i++) {
+                    star[i].classList.add('on');
+                }
+                for (var k = index; k < 5; k++) {
+                    star[k].classList.remove('on');
+                }
+                console.log(spantwo);
+                spanhtml = `<span class="font_color">${Sarray[index - 1]['socre']}分 </span><span> (${Sarray[index - 1]['describe']}) </span>`;
+                spantwo.innerHTML = spanhtml;
+            }
+        }
+
+    </script>
+</body>
+
+</html>

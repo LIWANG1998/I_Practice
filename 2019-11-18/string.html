@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var zhuanarray = "HTML,CSS,JavaScript,JQuery";
+        // var array1 = zhuanarray.split();
+        // var array2 = zhuanarray.split("");
+        // var array3 = zhuanarray.split(",");
+        // console.log(array1);
+        // console.log(array2);
+        // console.log(array3);
+        // var arrayzhuanstr = ['189', '1234', '1234'];
+        // var str1 = arrayzhuanstr.join();
+        // var str2 = arrayzhuanstr.join("");
+        // var str3 = arrayzhuanstr.join("-");
+        // console.log(str1);
+        // console.log(str2);
+        // console.log(str3);
+        // var str4 = "使用正则表达式把和全部换成空最后留下的就是文字例子";
+        // // for (var index = 0; index < str4.length; index++) {
+        // //     console.log(str4[index]);
+        // // }
+        // for (var index = 0; index < str4.length; index = index + 2) {
+        //     var str5 = str4[index]
+        //     if (index + 1 < str4.length)
+        //         str5 += str4[index + 1];
+        //     console.log(str5);
+        // }
+
+        // function randomBetween(x, y) {
+        //     return Math.round(Math.random() * (y - x)) + x
+        // }
+
+        // function sjzm() {
+        //     var arrays = [];
+        //     for (var i = 0; i < 4; i++) {
+        //         // console.log(i);
+        //         arrays.push(String.fromCodePoint(randomBetween(65, 122)));
+        //     }
+        //     return arrays.join("");
+        // }
+
+        // 小写97-122 大写65-90  数字 48-57 
+        // 随机1-62 
+
+        function dangeshu() {
+            var shuiji = Math.round((Math.random() * 61) + 1);
+            var shuijiZhi = 0;
+            if (shuiji <= 26) {
+                //小写字母
+                shuijiZhi = shuiji + 96;
+                // shuijiZhi = Math.round((Math.random() * (122 - 97)) + 97);
+            }
+            if (shuiji > 26 && shuiji <= 52) {
+                //大写字母
+                shuijiZhi = shuiji + 38;
+                // shuijiZhi = Math.round((Math.random() * (90 - 65)) + 65);
+            }
+            if (shuiji > 52) {
+                //数字
+                shuijiZhi = shuiji - 5;
+                // shuijiZhi = Math.round((Math.random() * (57 - 48)) + 48);
+            }
+            var ascllzhuan = String.fromCharCode(shuijiZhi);
+            return ascllzhuan;
+        }
+        function sjs() {
+            var shuijishu = "";
+            for (var i = 0; i < 4; i++) {
+                shuijishu += dangeshu();
+            }
+            console.log(shuijishu);
+        }
+        sjs();
+
+
+    </script>
+</body>
+
+</html>

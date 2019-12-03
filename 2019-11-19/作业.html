@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        @keyframes dong {
+            50% {
+                transform: translateY(50%);
+            }
+
+            100% {
+                transform: translateY(0%);
+            }
+        }
+
+        .btn {
+            text-align: center;
+            margin: 10px;
+        }
+
+        .rowbox {
+            margin: 0 auto;
+            display: flex;
+            width: 700px;
+            background: rgb(1, 162, 255);
+        }
+
+        .celbox {
+            height: 150px;
+            width: 150px;
+            background-color: black;
+            margin: 10px auto;
+            transition: 1s;
+        }
+
+        .celboxbian {
+            background-color: rgb(255, 0, 0);
+            border-radius: 50%;
+            animation: dong 1s ease-in-out 0.1s 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bigbox">
+        <div class="btn">
+            <input type="button" id="changeBtn" value="点击变红">
+        </div>
+        <div class="rowbox">
+            <div class="celbox"></div>
+            <div class="celbox"></div>
+            <div class="celbox"></div>
+            <div class="celbox"></div>
+        </div>
+    </div>
+    <script>
+        var changeBtn = document.getElementById('changeBtn');
+        var celboxs = document.querySelectorAll('.celbox');
+        var celboxt = document.getElementsByClassName('celbox');
+        changeBtn.onclick = function () {
+            for (var item of celboxt) {
+                item.classList.add('celboxbian');
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .divg {
+            height: 3000px;
+        }
+
+        .divg :nth-child(1) {
+            height: 300PX;
+            background: rgb(226, 43, 43);
+        }
+
+        .divg :nth-child(2) {
+            height: 300PX;
+            background: rgb(43, 107, 226);
+        }
+
+        .divg :nth-child(3) {
+            height: 300PX;
+            background: rgb(205, 43, 226);
+        }
+
+        .divg :nth-child(4) {
+            height: 300PX;
+            background: rgb(43, 226, 113);
+        }
+
+        .divg :nth-child(5) {
+            height: 300PX;
+            background: rgb(226, 177, 43);
+        }
+
+        .divg :nth-child(6) {
+            height: 300PX;
+            background: rgb(223, 226, 43);
+        }
+
+        .divg :nth-child(7) {
+            height: 300PX;
+            background: rgb(43, 101, 226);
+        }
+
+        .divg :nth-child(8) {
+            height: 300PX;
+            background: rgb(95, 226, 43);
+        }
+
+        .divg :nth-child(9) {
+            height: 300PX;
+            background: rgb(226, 43, 144);
+        }
+
+        .divg :nth-child(10) {
+            height: 300PX;
+            background: rgb(43, 174, 226);
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="divg">
+        <div>300</div>
+        <div>600</div>
+        <div>900</div>
+        <div>1200</div>
+        <div>1500</div>
+        <div>1800</div>
+        <div>2100</div>
+        <div>2400</div>
+        <div>2700</div>
+        <div>3000</div>
+        <span style='position:fixed'>0</span>
+    </div>
+    <script>
+        // document.addEventListener('mousewheel', function (event) {
+        //     document.getElementsByTagName('span')[0].firstChild.nodeValue = event.wheelDelta;
+        //     console.log(event);
+        // })
+        window.onscroll = function () {
+            console.log("发生了滚动")
+            var a = document.documentElement.scrollTop || document.body.scrollTop
+            console.log(a)
+        }
+    </script>
+</body>
+
+</html>

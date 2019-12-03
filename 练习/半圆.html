@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .circle_box {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: #eee;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 100%;
+        }
+
+        .circle_wrap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 200px;
+            /* background: red; */
+            border-radius: 100%;
+            /* 0-180deg 的时候 */
+            clip: rect(0, 200px, 200px, 100px);
+            /* 180-360deg 的时候 */
+            /* clip: rect(0, 100px, 200px, 0); */
+
+        }
+
+        .circle {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 200px;
+            border-radius: 100%;
+            background: green;
+            clip: rect(0, 100px, 200px, 0);
+            /* 事件计算角度 */
+            transform: rotate(0deg);
+        }
+
+
+        .circle_wraptwo {
+            /* >180的时候显示 */
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 200px;
+            clip: rect(0, 200px, 200px, 100px);
+            background: green;
+            border-radius: 100%;
+        }
+
+        .circle_wrapthree {
+            position: absolute;
+            width: 160px;
+            height: 160px;
+            border-radius: 100%;
+            background: #eee;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: rgb(255, 123, 0);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="circle_box">
+        <div class="circle_wrap">
+            <div class="circle">
+            </div>
+        </div>
+        <div class="circle_wraptwo">
+        </div>
+        <div class="circle_wrapthree">
+            <label for="" id="time"></label>
+        </div>
+    </div>
+    <Script>
+        let time = document.querySelector('#time');
+        let circle_wrap = document.querySelector('.circle_wrap');
+        let circle_wraptwo = document.querySelector('.circle_wraptwo');
+        let circle = document.querySelector('.circle');
+        function timeChange() {
+            let nowTime = new Date();
+            let Hours = nowTime.getHours().toString().padStart(2, '0');
+            let Minutes = nowTime.getMinutes().toString().padStart(2, '0');
+            let Seconds = nowTime.getSeconds().toString().padStart(2, '0');
+            // toLocaleTimeString();
+
+            let jiao = (Seconds) / 60 * 360;
+            if (jiao > 180 || jiao == 0) {
+                circle_wraptwo.setAttribute('style', 'display: block;');
+                circle_wrap.setAttribute('style', 'clip: rect(0, 100px, 200px, 0);')
+            }
+            else {
+                circle_wraptwo.setAttribute('style', '');
+                circle_wrap.setAttribute('style', '')
+            }
+            circle.setAttribute("style", `transform: rotate(${jiao}deg);`);
+            // console.log(Seconds);
+            // console.log(jiao);
+            // time.innerHTML = `${nowTime.toLocaleTimeString()}`;
+            time.innerHTML = `${Hours}:${Minutes}:${Seconds}`;
+        }
+        setInterval(timeChange, 1000);
+    </Script>
+</body>
+
+
+</html>

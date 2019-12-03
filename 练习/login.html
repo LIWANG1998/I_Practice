@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *,
+        ::before,
+        ::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #eee;
+        }
+
+        .divs {
+            margin-top: 80px;
+        }
+
+        form {
+
+            padding: 15px 40px 50px;
+            margin: 0 auto;
+            max-width: 380px;
+            background-color: rgb(255, 254, 254);
+            border-radius: 10px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            /* background-color: yellowgreen; */
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .sdss {
+            width: 100%;
+            border: 1px solid #ced4da;
+            height: 40px;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: .25rem;
+        }
+
+        .focusshijian:focus {
+            color: #495057;
+            background-color: #fff;
+            border-color: #80bdff;
+            outline: 0;
+            /* 不要选中时自带的选中边框 */
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, .25);
+            /* 选中输入框是的状态 ，给输入框加个阴影 */
+        }
+
+        #jizhu {
+            margin-right: 5px;
+        }
+
+        .label {
+            display: inline-block;
+            margin-bottom: 30px;
+        }
+
+        button {
+            outline: 0;
+            border: 0;
+            width: 100%;
+            color: #fff;
+            background-color: #007bff;
+            border-color: #007bff;
+            padding: 1rem;
+            border-radius: .25rem;
+            translate: all .3s;
+        }
+
+        button:hover {
+            background-color: #0265cf;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="divs">
+        <form action="">
+            <h2>Login Form</h2>
+            <input type="text" class="sdss focusshijian" name="username" id="username" placeholder="Email Address">
+            <input type="password" class="sdss focusshijian" name="userpassword" id="userpassword"
+                placeholder="Userpassword">
+            <label for="jizhu" class="label"><input type="checkbox" name="jizhu" id="jizhu">Remember Me</label>
+            <button>Login</button>
+        </form>
+    </div>
+</body>
+
+</html>

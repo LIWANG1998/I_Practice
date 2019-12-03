@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* 自定义字体，用户可以不用安装的情况下使用 */
+        @font-face {
+            font-family: "maoti";
+            src: url("./毛泽东字体.ttf");
+        }
+
+        .p1 {
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            font-family: "宋体";
+        }
+
+        .p2 {
+            font-style: italic;
+            font-weight: normal;
+            font-size: 20px;
+            font-family: "微软雅黑";
+        }
+
+        .p3 {
+            font-style: normal;
+            font-weight: bold;
+            font-size: 22px;
+            font-family: "幼圆";
+        }
+
+        .p4 {
+            font-style: italic;
+            font-weight: bold;
+            font-size: 22px;
+            font-family: "楷体";
+        }
+
+        .p5 {
+            font: bold 20px "楷体";
+        }
+
+        .p6 {
+            font: italic 22px "宋体";
+        }
+
+
+        html {
+            font-size: 16px;
+        }
+
+
+        .box {
+            color: red;
+            font-size: 20px;
+        }
+
+        .pb1 {
+            font-size: 1.5em;
+        }
+
+        .pb2 {
+            font-size: .875rem;
+        }
+        .pb3{
+            font:1.5em "maoti";
+        }
+    </style>
+</head>
+
+<body>
+    <p class="p1">1、第一段文本为正常风格，正常粗细，16像素的“宋体”</p>
+    <p class="p2">2、第二段文本为斜体风格，正常粗细，20像素的“微软雅黑”</p>
+    <p class="p3">3、第三段文本为正常风格，加粗，22像素的“幼圆”</p>
+    <p class="p4">4、第四段文本为斜体风格，加粗，22像素的“楷体”</p>
+
+    <p class="p5">5、风格为正常，粗体，20像素大小，“微软雅黑”</p>
+    <p class="p6">6、风格为斜体，正常粗体，22像素大小，“宋体”</p>
+
+    <div class="box">
+        <p class="pb1">从Box父系元素继承</p>
+        <p class="pb2">文章</p>
+        <p class="pb3">文章的</p>
+    </div>
+    <!-- div.box3[title="这是一个盒子"] -->
+    <div class="box3" title="这是一个盒子"></div>
+    <!-- a.bd[href="http://baidu.com" target="_blank"]{百度一个} -->
+    <a href="http://baidu.com" class="bd" target="_blank">百度一个</a>
+    <!-- ul.menu>li.item*4 -->
+    <!-- ul.menu>li.item*4>a.bud[href="http://baidu.com" target="_blank" title="这是百度"]{点击百度} -->
+    <ul class="menu">
+        <li class="item"><a href="http://baidu.com" class="bud" target="_blank" title="这是百度">点击一下百度</a></li>
+        <li class="item"><a href="http://baidu.com" class="bud" target="_blank" title="这是百度">点击一下百度</a></li>
+        <li class="item"><a href="http://baidu.com" class="bud" target="_blank" title="这是百度">点击一下百度</a></li>
+        <li class="item"><a href="http://baidu.com" class="bud" target="_blank" title="这是百度">点击一下百度</a></li>
+    </ul>
+</body>
+
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            user-select: none;
+        }
+
+        .bigbig {
+            height: 1000px;
+            width: 1000px;
+        }
+
+        .bigbox {
+            width: 500px;
+            height: 500px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            /* background: rgb(29, 255, 244); */
+            transform-style: preserve-3d;
+            /* display: flex; */
+            transform: translate(-50%, -50%) rotateX(30deg) rotateY(30deg);
+            /* opacity: 0.7; */
+            /* transition: 1s;7485 */
+            cursor: pointer;
+        }
+
+        .face {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            /* transform: ; */
+            width: 200px;
+            height: 200px;
+            background: red;
+            opacity: .7;
+            text-align: center;
+        }
+
+        /* .smbox {
+            width: 300px;
+            height: 300px;
+            background: rgb(152, 218, 0);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) ;
+        } */
+
+        .front {
+            background: red;
+            transform: translate(-50%, -50%) translateZ(100px);
+        }
+
+        .back {
+            background: rgb(225, 0, 255);
+            transform: translate(-50%, -50%) rotateY(180deg) translateZ(100px);
+        }
+
+        .left {
+            background: rgb(34, 108, 204);
+            transform: translate(-50%, -50%) rotateY(90deg) translateZ(100px);
+        }
+
+        .right {
+            background: rgb(0, 255, 213);
+            transform: translate(-50%, -50%) rotateY(-90deg) translateZ(100px);
+        }
+
+        .top {
+            background: rgb(94, 255, 0);
+            transform: translate(-50%, -50%) rotateX(90deg) translateZ(100px);
+        }
+
+        .bottom {
+            background: rgb(224, 203, 12);
+            transform: translate(-50%, -50%) rotateX(-90deg) translateZ(100px);
+        }
+
+        .anzhu {
+            /* display: inline-block; */
+            font-size: 50px;
+            line-height: 100px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class=bigbig>
+        <div class="anzhu">按住鼠标左键滑动鼠标,即可旋转观看图像</div>
+        <div class="bigbox" style=" transform: translate(-50%, -50%) rotateX(30deg) rotateY(30deg);">
+            <div class="face front">front</div>
+            <div class="face back">back</div>
+            <div class="face left">left</div>
+            <div class="face right">right</div>
+            <div class="face top">top</div>
+            <div class="face bottom">bottom</div>
+        </div>
+    </div>
+</body>
+<script>
+    let bigbig = document.querySelector('.bigbig');
+    let bigbox = document.querySelector('.bigbox');
+    let x = 0;
+    let y = 0;
+    // let zhi = '';    
+    bigbig.onmousedown = function (v) {
+        bigbig.addEventListener('mousemove', rotate);
+        // console.log(v);
+        // let startX = v.clientX;
+        // let startY = v.clientY;
+        // zhi = bigbox.style.transform;
+        // let zhis = zhi.split(/[()]/);
+        // // console.log(zhis);
+        // // console.log("------------------");
+        // document.onmousemove = function (e) {
+        //     // console.log(e);
+        //     let endX = e.clientX;
+        //     let endY = e.clientY;
+        //     // console.log(endX - startX);
+        //     let degsX = (endX - startX);
+        //     let degsY = (endY - startY);
+        //     let rotateX = parseInt(zhis[3]);
+        //     let rotateY = parseInt(zhis[5]);
+        //     bigbox.style.transform = `translate(-50%,-50%) rotateX(${rotateX + degsY}deg) rotateY(${rotateY + degsX}deg)`;
+        // bigbox.setAttribute('style', `transform:translate(-50%, -50%) rotateX(${30 + degsY}deg) rotateY(${30 + degsX}deg)`);
+        // console.log(degs);
+        // }
+    }
+    bigbig.onmouseup = function (v) {
+        // console.log("------------------");
+        // console.log(v);
+        // document.onmousemove = null;
+        bigbig.removeEventListener('mousemove', rotate);
+    }
+    function rotate(e) {
+        x += e.movementX;
+        y += e.movementY;
+        bigbox.style.transform = `translate(-50%,-50%) rotateX(${-y}deg) rotateY(${x}deg)`;
+    }
+</script>
+
+</html>

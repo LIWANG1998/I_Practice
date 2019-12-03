@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            height: 200px;
+            width: 200px;
+        }
+
+        .box1 {
+            background: springgreen;
+            /* 1.元素的不透明度“opacity” */
+            opacity: 0.5;
+            /* 位置依然还在 还可以触发相应的js事件 */
+        }
+
+        .box1:hover+span {
+            color: red;
+        }
+
+        .box2 {
+            background: rgb(0, 153, 255);
+            /* 元素可见性“visibility” */
+            visibility: hidden;
+            /* 不可见  但是位置还在 也不可以触发相应的js事件 */
+        }
+
+        .box3 {
+            background: rgb(247, 0, 255);
+            /* 3.元素的显示方式“display” */
+            display: none;
+            /* 标签直接从html 中删除了 所以位置也没有了  */
+        }
+
+        .box4 {
+            background: rgb(198, 248, 15);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1"></div>
+    <span>测试文字一</span>
+    <div class="box2"></div>
+    <span>测试文字二</span>
+    <div class="box3"></div>
+    <span>测试文字三</span>
+    <div class="box4"></div>
+</body>
+
+</html>

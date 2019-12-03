@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            /* color: green; */
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <label for="withd">宽度：</label><input type="text" name="withd" id="withd">
+        <select name="withdUnit" id="withdUnit">
+            <option value="mm">mm</option>
+            <option value="cm" selected>cm</option>
+            <option value="dm">dm</option>
+            <option value="m">m</option>
+        </select>
+        <br>
+        <label for="height">高度：</label><input type="text" name="height" id="height">
+        <select name="heightUnit" id="heightUnit">
+            <option value="mm">mm</option>
+            <option value="cm" selected>cm</option>
+            <option value="dm">dm</option>
+            <option value="m">m</option>
+        </select>
+        <br>
+        <label for="color">背景颜色：</label>
+        <select name="colorunit" id="colorunit">
+            <option value="red">红色</option>
+            <option value="black">黑色</option>
+            <option value="blue">蓝色</option>
+            <option value="green">绿色</option>
+        </select>
+        <br>
+        <label for="top">位置top：</label><input type="text" name="top" id="top" class="position"><label
+            for="top">px</label>
+        <br>
+        <label for="left">位置left：</label><input type="text" name="left" id="left" class="position"><label
+            for="top">px</label>
+        <br>
+        <button id="btn1">测试1</button>
+        <button id="btn2">测试2</button>
+        <button id="btn3">测试3</button>
+    </div>
+    <script>
+        // 1.分别用原始模式，工厂模式，构造函数模式创建一个盒子对象。要求如下
+        //     (1)对象有以下属性：宽度(数字类型，默认单位为cm) ，高度(同宽度) ，背景颜色，位置。长度单位可选mm（毫米）, cm(厘米) ，dm(分米), m(米)
+        //         (2)盒子对象的宽度，高度可设置带长度单位的字符串，对象会自动转换成cm。如: 设置box.width = '1.2m'，获取box.width返回不带单位的数字120，也可直接设置数字。提示Object.defineproperties，查询文档或者上课案例。
+        // (3)有方法getSize()获取盒子大小。返回数字，默认平方厘米。
+        var withd = document.querySelector('#withd');
+        var height = document.querySelector('#height');
+        var withdUnit = document.querySelector('#withdUnit');
+        var heightUnit = document.querySelector('#heightUnit');
+        var colorunit = document.querySelector('#colorunit');
+        var position = document.querySelectorAll('.position');
+        var btn1 = document.querySelector('#btn1');
+        var btn2 = document.querySelector('#btn2');
+        var btn3 = document.querySelector('#btn3');
+        function huan(dw) {
+            if (!isNaN(dw)) {
+                return dw;
+            }
+            else if (typeof dw == 'string') {
+                let w = parseFloat(dw);
+                let c = dw.replace(w, '');
+                let b;
+                if (c == 'mm') {
+                    b = 0.1;
+                }
+                else if (c == 'cm') {
+                    b = 1;
+                }
+                else if (c == 'dm') {
+                    b = 10;
+                }
+                else if (c == 'mm') {
+                    b = 100;
+                }
+                else {
+                    throw "你输入的长度格式不正确";
+                }
+                return w * b;
+            }
+            else {
+                throw "你输入的长度格式不正确";
+            }
+
+        }
+        btn1.onclick = function () {
+            //原始模式
+            var box1 = {
+                _withd: 0, _height: 0, color: '', position: [], getSize: function () {
+                    return this._withd * this._height;
+                }
+            };
+            Object.defineProperties(box1, {
+                withd: {
+                    get() {
+                        return this._withd;
+                    },
+                    set(v) {
+                        this._withd = huan(v);
+                    }
+                },
+                height: {
+                    get() {
+                        return this._height;
+                    },
+                    set(s) {
+                        this._height = huan(s);
+                    }
+                }
+            });
+            box1.withd = withd.value + withdUnit.value;
+            box1.height = height.value + heightUnit.value;
+            box1.color = colorunit.value;
+            var positions = [];
+            for (var item of position) {
+                positions.push(item.value);
+            }
+            box1.position = positions;
+            console.log(box1);
+            console.log(box1.getSize());
+        }
+        btn2.onclick = function () {
+            //工厂模式
+            function boxs(wd, ht, cr, pn) {
+                var box2 = new Object();
+                Object.defineProperties(box2, {
+                    withd: {
+                        get() {
+                            return this._withd;
+                        },
+                        set(v) {
+                            this._withd = huan(v);
+                        }
+                    },
+                    height: {
+                        get() {
+                            return this._height;
+                        },
+                        set(s) {
+                            this._height = huan(s);
+                        }
+                    }
+                });
+                box2.withd = wd;
+                box2.height = ht;
+                box2.color = cr;
+                box2.position = pn;
+                box2.getSize = function () {
+                    console.log()
+                    return box2.height * box2.withd;
+                };
+                return box2;
+            }
+            var withdss = withd.value + withdUnit.value;
+            var heightss = height.value + heightUnit.value;
+            var colorss = colorunit.value;
+            var positions = [];
+            for (var item of position) {
+                positions.push(item.value);
+            }
+            var positionss = positions;
+            var box3 = boxs(withdss, heightss, colorss, positionss);
+
+            console.log(box3);
+            // console.log(box3.withd);
+            console.log(box3.getSize());
+        }
+
+        //工厂模式
+        function boxst(wd, ht, cr, pn) {
+            //  Object.defineProperties()放在赋值操作的前面
+            Object.defineProperties(this, {
+                withd: {
+                    get() {
+                        return this._withd;
+                    },
+                    set(v) {
+                        this._withd = huan(v);
+                    }
+                },
+                height: {
+                    get() {
+                        return this._height;
+                    },
+                    set(s) {
+                        this._height = huan(s);
+                    }
+                }
+            });
+            this.withd = wd;
+            this.height = ht;
+            this.color = cr;
+            this.position = pn;
+            this.getSize = function () {
+                console.log()
+                return this.height * this.withd;
+            };
+        }
+        btn3.onclick = function () {
+            var withdss = withd.value + withdUnit.value;
+            var heightss = height.value + heightUnit.value;
+            var colorss = colorunit.value;
+            var positions = [];
+            for (var item of position) {
+                positions.push(item.value);
+            }
+            var positionss = positions;
+            var box4 = new boxst(withdss, heightss, colorss, positionss);
+
+            console.log(box4);
+            // console.log(box3.withd);
+            console.log(box4.getSize());
+        }
+        // 2.给所有字符串添加一个方法replaceAll方法的，实现一下功能。'abcaba'.replaceAll('a', 'x') ，替换所有的字母a为z，返回结果为'xbcxbx'。
+        String.prototype.replaceAll = function () {
+            return this.replace(/a/g, 'x');
+        }
+        // 3.给数组添加一个方法max可以返回数组的最大值，且不改变原数组。
+        Array.prototype.max = function () {
+            var arry = this.concat();
+            for (var i = 0; i < arry.length; i++) {
+                var z = '';
+                if (arry[i] > arry[i + 1]) {
+                    z = arry[i];
+                    arry[i] = arry[i + 1];
+                    arry[i + 1] = z;
+                }
+            }
+            // console.log(arry);
+            return arry[arry.length - 1];
+        }
+    </script>
+</body>
+
+</html>

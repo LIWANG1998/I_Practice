@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .bigbox {
+            /* background: royalblue; */
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 1280px;
+            height: 533px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .imglis {
+            padding: 0;
+            margin: 0 auto;
+            list-style: none;
+            transform: translateX(0px);
+            transition: .5s;
+        }
+
+        .imglis>li {
+            float: left;
+        }
+
+        img {
+            display: block;
+        }
+
+        .imgols {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            position: absolute;
+            bottom: 10px;
+            right: 40px;
+        }
+
+        .imgols>li {
+            border-radius: 100%;
+            width: 40px;
+            height: 40px;
+            float: left;
+            background: yellowgreen;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 3px;
+            color: white;
+            font-size: 20px;
+            opacity: 0.7;
+            cursor: pointer;
+        }
+
+        .imgols>li.btnba {
+            background: rgb(253, 80, 0);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bigbox">
+        <ul class="imglis">
+            <li><img src="img/banner1.jpg" alt=""></li>
+            <li><img src="img/banner2.jpg" alt=""></li>
+            <li><img src="img/banner3.jpg" alt=""></li>
+            <li><img src="img/banner4.jpg" alt=""></li>
+            <li><img src="img/banner5.jpg" alt=""></li>
+        </ul>
+        <ol class="imgols">
+
+        </ol>
+    </div>
+</body>
+<script>
+    var v = 1;
+    var ft = true;
+    let imgsElt = document.querySelector(".imglis");
+    let imglisElt = document.querySelectorAll(".imglis>li");
+    imgsElt.style.width = `${imglisElt.length * 1280}px`;
+    let imgols = document.querySelector(".imgols");
+    var imgolshtml = '';
+    for (let i = 0; i < imglisElt.length; i++) {
+        imgolshtml += `<li>${i + 1}</li>`;
+    }
+    imgols.innerHTML = imgolshtml;
+    function play() {
+        imgc(v);
+        if (ft == false) {
+            v = v - 1;
+        }
+        else {
+            v = v + 1;
+        }
+
+    };
+    function imgc(s) {
+        if (s == 4) {
+            ft = false;
+        }
+        if (s == 0) {
+            ft = true;
+        }
+        btnon(s);
+    }
+    var playimg = setInterval(play, 3000);
+    for (let k = 0; k < 5; k++) {
+        imglisElt[k].onmouseover = function () {
+            clearInterval(playimg);
+        }
+        imglisElt[k].onmouseout = function () {
+            playimg = setInterval(play, 3000);
+        }
+    }
+    var btnsli = document.querySelectorAll('.imgols>li');
+    for (let i = 0; i < 5; i++) {
+        btnsli[i].onmouseenter = function () {
+            btnon(i);
+            clearInterval(playimg);
+        }
+        btnsli[i].onmouseout = function () {
+            playimg = setInterval(play, 3000);
+        }
+    }
+    function btnon(s) {
+        v = s;
+        for (var j = 0; j < btnsli.length; j++) {
+            if (j == s) {
+                btnsli[j].classList.add('btnba');
+            }
+            else {
+                btnsli[j].classList.remove('btnba');
+            }
+        }
+        imgsElt.style.transform = `translateX(${s * - 1280}px)`;
+        // imgsElt.setAttribute('style', `transform: translateX(-${s * 1280}px);`);
+    }
+</script>
+
+</html>

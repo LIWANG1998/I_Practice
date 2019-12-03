@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .bigbox {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: darkgray;
+            border-radius: 10px;
+            padding: 30px;
+        }
+
+        .bigbox>div {
+            padding: 10px;
+        }
+
+        div>label {
+            display: inline-block;
+            width: 120px;
+            text-align: right;
+        }
+
+        div>input {
+            height: 30px;
+            width: 250px;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+            padding: 0;
+        }
+
+        div>button {
+            height: 32px;
+            /* width: 250px;s    */
+            font-size: 18px;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        div>button:hover {
+            background: rgb(170, 196, 202);
+            box-shadow: 0 0 5px 2px rgba(29, 29, 29, 0.2);
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="bigbox">
+        <div><label for="">输入身份证号：</label><input type="text" id="idValue"> <button id="idBtn">显示出生年月</button></div>
+        <div><label for="">输出格式为：</label><input type="text" id="Valueid" disabled></div>
+        <div><label for="">姓名：</label><input type="text" id="Valuename"></div>
+        <div><label for="">电话号码：</label><input type="text" id="Valuephone"></div>
+        <div><label for="">邮箱：</label><input type="email" id="Valueemail"> <button id="valueBtn">脱敏显示</button></div>
+    </div>
+    <script>
+        //8. 用户信息脱敏。写一个表格，包含三个输入字段，姓名，电话码号，邮箱。然后在最后显示用户信息脱名以后的信息。
+        // 要求：
+        // - 姓名第二个字用*覆盖
+        // - 电话号码中间四位用*覆盖，电话号码输入支持全数字和-连接方式，如189-1234-1234/18912341234都合法。
+        // - 邮箱@前面的所有内容*覆盖，且*个数和@前的字符串数量相等
+        // - 在输入信息的前后有空格会被系统默认删除
+        //例如用户输，姓名：李大锤，电话号码：189-1234-1234，邮箱：pony@qq.com。
+        // 输出，姓名：李*锤，电话号码：189****1234，邮箱：****@qq.com
+        var Valuename = document.getElementById("Valuename");
+        var Valuephone = document.getElementById("Valuephone");
+        var Valueemail = document.getElementById("Valueemail");
+        var valueBtn = document.getElementById("valueBtn");
+        valueBtn.onclick = function () {
+
+            var oldValuename = Valuename.value.trim();
+            Valuename.value = oldValuename.replace(oldValuename[1], "*");
+
+            var oldValuephone = Valuephone.value.trim();
+            if (oldValuephone.includes("-") == true) {
+                oldValuephone = oldValuephone.replace(/-/g, "");
+            }
+            var threevalue = oldValuephone.slice(0, 3);
+            var fuorvalue = oldValuephone.slice(oldValuephone.length - 4);
+            var xinx = "";
+            for (var i = 0; i < oldValuephone.length - 7; i++) {
+                xinx += "*";
+            }
+            Valuephone.value = threevalue + xinx + fuorvalue;
+
+            var oldValueemail = Valueemail.value.trim();
+            var emailwindex = oldValueemail.lastIndexOf('@');
+            var fivevalue = oldValueemail.slice(emailwindex);
+            var xinxx = "";
+            for (var i = 0; i < emailwindex; i++) {
+                xinxx += "*";
+            }
+            Valueemail.value = xinxx + fivevalue;
+        }
+        // 7. 输入身份证号，点击按钮，显示出生年月，输出格式为："出生年月：xxxx年xx月xx日"
+        //     > 提示：
+        // - 获取元素：document.querySelector(CSS选择器);
+        // - 点击事件：el.onclick = function () { };
+        // - 获取输入框的值：el.value;
+        // - 设置元素显示内容：el.textContent = "";
+        var idValue = document.getElementById("idValue");
+        var idBtn = document.getElementById("idBtn");
+        var Valueid = document.getElementById("Valueid");
+        idBtn.onclick = function () {
+            var oldidValue = idValue.value;
+            // 513902199805021753
+            var year = oldidValue.slice(6, 10);
+            var month = oldidValue.slice(10, 12);
+            var day = oldidValue.slice(12, 14);
+
+            // console.log(oldidValue);
+            Valueid.value = `出生年月：${year}年${month}月${day}日`;
+        }
+        //增
+        //删
+        //查
+        //改 replace  
+        // 1. 将字符串 “hello” 逆序输出为 “olleh”
+        function hello() {
+            var str = "hello";
+            var fanstr = "";
+            for (var i = str.length - 1; i >= 0; i--) {
+                console.log(i);
+                fanstr += str[i];
+            }
+            console.log(fanstr);
+        }
+        console.log("hello()");
+        function slicehello() {
+            // slice(start, end) 字符串的截取方式
+            var str = "hello";
+            var fanstr = "";
+            for (var i = str.length - 1; i >= 0; i--) {
+                var fan = str.slice(i, i + 1);
+                fanstr += fan;
+            }
+            console.log(fanstr);
+        }
+        console.log("slicehello()");
+        // 2. 删除字符串 “01i13P47h2o39n32e09” 中的所有数字，输出结果
+        function sNum() {
+            // replace 字符串的替换 
+            var Num = "01i13P47h2o39n32e09";
+            var NewNum = Num.replace(/\d/g, "");
+            console.log(NewNum);
+        }
+        console.log("sNum()");
+        // 3. 定义一个字符串 ”CHINESE“，将其输出为 “Chinese“
+        function Conver() {
+            var str = "CHINESE";
+            console.log(str);
+            var strone = str.slice(0, 1);
+            var strtwo = str.slice(1);
+            var strthree = strone + strtwo.toLowerCase();
+            console.log(strthree);
+        }
+        console.log("Conver()");
+        // 4. 统计 ”warriors” 单词中，“r“字母出现的次数
+        function MatchingNum() {
+            // split("")字符串的分割
+            var str = "warriors"
+            var strarray = str.split("r");
+            var numb = strarray.length - 1;
+            console.log(numb);
+        }
+        console.log("MatchingNum()");
+        // 5. 将字符串 ”-_ -” 中的 “_“ 替换成 ”$”
+        function NewReplace() {
+            var str = "-_ -";
+            var Newstr = str.replace("_", "$");
+            console.log(Newstr);
+        }
+        console.log("NewReplace()");
+        // 6. 将字符串”border - bottom - color” 转换成驼峰命名”borderBottomColor”
+        function Hump() {
+            var NewStrs = "";
+            var str = "border - bottom - color";
+            var strarray = str.split(" - ");
+            console.log(strarray);
+            for (var i = 1; i < strarray.length; i++) {
+                var Newstr = strarray[i];
+                var Newstrone = Newstr.slice(0, 1);
+                var Newstrtwo = Newstr.slice(1);
+                strarray[i] = Newstrone.toUpperCase() + Newstrtwo;
+            }
+            for (var i = 0; i < strarray.length; i++) {
+                NewStrs += strarray[i];
+            }
+            console.log(NewStrs);
+        }
+        console.log("Hump()");
+
+
+        function tihuan() {
+            var strs = "01i13P47h2o39n32e09";
+            var num = "0123456789";
+            var array5 = strs.split("");
+            for (var i in array5) {
+                if (num.indexOf(array5[i]) != -1) {
+                    array5[i] = "";
+                    console.log(array5);
+                }
+            }
+            var strs = array5.join("");
+            console.log(strs);
+        }
+    </script>
+</body>
+
+</html>

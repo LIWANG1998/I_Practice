@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <style>
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background: rosybrown;
+            position: relative;
+            /* top:20px; */
+            left: 50px;
+        }
+
+        .box2 {
+            width: 200px;
+            height: 200px;
+            background: rgb(143, 155, 188);
+        }
+    </style>
+    <style>
+        .icon {
+            width: 10em;
+            height: 10em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <i class="fa fa-camera-retro fa-lg"></i> fa-lg
+    <i class="fa fa-camera-retro fa-2x"></i> fa-2x
+    <i class="fa fa-camera-retro fa-3x"></i> fa-3x
+    <i class="fa fa-camera-retro fa-4x"></i> fa-4x
+    <i class="fa fa-camera-retro fa-5x"></i> fa-5x
+    <div class="list-group">
+        <a class="list-group-item" href="#"><i class="fa fa-home fa-fw"></i>&nbsp; Home</a>
+        <a class="list-group-item" href="#"><i class="fa fa-book fa-fw"></i>&nbsp; Library</a>
+        <a class="list-group-item" href="#"><i class="fa fa-pencil fa-fw"></i>&nbsp; Applications</a>
+        <a class="list-group-item" href="#"><i class="fa fa-cog fa-fw"></i>&nbsp; Settings</a>
+    </div>
+    <ul class="fa-ul">
+        <li><i class="fa-li fa fa-check-square "></i>List icons</li>
+        <li><i class="fa-li fa fa-check-square"></i>can be used</li>
+        <li><i class="fa-li fa fa-spinner fa-spin"></i>as bullets</li>
+        <li><i class="fa-li fa fa-square"></i>in lists</li>
+    </ul>
+    <span class="fa-stack fa-lg">
+        <i class="fa fa-square-o fa-stack-2x"></i>
+        <i class="fa fa-twitter fa-stack-1x"></i>
+    </span>
+    fa-twitter on fa-square-o<br>
+    <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-flag fa-stack-1x fa-inverse"></i>
+    </span>
+    fa-flag on fa-circle<br>
+    <span class="fa-stack fa-lg">
+        <i class="fa fa-square fa-stack-2x"></i>
+        <i class="fa fa-terminal fa-stack-1x fa-inverse"></i>
+    </span>
+    fa-terminal on fa-square<br>
+    <span class="fa-stack fa-lg">
+        <i class="fa fa-camera fa-stack-1x"></i>
+        <i class="fa fa-ban fa-stack-2x text-danger"></i>
+    </span>
+    fa-ban on fa-camera
+
+
+    <div class="box1">ni de</div>
+    <div class="box2">deded</div>
+
+    <h3>Symbol 引用</h3>
+    <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-rili"></use>
+    </svg>
+    <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-huahua"></use>
+    </svg>
+    <script src="iconfont.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* body{
+            font-size:20px;
+        } */
+        p {
+            background: chartreuse;
+            margin: 0;
+        }
+
+        .p1 {
+            /* font: italic normal 20px "微软雅黑"; */
+            font: italic normal 1.25em "微软雅黑";
+            text-align: right;
+
+            /* 文本对齐要加为block 或者inline-block;注意 */
+        }
+
+        .duiqi {
+            display: inline-block;
+            width: 100%;
+            text-align: right;
+            background: rosybrown;
+        }
+
+        span {
+            border: 1px solid red;
+        }
+
+        .p2 {
+            /* font: bold 32em "幼圆"; */
+            font: bold 2em "幼圆";
+            background: rgb(54, 141, 255);
+            /* line-height: 1.5em = line-height: 1.5; 是指父级元素文字大小的1.5倍*/
+            line-height: 1.5em;
+            /* line-height: 1.5rem; 是指html元素文字大小的1.5倍 */
+            /* rem相对于html元素 */
+            /* em相对于父级元素 */
+        }
+
+        .p3 {
+            /* font: italic bold 24px "楷体"; */
+            font: italic bold 1.5em "楷体";
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background: coral;
+            /* 设置文字垂直居中 */
+            line-height: 100px;
+            /* 设置文字水平居中 */
+            text-align: center;
+        }
+
+        .p4 {
+            background: rgb(29, 255, 199);
+            /* 不用line-height实现行高 */
+            padding-top: 1em;
+            padding-bottom: 1em;
+        }
+
+        .p5 {
+            line-height: 3.2em;
+        }
+
+        .suoj {
+            /* 文本缩进 */
+            text-indent: 2em;
+
+            /* 默认text-decoration: none; */
+            /* 下划线 */
+
+            /* text-decoration: underline; */
+            /* 上划线 */
+
+            /* text-decoration: overline; */
+            /* 中杆线 */
+            text-decoration: line-through;
+
+            /* text-transform: none（默认）; */
+            /* 首字母大写 */
+            text-transform: capitalize;
+        }
+
+        input {
+            /* 字母全变大写 */
+            text-transform: uppercase;
+            /* 字母全变小写 */
+            text-transform: lowercase;
+        }
+
+        .wen1 {
+            /* 文字阴影 */
+            text-shadow: 4px -2px 2px red;
+            background: white;
+        }
+    </style>
+</head>
+
+<body>
+    <span>查看body的font-size</span>
+    <p class="p1">这是一段文字1</p>
+    <p class="p2">这是一段文字2</p>
+    <p class="p3">这是一段文字3</p>
+    <p class="p4">这是一段文字4</p>
+    <p class="p5">这是一段文字5</p>
+    <div class="box">垂直居中</div>
+    <div class="duiqi">
+        <span>zheshi wenzi </span>
+    </div>
+    <del>标签类似于 text-decoration: line-through;</del>
+    <p class="suoj">my
+        color啊哈看是否规范哈股份回购是发噶好风光和啊回复尕海股份个卡号发噶事发挥高富帅花粉管啊书法家沙发减肥我应该是个威孚高科是个废物一个服务围观符合公司法还是个无法回归还是富贵是我国房价还是官方。</p>
+    <input type="text" name="" id="">
+    <p class="wen1">这是一段文字</p>
+</body>
+
+</html>

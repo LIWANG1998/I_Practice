@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 4.输入三个整数x,y,z，请把这三个数由小到大输出.
+        // var x = Number(prompt("x"));
+        // var y = Number(prompt("y"));
+        // var z = Number(prompt("z"));
+        // var t = 0;
+        // if (x > y) {
+        //     t = y;
+        //     y = x;
+        //     x = t;
+        // }
+        // if (y > z) {
+        //     t = z;
+        //     z = y;
+        //     y = t;
+        // }
+        // if (x > y) {
+        //     t = y;
+        //     y = x;
+        //     x = t;
+        // }
+        // // if (x < y) {
+        // //     t = x;
+        // //     x = y;
+        // //     y = t;
+        // // }
+        // // if (x < z) {
+        // //     t = x;
+        // //     x = z;
+        // //     z = t;
+        // // }
+        // // if (y < z) {
+        // //     t = y;
+        // //     y = z;
+        // //     z = t;
+        // // }
+        // console.log(x, y, z);
+
+        var areey = [];
+        var num;
+        var count = Number(prompt("添加数值次数"));
+        // debugger
+        for (var i = 1; i <= count; i++) {
+            num = Number(prompt(`添加数值${i}`));
+            areey.push(num);
+        }
+        for (var n = areey.length - 1; n >= 1; n--) {
+            var big;
+            for (var j = 0; j < n; j++) {
+                if (areey[j] > areey[j + 1]) {
+                    big = areey[j + 1];
+                    areey[j + 1] = areey[j];
+                    areey[j] = big;
+                }
+            }
+        }
+        console.log(areey);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 数组 array = ['1','2','3']
+        // 在一个字符串 'x',尾部增加一个字符串 'y'
+        // 然后再删除头部和尾部增加的元素。
+        // 在 元素'1'到 '2'插入 'k','j'
+        var arr1 = []
+        // 增加
+        arr1[0] = '1';
+        arr1[1] = '2';
+        arr1[2] = '3';
+        //头部增加 push()
+        arr1.push('x');
+        //尾部增加 unshift()
+        arr1.unshift('y');
+        //插入
+        var index1 = "";
+        var index2 = "";
+        for (var i in arr1) {
+            if (arr1[i] == '1') {
+                index1 = i;
+            }
+            if (arr1[i] == '2') {
+                index2 = i;
+            }
+        }
+        arr1.splice(index2, 0, 'k', 'j');
+        // console.log(arr1);
+        var s = arr1.slice(1, 5);
+        // console.log(s);
+        // console.log(arr1);
+        var arr5 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        function forMath() {
+            var he = 0;
+            for (var i = 0; i < arr5.length; i++) {
+                // console.log(arr5[i]);
+                he += arr5[i];
+            }
+            console.log(he);
+        }
+        console.log('forMath()');
+        function forinMath() {
+            var he = 0;
+            for (var idx in arr5) {
+                he += arr5[idx]
+            }
+            console.log(he);
+        }
+        console.log('forinMath()');
+        function forofMath() {
+            var he = 0;
+            for (var item of arr5) {
+                he += item;
+            }
+            console.log(he);
+        }
+        console.log('forofMath()');
+        function forEachMath() {
+            var he = 0;
+            arr5.forEach(function (item, index, arry) {
+                console.log(`值${item},键${index},数组${arry}`)
+                he += item;
+            });
+            // arr5.forEach((item, index, arry) => {
+            //     console.log(`值${item},键${index},数组${arry}`)
+            //     he += item;
+            // });
+            // arr5.map(function (item, index, arry) {
+            //     console.log(`值${item},键${index},数组${arry}`)
+            //     he += item;
+            // })
+            console.log(he);
+        }
+        console.log('forEachMath()');
+
+        var arr4 = [2, 3, 4, 5];
+        // var arr6 = [];
+        function pingfang() {
+            // for (var idx in arr4) {
+            //     // arr4[idx] = arr4[idx] ** 2;
+            //     // arr4.splice(idx, 1, arr4[idx] ** 2);
+            //     var arr6item = arr4[idx] ** 2;
+            //     console.log(arr6item);
+            //     //添加
+            //     arr6.push(arr6item);
+            // }
+            var arr6 = arr4.map((item) => {
+                //返回一个新的值，添加到数组里
+                return item ** 2;
+            })
+            console.log(arr4);
+        }
+        console.log('pingfang()');
+
+        function filterMath() {
+            var users = [
+                { name: 'jili1', age: '16' },
+                { name: 'jili2', age: '17' },
+                { name: 'jili3', age: '18' },
+                { name: 'jili4', age: '19' },
+                { name: 'jili5', age: '18' }
+            ]
+            var userone = users.filter(function (item, ide, array) {
+                console.log(item.age);
+                // 返回为true的item
+                return item.age >= 18
+            })
+            console.log(userone);
+        }
+        console.log('filterMath()');
+    </script>
+</body>
+
+</html>

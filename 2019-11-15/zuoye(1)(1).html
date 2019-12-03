@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .bigbox {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 402px;
+            min-height: 200px;
+            border: 1px solid red;
+            /* border-radius: 10px; */
+        }
+
+        .shuru {
+            display: flex;
+            flex-wrap: wrap;
+            display: flex;
+        }
+
+        .xianshi {
+            height: 150px;
+            display: flex;
+            flex-direction: column-reverse;
+        }
+
+        .shuru>div {
+            width: 100px;
+            height: 45px;
+            background: cornflowerblue;
+            text-align: center;
+            line-height: 45px;
+            cursor: pointer;
+        }
+
+        p {
+            text-align: right;
+            /* background-color: cornsilk; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bigbox">
+        <div class="xianshi">
+            <!-- <p>5</p>
+            <p>1+2</p> -->
+        </div>
+        <div class="shuru">
+            <div class="number">(</div>
+            <div class="number">)</div>
+            <div class="symbol">%</div>
+            <div class="claer">C</div>
+            <div class=" number">7</div>
+            <div class="number">8</div>
+            <div class="number">9</div>
+            <div class="symbol">/</div>
+            <div class="number">4</div>
+            <div class="number">5</div>
+            <div class="number">6</div>
+            <div class="symbol">*</div>
+            <div class="number">1</div>
+            <div class="number">2</div>
+            <div class="number">3</div>
+            <div class="symbol">-</div>
+            <div class="number">0</div>
+            <div class="number">.</div>
+            <div class="symbol">＝</div>
+            <div class="symbol">+</div>
+        </div>
+    </div>
+    <script>
+        var html = "";
+        var bds = 0;
+        var xianshi = document.querySelector(".xianshi");
+        var numbers = document.querySelectorAll(".number");
+        var symbols = document.querySelectorAll(".symbol");
+        var claer = document.querySelector(".claer");
+        claer.onclick = function () {
+            xianshi.innerText = "";
+        }
+
+        for (var num of numbers) {
+            num.onclick = function () {
+                var numb = ""
+                var nums = this.innerText;
+                if (bds != 0) {
+                    numb = xianshi.firstElementChild.innerText;
+                }
+                numb += nums;
+
+                console.log(bds);
+                html = `<p>${numb}</p>`;
+                console.log(html);
+                xianshi.innerHTML = html;
+                console.log(nums);
+                bds = 1;
+            }
+        }
+        for (var sym of symbols) {
+            sym.onclick = function () {
+                // console.log(bds);
+                var symb = ""
+                var syms = this.innerText;
+                if (bds != 0) {
+                    symb += xianshi.firstElementChild.innerText;
+                }
+                if (syms == "＝") {
+                    var cont = eval(symb);
+                    console.log(cont);
+                    html = `<p>${cont}</p>` + html;
+                    bds = 0;
+                }
+                else {
+                    symb += syms;
+                    console.log(symb);
+                    html = `<p>${symb}</p>`;
+                    bds = 1;
+                }
+                xianshi.innerHTML = html;
+                console.log(html);
+            }
+        }
+
+
+        // function shuzhi(e) {
+        //     // alert(e);
+        //     // var a = e;
+        //     // e.innerHtml
+        //     console.log(e.innerText);
+        //     var ev = e.innerText;
+        //     console.log(ev)
+        //     html = `<p>${ev}</p>`;
+        //     console.log(html);
+        //     xianshi.innerHTML = html;
+        // }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.cont {
+    margin: auto;
+    width: 1200px;
+    background-color: beige;
+    height: 60px;
+}
+
+/*1、当设备屏幕小于1180px时会采用该样式*/
+
+@media screen and (max-width:1200px) {
+    .cont {
+        width: 100%;
+        background-color: blueviolet;
+    }
+}
+
+/* 2、当设备屏幕大于850px时会采用该样式 */
+
+/* @media screen and (min-width:850px) {
+    css codes
+} */
+
+/* 3、当设备屏幕大于850px,小于1180px时会采用该样式 */
+
+/* @media screen and (min-width:850px) and (max-width:1180px) {
+    css codes
+} */
+
+/* 4、仅当电脑、手机、平板设备屏幕小于1180px时会采用该样式 */
+
+/* @media only screen and (max-width:1180px) {
+    css codes
+} */
+
+header {
+    height: 60px;
+    background-color: aquamarine;
+}
+
+nav {
+    display: flex;
+}
+
+.logox {
+    height: 60px;
+    width: 240px;
+    background: red;
+    margin-right: 100px;
+}
+
+.navs {
+    background: chartreuse;
+    flex-grow: 1;
+}
+
+.navs>ul {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.navs li {
+    line-height: 60px;
+    text-align: center;
+    background-color: seagreen;
+    flex-grow: 1;
+    cursor: pointer;
+}
+
+.hoverUL {
+    display: none;
+}
+
+.navs li:hover {
+    background-color: rgb(29, 105, 247);
+}
+
+.navs li:hover .hoverUL {
+    display: block;
+}

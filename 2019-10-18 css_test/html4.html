@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>伪类选择器</title>
+    <style>
+        /* 如果要同时生效，顺序不能变 */
+        a:link {
+            color: blue;
+        }
+
+        a:visited {
+            color:rgb(72, 0, 90);
+        }
+
+        a:hover {
+            color: red;
+            cursor: pointer;
+        }
+
+        a:active {
+            color: green
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <a href="https://www.baidu.com">这是一个文字</a>
+    </div>
+</body>
+
+</html>

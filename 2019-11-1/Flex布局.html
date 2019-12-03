@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            height: 600px;
+            width: 600px;
+            background: chocolate;
+            display: flex;
+            /*  默认 flex-direction 水平(主轴)排列(从左到右) row
+                所有项目不设置width height 时 大小→内容撑开
+                默认 flex-wrap nowrap 如果所有flex项目宽度之和大于flex盒子，那么所有项目设置的宽度将会等分
+                
+
+               */
+            margin: 100px auto;
+            /*  flex-direction 属性决定主轴的方向（即子元素的排列方向）。*/
+            /*  row（默认值）：主轴为水平方向，起点在左端。
+                reverse：主轴为水平方向，起点在右端。
+                column：主轴为垂直方向，起点在上沿。
+                column-reverse：主轴为垂直方向，起点在下沿。*/
+            /* flex-direction: row; */
+            /* 默认情况下，子元素都排在一条线（又称"轴线"）上。flex-wrap 属性定义，如果一条轴线排不下，如何换行 */
+            /* nowrap | wrap | wrap-reverse; */
+            /* nowrap 默认不换行，
+               wrap 换行 
+               wrap-reverse; 反向换行
+               */
+            /* flex-wrap: nowrap; */
+            /* flex-flow 属性是 flex-direction 属性和 flex-wrap 属性的简写形式，默认值为 row nowrap。 */
+            flex-flow: row wrap;
+
+            /* justify-content 属性定义了子元素在主轴上的对齐方式。
+                flex-start（默认值）：左对齐 
+                flex-end：右对齐
+                center： 居中
+                space-between：两端对齐，子元素之间的间隔都相等。
+                space-around：每个子元素两侧的间隔相等。所以，子元素之间的间隔比项目与边框的间隔大一倍。
+            */
+            /* justify-content: space-around; */
+            /*   align-items 属性定义项目在交叉轴上如何对齐。
+                flex-start：交叉轴的起点对齐
+                flex-end：交叉轴的终点对齐。
+                center：交叉轴的中点对齐
+                baseline: 子元素的第一行文字的基线对齐。
+                stretch（默认值）：如果子元素未设置高度或设为auto，将占满整个容器的高度。
+
+            */
+            /* align-items: flex-start; */
+
+            /* align-content 属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。 */
+            /* 
+                flex-start：与交叉轴的起点对齐。
+                flex-end：与交叉轴的终点对齐。
+                center：与交叉轴的中点对齐。
+                space-between：与交叉轴两端对齐，轴线之间的间隔平均分布。
+                space-around：每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍。
+                stretch（默认值）：轴线占满整个交叉轴（需设置高度为auto）。
+
+            */
+
+            /* align-content: space-around; */
+            align-items: center;
+        }
+
+        .item {
+            width: 100px;
+            height: 100px;
+            background: cornsilk;
+            outline: 1px solid cornflowerblue;
+        }
+
+        .box .item:nth-child(1) {
+            /* 子元素的排列顺序。数值越小，排列越靠前，默认为0 */
+            /* order: -1; */
+            /* flex-grow 按比例分掉剩余空间 */
+            /* flex-grow: 1; */
+            /* flex-shrink 配合nowrap 使用 一般是一行才设置这个 */
+            /* flex-shrink: 0; */
+        }
+
+        .box .item:nth-child(15) {
+            /* 子元素的排列顺序。数值越小，排列越靠前，默认为0 */
+            /* order: -1; */
+            /* flex-grow 按比例分掉剩余空间 */
+            /* flex-grow: 1; */
+        }
+
+        .box .item:nth-child(16) {
+            /* 子元素的排列顺序。数值越小，排列越靠前，默认为0 */
+            /* order: -1; */
+            /* flex-grow 按比例分掉剩余空间 */
+            /* flex-grow: 4; */
+            /* flex-basis它可以设为跟 width 或 height 属性一样的值（比如350px），则项目将占据固定空间。 */
+            /* flex-basis: 200px; */
+            /* flex: none (0 0 auto); */
+            align-self: flex-start;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="item">
+            <h1>1</h1>
+        </div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+    </div>
+</body>
+
+</html>

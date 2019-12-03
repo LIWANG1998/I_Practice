@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 创建数组 
+        // var array=[1,2,3];
+        // var arr1=new Array(1,2,3);
+        // var arr2=[];
+        //     arr2[0]="1";
+        //     arr2[1]="2";
+        //     不创建 这个位置是还在的，
+        //     只是这个位置上没有定义值，
+        //     总长度还是最后一个位置决定 
+        //     arr2[3]="3";
+
+        // 数组的访问 
+        // 下标访问 array[index]
+        // 修改可以访问之后直接赋值进行修改 array[index]="***";
+
+        // 数组空位
+        // var names = ["达摩", , "貂蝉", "吕布"];
+        //  1 in names 返回的值是false 可以查询这个位置是否有值
+        // names[1] 返回的是undefined 未定义
+
+        //数组 增  
+        // 
+        //  尾部增加 push('')
+        //  头部增加 unshift('')
+
+        //数组 合并
+        // Array.prototype.push.apply(a,b)
+        // 改变 a 意思就是把 合并的值赋给了a
+        // var 新赋=a.concat(b,c...) 不改变原数组 需要新的来接收
+        // [...数组1,...数组2] es6语法 可以实现多个合并，位置随意
+
+        //数组 删除  
+        //  尾部删除 pop('')
+        //  头部删除 shift('')
+        //  可以实现中间删除 splice(开始下标，删除个数);范围删除(改变原数组)
+        //  可是实现中间修改 splice(开始下标，删除个数，插入的内容(个数不限))
+        //  可是实现中间添加 splice(开始下标，0，插入的内容(个数不限))
+
+
+        //数组 截取
+        //   slice(开始位置，结束位置) 不改变原数组 需要新的来接收
+
+        //数组 排序
+        // asc 码 升序
+        // array.sort(); 改变了原数组
+        // array.sort(function (a, b) {
+        //     return a - b;
+        // })
+        // asc 码 降序
+        // array.reverse();
+        // array.sort(function (a, b) {
+        //     return b - a;
+        // })
+                
+
+
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .div1 {
+            margin: 0 auto;
+            /* border: 1px solid red; */
+            width: 860px;
+            height: 485px;
+            background: rosybrown;
+            font-size: 0px;
+        }
+
+        .div1>* {
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .rieghtdiv {
+            width: 233px;
+            height: 485px;
+            background: #000000;
+        }
+
+        .topimg {
+            margin-top: 10px;
+        }
+
+        .shuru {
+            margin: auto;
+            margin-top: 35px;
+            width: 80%;
+            /* height: 200px; */
+            /* border: 1px solid red; */
+        }
+
+        .srk {
+            margin: auto;
+            width: 95%;
+            height: 61px;
+            border: 1px solid #373739;
+            border-radius: 4px;
+
+        }
+
+        .srk>div>* {
+            vertical-align: top;
+
+        }
+
+        .srk>div {
+            height: 30px;
+            background: #373739;
+        }
+
+        .srk img {
+            display: inline-block;
+            width: 20%;
+            height: 100%;
+            /* border:1px solid; */
+        }
+
+        hr {
+            border: 0.5px solid #404041;
+        }
+
+        .srk input {
+            color: rgb(204, 204, 204);
+            padding: 0;
+            width: 80%;
+            height: 100%;
+            border: none;
+            background: transparent;
+            outline:none;
+        }
+
+        .gouxuan {
+            margin-top: 5px;
+            color: rgb(165, 165, 165);
+            font-size: 11px;
+        }
+
+        .gouxuan>label {
+            vertical-align: 3px;
+        }
+
+        .loginbtn {
+            margin: auto;
+            margin-top: 5px;
+            width: 95%;
+            /* border:1px solid red; */
+        }
+
+        .loginbtn>input {
+            font-weight: bold;
+            font-size: 20px;
+            margin: 0 auto;
+            display: inline-block;
+            width: 100%;
+            height: 32px;
+            border: none;
+            background: #F2C110;
+            border-radius: 15px;
+            outline:none;
+            cursor: pointer;
+        }
+
+        .loginbtns {
+            margin-top:10px ;
+            text-align: center;
+            color: rgb(165, 165, 165);
+            font-size: 11px;
+        }
+
+        /* .gouxuan * {
+            display: inline-block;
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="div1">
+        <div class="leftdiv"><img src="lolloginlogo.png" alt=""></div>
+        <div class="rieghtdiv">
+            <div class="topimg"><img src="./tops.png" alt="" width="100%"></div>
+            <div class="shuru">
+                <form action="">
+                    <div class="srk">
+                        <div>
+                            <img src="../sda.png" alt="" for="username"><input type="text" name="username" id="username"
+                                placeholder="请输入QQ号码">
+                        </div>
+                        <hr>
+                        <div>
+                            <img src="../sda.png" alt="" for="userpwd"><input type="password" name="userpwd"
+                                id="userpwd" placeholder="请输入密码">
+                        </div>
+                    </div>
+                    <div class="gouxuan">
+                        <input type="checkbox" name="check1" id="usernames" value=""><label for="usernames">保存密码</label>
+                        <br>
+                        <input type="checkbox" name="check2" id="user" value=""><label for="user">自动登录</label>
+                    </div>
+                    <div class="loginbtn">
+                        <input type="submit" value="登录">
+                    </div>
+                    <div class="loginbtns">
+                        <span>QQ快速登录</span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

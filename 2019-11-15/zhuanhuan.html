@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .bigbox {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 400px;
+            min-height: 200px;
+            border: 1px solid red;
+            border-radius: 10px;
+        }
+
+        .inpsty {
+            height: 35px;
+            outline: none;
+            border: none;
+            border: 1px solid rgb(116, 181, 255);
+            border-radius: 5px;
+            font-size: 1.1em;
+        }
+
+        .inpsty:focus {
+            box-shadow: 0 0 2px 1px rgb(12, 138, 255);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bigbox">
+        <label for="">转换数字：</label>
+        <input type="text" placeholder="输入转换数字" class="inpsty" id="zValue">
+        <select name="" class="inpsty" id="zF">
+            <option value="0b">2进制</option>
+            <!-- <option value="4">4进制</option> -->
+            <option value="0o">8进制</option>
+            <option value="">10进制</option>
+            <option value="0x">16进制</option>
+        </select>
+        <br>
+        <label for="">转换结果：</label>
+        <input type="text" placeholder="输出转换结果" class="inpsty" id="hValue" disabled>
+        <select name="" class="inpsty" id="hF">
+            <option value="2">2进制</option>
+            <!-- <option value="4">4进制</option> -->
+            <option value="8">8进制</option>
+            <option value="10">10进制</option>
+            <option value="16">16进制</option>
+        </select>
+        <br>
+        <button id="zhuanhuan">转换</button>
+    </div>
+    <script>
+        var zhuanhuan = document.getElementById("zhuanhuan");
+        zhuanhuan.onclick = function () {
+            var zValue = document.getElementById("zValue").value;
+            var zF = document.getElementById("zF").value;
+            var numStr = zF + zValue;
+            var numInt = Number(numStr);
+            var hF = document.getElementById("hF").value;
+            var hVzhi = (numInt).toString(hF);
+            var hValue = document.getElementById("hValue");
+            hValue.value = hVzhi;
+        }
+    </script>
+</body>
+
+</html>

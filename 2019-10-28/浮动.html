@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            border: 1px solid red;
+        }
+
+        .bigbox::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .box1 {
+            width: 160px;
+            height: 100px;
+            background: blueviolet;
+            float: left;
+        }
+
+        .box2 {
+            width: 160px;
+            height: 100px;
+            background: rgb(32, 209, 240);
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bigbox">
+        <div class="box1">left</div>
+        <div class="box2">right</div>
+    </div>
+</body>
+
+</html>

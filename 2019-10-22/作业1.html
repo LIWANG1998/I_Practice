@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            background:#e3e3e3 ;
+        }
+        .shsj {
+            text-indent: 2em;
+        }
+
+        .xiahua {
+            text-decoration: none;
+        }
+
+        .shsjs {
+            color: #fff;
+            text-shadow: 0 2px 1px rgba(253, 76, 233, .96);
+        }
+
+        .rduiqi {
+            text-align: right;
+        }
+
+        .hgsz {
+            line-height: 1.4em;
+        }
+
+        .divs {
+            width: 100px;
+            /* height: 200px; */
+            text-overflow: ellipsis;
+            /* ellipsis显示省略符号来代表被裁剪的文本 */
+            overflow: hidden;
+            /* 段落内的文本不会换行 */
+            white-space: nowrap;
+            
+            /* width: 9em; */
+            /* height: 11em; */
+            /* display: -webkit-box; */
+            /* 将对象作为弹性伸缩盒子模型显示 */
+            /* -webkit-box-orient: vertical; */
+            /* 设置或检索伸缩盒对象的子元素的排列方式 */
+            /* -webkit-line-clamp: 8; */
+            /*限制在一个块元素显示的文本的行数 */
+            /* overflow: hidden; */
+            /*超出的内容就隐藏 */
+        }
+        .kz1{
+            /* margin: auto; */
+            background: white;
+            border:1px solid #acacac;
+            width: 960px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>1、第一个文本段落首行缩进两个中文字符</h2>
+    <p class="shsj">
+        因使用了WebKit的CSS扩展<article class="kz1">必须结合的属性 ，将对象作为弹性伸缩盒子模型显示</article>属性，该方法适用于WebKit浏览器及移动端；注：
+        -webkit-line-clamp用来限制在一个块元素显示的文本的行数。 为了实现该效果，它需要组合其他的WebKit属性。常见结合属性：
+        display: -webkit-box; 必须结合的属性 ，将对象作为弹性伸缩盒子模型显示 。
+    </p>
+    <h2>2、第二个文本段落中应该包含一个名为“百度”的超链接，点击后以浏览器新选项卡（或新窗口）的方式跳转到“https://www.baidu.com”,该超链接标签文本不应包含下划线</h2>
+    <p class="shsj">
+        因使用了WebKit的CSS扩展属性，该方法适用于WebKit浏览器及移动端；注：
+        <a class="xiahua" href="http://www.baidu.com" target="_blank">百度</a>
+        -webkit-line-clamp用来限制在一个块元素显示的文本的行数。 为了实现该效果，它需要组合其他的WebKit属性。常见结合属性：
+        display: -webkit-box; 必须结合的属性 ，将对象作为弹性伸缩盒子模型显示 。
+    </p>
+    <h2>第三个段落为字体颜色为“#fff”带阴影的文本，阴影水平偏移量“0”,垂直偏移量“2px”,模糊距离“1px”，颜色为“rgba(253,76,233,.96)”</h2>
+    <p class="shsj shsjs">
+        因使用了WebKit的CSS扩展属性，该方法适用于WebKit浏览器及移动端；注：
+        <a class="xiahua" href="http://www.baidu.com" target="_blank">百度</a>
+        -webkit-line-clamp用来限制在一个块元素显示的文本的行数。 为了实现该效果，它需要组合其他的WebKit属性。常见结合属性：
+        display: -webkit-box; 必须结合的属性 ，将对象作为弹性伸缩盒子模型显示 。
+    </p>
+    <h2>4、第四个段落文本对齐方式为右对齐，字数控制在2~16字内</h2>
+    <p class="rduiqi">将对象作为弹性伸缩盒子模型显示 </p>
+    <h2>5、以上段落，除了第四个段落以外，至少要求具有两行任意文本，行高应为文本的140%</h2>
+    <p class="hgsz">因使用了WebKit的CSS扩展属性，该方法适用于WebKit浏览器及移动端；注：
+        <a class="xiahua" href="http://www.baidu.com" target="_blank">百度</a>
+        -webkit-line-clamp用来限制在一个块元素显示的文本的行数。 为了实现该效果，它需要组合其他的WebKit属性。常见结合属性：
+        display: -webkit-box; 必须结合的属性 ，将对象作为弹性伸缩盒子模型显示 。</p>
+    <h2>6. 在宽度为100px的div里面给上，200px宽度的内容，然后让超出的内容显示省略号</h2>
+    <div class="divs">
+        因使用了WebKit的CSS扩展属性，该方法适用于WebKit浏览器及移动端；注：
+        <a class="xiahua" href="http://www.baidu.com" target="_blank">百度</a>
+        -webkit-line-clamp用来限制在一个块元素显示的文本的行数。 为了实现该效果，它需要组合其他的WebKit属性。常见结合属性：
+        display: -webkit-box; 必须结合的属性 ，将对象作为弹性伸缩盒子模型显示 。
+    </div>
+    <h2>扩展1</h2>
+    <article class="kz1">必须结合的属性 ，将对象作为弹性伸缩盒子模型显示</article>
+</body>
+
+</html>

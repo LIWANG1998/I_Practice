@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box" id="boxname1" name="hoade">
+        <a href="" id="lian1" class="jie1" name="li1">这是个链接</a>
+    </div>
+    <div class="box" id="boxname2" name="hoade1">
+        <a href="" id="lian2" class="jie2" name="lj1">这是个链接1</a>
+        <p id="wz1" class="wz1" name="wz1">haodd1</p>
+    </div>
+    <div class="box" id="boxname3" name="hoade1">
+        <p id="wz2" class="wz1" name="wz2">haodd2</p>
+    </div>
+    <form action="">
+        <label for="">a</label><input type="radio" id="radio1" class="radioone" name="gender">
+        <label for="">b</label><input type="radio" id="radio2" class="radioone1" name="gender">
+    </form>
+    <script>
+        var h2 = document.querySelector("#lian1");
+        // a.通过ID获取
+        var ID1 = document.getElementById('boxname1');
+        console.log(ID1);
+
+        var ID2 = document.getElementById('boxname2');
+        console.log(ID2);
+
+        var ID3 = document.getElementById('boxname3');
+        console.log(ID3);
+
+        var ID4 = document.getElementById('lian1');
+        console.log(ID4);
+
+        var ID5 = document.getElementById('lian2');
+        console.log(ID5);
+
+
+        // b.通过class获取
+
+        var CLASS1 = document.getElementsByClassName('box');
+        console.log(CLASS1);
+
+        var CLASS2 = document.getElementsByClassName('jie1');
+        console.log(CLASS2);
+
+        var CLASS3 = document.getElementsByClassName('jie2');
+        console.log(CLASS3);
+
+        var CLASS4 = document.getElementsByClassName('wz1');
+        console.log(CLASS4);
+
+        var CLASS5 = document.getElementsByClassName('radioone');
+        console.log(CLASS5);
+
+        // c.通过TagName获取
+
+        var TagName1 = document.getElementsByTagName('div');
+        console.log(TagName1);
+
+        var TagName2 = document.getElementsByTagName('a');
+        console.log(TagName2);
+
+        var TagName3 = document.getElementsByTagName('p');
+        console.log(TagName3);
+
+        var TagName4 = document.getElementsByTagName('form');
+        console.log(TagName4);
+
+        var TagName5 = document.getElementsByTagName('input');
+        console.log(TagName5);
+        // d.通过name属性获取
+
+        var name1 = document.getElementsByName('hoade1');
+        console.log(name1);
+
+        var name2 = document.getElementsByName('lj1');
+        console.log(name2);
+
+        var name3 = document.getElementsByName('wz2');
+        console.log(name3);
+
+        var name4 = document.getElementsByName('hoade1');
+        console.log(name4);
+
+        var name5 = document.getElementsByName('gender');
+        console.log(name5);
+
+        // e.通过父标签获取
+
+        // f.通过querySelectAll获取
+    </script>
+</body>
+
+</html>

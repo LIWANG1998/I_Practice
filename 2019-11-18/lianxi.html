@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="">需要加密：</label><input type="text" id="wenzhi"> <button id="addmi">加密</button>
+    <br>
+    <label for="">需要解密：</label><input type="text" id="Sunicode"> <button id="jiemi">解密</button>
+    <br>
+    <label for="">解密之后：</label><input type="text" id="Scode">
+    <script>
+        var addmi = document.querySelector("#addmi");
+        var wenzhi = document.querySelector("#wenzhi");
+        var Sunicode = document.querySelector("#Sunicode");
+        var jiemi = document.querySelector("#jiemi");
+        var Scode = document.querySelector("#Scode");
+        addmi.onclick = function () {
+            var unicodeValue = "";
+
+            for (var i = 0; i < wenzhi.value.length; i++) {
+                var char = wenzhi.value.charCodeAt(i);
+                console.log(char);
+                var charunicode = char + 1100;
+                var unicodechar = String.fromCharCode(charunicode);
+                unicodeValue += unicodechar;
+
+            }
+            Sunicode.value = unicodeValue;
+        }
+        jiemi.onclick = function () {
+            var Scodevue = "";
+            var ScodeValue = Sunicode.value;
+            for (var k = 0; k < ScodeValue.length; k++) {
+
+                var decodeunicode = ScodeValue.charCodeAt(k);
+                var decodeunvalue = (decodeunicode - 1100);
+                console.log(String.fromCharCode(decodeunvalue));
+                Scodevue += String.fromCharCode(decodeunvalue);
+            }
+            Scode.value = Scodevue;
+        }
+
+    </script>
+</body>
+
+</html>

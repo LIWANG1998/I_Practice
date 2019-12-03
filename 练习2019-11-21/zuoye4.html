@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .bigbox {
+            text-align: center;
+        }
+
+        .bigbox ul {
+            display: inline-block;
+            margin: 0 auto;
+            padding: 0;
+            list-style: none;
+        }
+
+        .bigbox ul li {
+            margin: 10px;
+            float: left;
+            height: 170px;
+            width: 170px;
+            border: 1px solid rgb(201, 201, 201);
+            cursor: pointer;
+        }
+
+        .bigbox ul li:hover {
+            border: 1px solid rgb(173, 45, 45);
+        }
+
+        .fangba {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 400px;
+            height: 400px;
+            border: 2px solid rgb(201, 201, 201);
+        }
+
+        .fangbadis {
+            display: block !important;
+        }
+
+        .mune {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border: 1px solid rgb(201, 201, 201);
+            list-style: none;
+            margin: 0;
+            padding: 2px;
+            border-radius: 3px;
+        }
+
+        .mune li {
+            /* margin: 2px;
+            height: 20px;
+            line-height: 20px; */
+            position: relative;
+        }
+
+        /* .mune li em {
+            position: absolute;
+            height: 24px;
+            width: 24px;
+            background: rgb(224, 194, 22);
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="bigbox">
+        <!-- <ul>
+            <li class="musover"><img src="img/shirt_1.jpg" alt=""></li>
+            <li class="musover"><img src="img/shirt_1.jpg" alt=""></li>
+            <li class="musover"><img src="img/shirt_1.jpg" alt=""></li>
+            <li class="musover"><img src="img/shirt_1.jpg" alt=""></li>
+        </ul> -->
+    </div>
+    <div class="fangba"></div>
+    <ul class="mune">
+        <li>
+            <em></em>
+            <span>剪切</span>
+        </li>
+        <li>
+            <em></em>
+            <span>复制</span>
+        </li>
+        <li>
+            <em></em>
+            <span>粘贴</span>
+        </li>
+    </ul>
+    <script>
+        var bigbox = document.querySelector(".bigbox");
+        var musoverli = '';
+        for (var i = 0; i < 4; i++) {
+            musoverli += `<li class="musover"><img src="img/shirt_${i + 1}.jpg" alt=""></li>`;
+        }
+        var bigboxhtml = `<ul>${musoverli}</ul>`;
+        bigbox.innerHTML = bigboxhtml;
+        var musover = document.querySelectorAll('.musover');
+        var fangba = document.querySelector('.fangba');
+        // console.log(musover);
+        for (var i in musover) {
+            // console.log(item);
+            musover[i].index = i
+            musover[i].onmouseover = function () {
+                fangba.classList.add('fangbadis');
+                console.log();
+                // var imgsrc = this.children[0].getAttribute('src');
+                fangba.innerHTML = `<img src="img/shirt_${Number(this.index) + 1}_big.jpg" alt="">`;
+            }
+            musover[i].onmouseout = function () {
+                // console.log(this.index);
+                fangba.classList.remove('fangbadis');
+                fangba.removeAttribute('style');
+                fangba.innerHTML = "";
+            }
+
+            musover[i].onmousemove = function (event) {
+                var eventleft = event.clientX + 20;
+                var eventtop = event.clientY + 20;
+                var pagewidth = document.documentElement.offsetWidth;
+                if (eventleft + 400 > pagewidth) {
+                    eventleft = event.clientX - 400 - 20;
+                }
+                fangba.setAttribute('style', 'top:' + eventtop + 'px;left:' + eventleft + 'px');
+                // console.log(event);
+            }
+        }
+        var mune = document.querySelector('.mune');
+        document.oncontextmenu = function (event) {
+            // console.log(mune);
+            var eventleft = event.clientX + 20;
+            var eventtop = event.clientY + 20;
+            var pagewidth = document.documentElement.offsetWidth;
+            if (eventleft + mune.offsetWidth > pagewidth) {
+                eventleft = event.clientX - mune.offsetWidth - 10;
+            }
+            mune.setAttribute('style', ' display: block;top:' + eventtop + 'px;left:' + eventleft + 'px');
+            return false;
+        }
+        var muneli = document.querySelector('.mune li');
+    </script>
+</body>
+
+</html>

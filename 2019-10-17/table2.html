@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    textarea,button{
+        width: 100%;
+    }
+ form{
+     border:1px dashed red;
+ }
+</style>
+
+<body>
+    表单
+    <form action="https://www.baidu.com">
+        <table border=0 cellspacing="25px">
+            <tr>
+                <td>名字</td>
+                <td><input type="text" name="name" id=""></td>
+                <td>性别</td>
+                <td>
+                    <select name="sex" id="">
+                        <option value="nan">男</option>
+                        <option value="nv">女</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>手机号码</td>
+                <td><input type="tel" name="tel" id=""></td>
+                <td>电子邮箱</td>
+                <td><input type="email" name="email" id=""></td>
+            </tr>
+            <tr>
+                <td>申请产品</td>
+                <td>
+                    <input type="checkbox" name="sm" >实木
+                    <input type="checkbox" name="sf" >沙发
+                    <input type="checkbox" name="bg">办公
+                </td>
+                <td>爱好</td>
+                <td><input type="radio" name="sex1" value="男">男<input type="radio" name="sex1"value="女">女</td>
+            </tr>
+            <tr>
+                <td>文件上传</td>
+                <td><input type="file" value="选择文件"></td>
+            </tr>
+            <tr>
+                <td>自我介绍</td>
+                <td colspan="3">
+                    <textarea name="ch"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <!-- <input type="button" value="提交" class="in"> -->
+                    <button>提交</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>

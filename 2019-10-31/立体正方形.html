@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 500px;
+            height: 500px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto auto;
+            /* transform: translate(-50%, -50%); */
+            /* background: rgba(9, 74, 112, 0.37); */
+            transform-style: preserve-3d;
+            transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+            transition: 15s;
+        }
+
+        .face {
+            width: 200px;
+            height: 200px;
+            border: 1px solid;
+            line-height: 200px;
+            text-align: center;
+            font-size: 2em;
+            position: absolute;
+            opacity: 0.5;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto auto;
+        }
+
+        .qian {
+            transform: translateZ(100px);
+            background: rgb(17, 219, 255);
+        }
+
+        .hou {
+            transform: translateZ(-100px) rotateY(180deg);
+            background: rgb(17, 255, 223);
+        }
+
+        .shang {
+            transform: rotateX(90deg) translateZ(100px);
+            background: rgb(17, 241, 110);
+        }
+
+        .xiao {
+            transform: rotateX(-90deg) translateZ(100px);
+            background: rgb(192, 241, 17);
+        }
+
+        .zuo {
+            transform: rotateY(-90deg) translateZ(100px);
+            background: rgb(241, 163, 17);
+        }
+
+        .you {
+            transform: rotateY(90deg) translateZ(100px);
+            background: rgb(241, 163, 17);
+        }
+
+        .btn:active+.box {
+            transform: rotateX(720deg) rotateY(720deg) rotateZ(720deg);
+        }
+    </style>
+</head>
+
+<body>
+    <button class="btn">按住</button>
+    <div class="box">
+        <div class="face qian">前面</div>
+        <div class="face hou">后面</div>
+        <div class="face shang">上面</div>
+        <div class="face xiao">下面</div>
+        <div class="face zuo">左面</div>
+        <div class="face you">右面</div>
+    </div>
+</body>
+
+</html>

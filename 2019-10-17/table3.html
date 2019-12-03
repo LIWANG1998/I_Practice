@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    form{
+        border:1px dashed red;
+        text-align: center;
+        background: #04889f;
+        color: white;
+    }
+    form>div{
+        margin: 20px;
+    }
+    label{
+        display: inline-block;
+        width: 100px;
+        text-align: right;
+    }
+    .btn{
+        width: 270px;
+        height: 35px;
+        background: blue;
+        color: white;
+        font-weight: bold;
+    }
+</style>
+
+<body>
+    
+    <form action="https://baidu.com">
+            表单注册
+        <div>
+            <label for="">用户名：</label>
+            <input type="text" name="name">
+        </div>
+        <div>
+            <label for="">密码：</label>
+            <input type="text" name="pwd">
+        </div>
+        <div>
+            <label for="">电子邮箱：</label>
+            <input type="text" name="eml">
+        </div>
+        <div>
+            <label for="">电话：</label>
+            <input type="text">
+        </div>
+        <div>
+            <input type="submit" value="ok" class="btn">
+        </div>
+    </form>
+</body>
+
+</html>

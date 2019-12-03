@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .btnclass {
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" class="ipt" value="按下鼠标 btn 变色">
+    <button id='btn'>按下</button>
+</body>
+<script>
+    let ipt = document.querySelector('.ipt');
+    let btn = document.querySelector('#btn');
+    btn.addEventListener('mousedown', function () {
+        ipt.value = "抬起鼠标 btn 还原";
+        btn.classList.add('btnclass');
+        btn.innerText = "鼠标已经按下";
+
+    })
+    btn.addEventListener('mouseup', function () {
+        ipt.value = "按下鼠标 btn 变色";
+        btn.innerText = "鼠标已经抬起";
+        btn.classList.remove('btnclass');
+    })
+</script>
+
+</html>

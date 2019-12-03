@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // apply/call
+        // 构造函数
+        // function Pre() {
+        //     this.country = '中国';
+        // }
+        // function Stu(name, major) {
+        //     this.name = name;
+        //     this.major = major;
+        //     // Pre.call(this, name, major);
+        //     Pre.apply(this, arguments);
+        // }
+        // var stu1 = new Stu('liwang', 'nide');
+        // console.log(stu1);
+
+        // prototype
+        function Per() {
+            this.country = "中国";
+        }
+        function Stu(name, major) {
+            this.name = name;
+            this.major = major;
+        }
+        Stu.prototype.say = function () {
+            return this.name;
+        }
+        Stu.prototype = new Per();
+        var stu1 = new Stu('liwang', 'nide');
+        console.log(stu1); // Per(){ this.country = "中国"; }
+        // 更正Stu的构造函数
+        Stu.prototype.constructor = Stu;
+
+        // var stu = new Stu("小明", "网页设计");
+        // console.log(stu.country); // 中国
+    </script>
+</body>
+
+</html>

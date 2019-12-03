@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        *,
+        :after,
+        :before {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: turquoise;
+        }
+
+        @keyframes ziti {
+            100% {
+                letter-spacing: 0.025em;
+                opacity: 1;
+            }
+        }
+
+
+        @keyframes fadeInLeft {
+            0% {
+                /* opacity: 1; */
+                /* position: relative;
+                left: -100%;
+                top: 0; */
+                /* transform: translateX(-100%); */
+                width: 0;
+            }
+
+            100% {
+                /* opacity: 1; */
+                /* transform: translateX(0); */
+                width: 100px;
+            }
+        }
+
+        /* div {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        } */
+
+        h3 {
+            font-size: 50px;
+            letter-spacing: .25em;
+            /* transform-origin: 50% 50%; */
+            /* opacity: 0; */
+            letter-spacing: .1em;
+            /* transform: translateX(0); */
+            animation: ziti 1.4s .2s cubic-bezier(.215, .61, .355, 1) 1 forwards;
+        }
+
+        .ss a {
+
+            /* clip-path: polygon(99.999% 0, 100% 0, 100% 100%, 99.999% 100%); */
+            /* opacity: 0; */
+            text-align: center;
+            text-decoration: none;
+            color: #e7e6e3;
+            background-color: transparent;
+            padding: 10px 30px;
+            border-radius: 32px;
+            /* 渐变色 */
+            background-image: linear-gradient(-183deg, #eeeeee0e 49.5%, #f3f3f3 50.5%);
+            background-size: 100% 255%;
+            background-position: 50% 0;
+            transition: color, background-position .3s ease-out;
+            /* animation: fadeInLeft 1s 1s cubic-bezier(.215, .61, .355, 1) 1 forwards; */
+        }
+
+
+
+        .ss a:hover {
+            transition-duration: .5s;
+            /* background-color: #f3f3f3; */
+            background-position: 0 100%;
+        }
+
+        .ys {
+            display: inline-block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid red;
+            /* background-color: rgb(255, 16, 16); */
+            height: 100px;
+            width: 200px;
+        }
+
+        .ystupian a {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+        }
+
+        .ystupian a::after {
+            /* ---------为了对齐文字下方--------- */
+            content: "";
+            position: absolute;
+            top: 20px;
+            right: 50%;
+            height: 2px;
+            width: 0px;
+            /* 向左跑 */
+            /* margin-left: -60px; */
+            /* 向左右 */
+            margin-right: -60px;
+            background-image: url("brush-line--muted.svg");
+            background-size: 120px 2px;
+            transition: width 0.3s ease-out 0s;
+            border-radius: 2px;
+            background-repeat: no-repeat;
+            background-position: 100% 0px;
+        }
+
+        .ystupian a:hover::after {
+            width: 120px;
+            /* 向左收 */
+            /* margin-right: -60px; */
+            /* 向右收 */
+            margin-left: -60px;
+            left: 50%;
+            right: auto;
+            /* transition-duration: 0.3s; */
+            background-position: 0px 0px;
+        }
+
+
+
+        /* 大的div */
+        .zy {
+            background-color: wheat;
+        }
+
+        .zyjj {
+            /* 左右间距 */
+            padding: 0 40px;
+            background-color: yellowgreen;
+        }
+
+        .kzdaxiao {
+            /* 居中操作 */
+            margin: 0 auto;
+            /* 固定宽度大小 */
+            width: 100%;
+            max-width: 1440px;
+            background: sandybrown;
+        }
+
+        .buzhidao {
+            /* 给个定位庄定位的 */
+            position: relative;
+            background-color: #e7e6e3;
+            /* 留出白色边框 */
+            margin: -10px;
+            padding: 10px;
+            /* 留出白色边框 */
+            /* 下面不留边框 */
+            padding-bottom: 0;
+            margin-bottom: 0;
+            /* 下面不留边框 */
+        }
+
+        .kztupian {
+            /* 控制图片左移 */
+            margin-left: -10px;
+            background: rosybrown;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        /* 每张图片 */
+        .meigetupians {
+            background-color: royalblue;
+            padding-left: 10px;
+            vertical-align: top;
+            display: inline-block;
+            width: 100%;
+        }
+
+        @media screen and (min-width:800px) {
+            .meigetupians {
+                width: 50%;
+            }
+        }
+
+
+        .dinwei {
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+
+        .tupianbox {
+            position: relative;
+            overflow: hidden;
+            height: 0;
+            padding-bottom: 56.25%;
+            background-color: #d1363a;
+        }
+
+        @media screen and (min-width: 550px) {
+            .tupianbox {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                height: auto;
+                padding-bottom: 0;
+            }
+        }
+
+        .imgs {
+            background-image: url("../2019-11-5/img/bgimg/league-newlogo-banner.jpg");
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-size: cover;
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            translate: all .3s;
+        }
+
+        @media screen and (min-width: 550px) {
+            .wenzhibox {
+                height: 0;
+                color: #e7e6e3;
+                padding-bottom: 56.25%;
+            }
+        }
+
+        .bgwenz {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 40px;
+            /* top: 0; */
+        }
+
+        @media screen and (max-width: 549px) {
+            .bgwenz {
+                position: relative;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                padding: 10px 0 0 0;
+
+            }
+        }
+
+        .meigetupians:hover .imgs {
+            opacity: .5;
+            transition-duration: .1s;
+            transform: scale(1.05);
+        }
+
+        .zhegediv {
+            margin-top: -10px;
+            padding: 20px 0 0;
+        }
+
+        /* 渐变button hover事件 */
+        .button {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            border: 0;
+            vertical-align: middle;
+            cursor: pointer;
+            overflow: visible;
+            text-align: center;
+            text-decoration: none;
+            padding: 10px 30px;
+            border-radius: 32px;
+            color: #e7e6e3;
+            font-size: 12px;
+            line-height: 20px;
+            min-width: 160px;
+            letter-spacing: .025em;
+            background-color: #d1363a;
+            background-image: linear-gradient(-183deg, #d1363a 49.5%, #2b2a29 50.5%);
+            background-size: 100% 255%;
+            background-position: 50% 0;
+            background-repeat: no-repeat;
+            transition-property: color, background-color, background-position;
+            transition-duration: .3s;
+            transition-timing-function: ease-out;
+        }
+
+        .zhegediv .iyc {
+            border: 1px solid whitesmoke;
+            background-color: rgba(231, 230, 227, 0);
+            background-image: linear-gradient(-183deg, rgba(231, 230, 227, 0) 49.5%, #e7e6e3 50.5%);
+            border-color: #e7e6e3;
+            color: #e7e6e3;
+        }
+
+        .button::before {
+            content: "/";
+            margin-right: 10px;
+        }
+
+        .button:hover {
+            transition-duration: .1s;
+            background-position: 0 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ss">
+        <h3>Celebrating 10 Years of League</h3>
+        <a href="">
+            <span>See the announcements</span>
+        </a>
+
+    </div>
+    <div class="ys">
+        <div class="ystupian">
+            <a href="">
+                a
+            </a>
+        </div>
+    </div>
+    <br>
+    <div class="zy">
+        <div class="zyjj kzdaxiao">
+            <div class="buzhidao">
+                <div class="kztupian">
+                    <div class="meigetupians">
+                        <div class="dinwei">
+                            <div class="tupianbox">
+                                <div class="imgs"></div>
+                            </div>
+                            <div class="wenzhibox kd">
+                                <div class="bgwenz">
+                                    <div class="zhegediv">
+                                        <a href="" class="button iyc"><span>Official Site</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="meigetupians">
+                        <div class="dinwei">
+                            <div class="tupianbox">
+                                <div class="imgs"></div>
+                            </div>
+                            <div class="wenzhibox"></div>
+                        </div>
+                    </div>
+                    <div class="meigetupians">
+                        <div class="dinwei">
+                            <div class="tupianbox">
+                                <div class="imgs"></div>
+                            </div>
+                            <div class="wenzhibox"></div>
+                        </div>
+                    </div>
+                    <div class="meigetupians">
+                        <div class="dinwei">
+                            <div class="tupianbox">
+                                <div class="imgs"></div>
+                            </div>
+                            <div class="wenzhibox"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>

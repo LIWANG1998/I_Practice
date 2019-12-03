@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        .icon {
+            width: 2em;
+            height: 60px;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+    </style>
+    <style>
+        body {
+            margin: 0 auto;
+        }
+
+        .box {
+            width: 384px;
+            height: 64px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /* background: rgb(40, 164, 202); */
+
+        }
+
+        .boxs1 {
+            background: linear-gradient(45deg, #ff00ff, #8a2be2);
+            width: 320px;
+            height: 60px;
+            transition: all .6s;
+            border-radius: 30px;
+            margin: 2px;
+            text-align: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            /* z-index: 2; */
+
+        }
+
+        .bigbox>div {
+            float: left;
+            width: 60px;
+            height: 60px;
+            border-radius: 30px;
+            margin: 2px;
+            text-align: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            cursor: pointer;
+        }
+
+        .boxs2 {
+            background: #3b5999;
+            transition: all 1.5s;
+        }
+
+        .boxs3 {
+            background: #55acee;
+            transition: all 1.7s;
+        }
+
+        .boxs4 {
+            background: #dd4b39;
+            transition: all 1.4s;
+        }
+
+        .boxs5 {
+            background: #0077b5;
+            transition: all 1s;
+        }
+
+        .boxs6 {
+            background: #e4405f;
+            transition: all .5s;
+        }
+
+        .box:hover .boxs1 {
+            width: 60px;
+
+        }
+
+        .box:hover .bigbox {
+            width: 320px;
+
+        }
+
+        .bigbox {
+            transition: all 1s;
+            background: coral;
+        }
+
+        .box:hover .boxs2 {
+            transform: translateX(64px) rotateZ(360deg);
+        }
+
+        .box:hover .boxs3 {
+            transform: translateX(128px) rotateZ(360deg);
+        }
+
+        .box:hover .boxs4 {
+            transform: translateX(192px) rotateZ(360deg);
+        }
+
+        .box:hover .boxs5 {
+            transform: translateX(256px) rotateZ(360deg);
+        }
+
+        .box:hover .boxs6 {
+            transform: translateX(320px) rotate(360deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="bigbox">
+            <div class="boxs2">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-Facebook-copy"></use>
+                </svg></div>
+            <div class="boxs3">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-ttww-copy"></use>
+                </svg></div>
+            <div class="boxs4">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-googleplus"></use>
+                </svg></div>
+            <div class="boxs5">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-linkedin-copy"></use>
+                </svg></div>
+            <div class="boxs6">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-instagram"></use>
+                </svg>
+            </div>
+        </div>
+        <div class="boxs1">
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-fenxiang-copy"></use>
+            </svg>
+        </div>
+    </div>
+    <script src="iconfont.js"></script>
+</body>
+
+</html>

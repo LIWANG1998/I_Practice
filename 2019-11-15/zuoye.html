@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .bigbox {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 402px;
+            min-height: 200px;
+            border: 1px solid red;
+            /* border-radius: 10px; */
+        }
+
+        .shuru {
+            display: flex;
+            flex-wrap: wrap;
+            display: flex;
+        }
+
+        .xianshi {
+            height: 150px;
+            display: flex;
+            flex-direction: column-reverse;
+        }
+
+        .shuru>div {
+            width: 100px;
+            height: 45px;
+            background: cornflowerblue;
+            text-align: center;
+            line-height: 45px;
+        }
+
+        p {
+            text-align: right;
+            background-color: cornsilk;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bigbox">
+        <div class="xianshi">
+            <p>5</p>
+            <p>1+2</p>
+        </div>
+        <div class="shuru">
+            <div>(</div>
+            <div>)</div>
+            <div>%</div>
+            <div>C</div>
+            <div onclick="shuzhi(this)">7</div>
+            <div onclick="shuzhi(this)">8</div>
+            <div onclick="shuzhi(this)">9</div>
+            <div>÷</div>
+            <div onclick="shuzhi(this)">4</div>
+            <div onclick="shuzhi(this)">5</div>
+            <div onclick="shuzhi(this)">6</div>
+            <div>×</div>
+            <div onclick="shuzhi(this)">1</div>
+            <div onclick="shuzhi(this)">2</div>
+            <div onclick="shuzhi(this)">3</div>
+            <div>－</div>
+            <div onclick="shuzhi(this)">0</div>
+            <div>·</div>
+            <div>＝</div>
+            <div>＋</div>
+        </div>
+    </div>
+    <script>
+        var xianshi = document.querySelector(".xianshi");
+        var html = ""
+        function shuzhi(e) {
+            // alert(e);
+            // var a = e;
+            // e.innerHtml
+            console.log(e.innerText);
+            var ev = e.innerText;
+            console.log(ev)
+            html = `<p>${ev}</p>`;
+            console.log(html);
+            xianshi.innerHTML = html;
+        }
+
+    </script>
+</body>
+
+</html>

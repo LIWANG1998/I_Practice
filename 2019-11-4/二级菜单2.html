@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="animation.css">
+    <style>
+        nav {
+            height: 60px;
+            background-color: rgb(0, 140, 255);
+
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .nacv li {
+            height: 60px;
+            width: 100px;
+            line-height: 60px;
+            text-align: center;
+            background: cornflowerblue;
+
+        }
+
+        .nacv>li {
+            /* z-index: 10px; */
+        }
+
+        .meun {
+            display: none;
+        }
+
+        .nacv,
+        .meun {
+            position: absolute;
+        }
+
+        .nacv>li:hover .meun {
+            display: block;
+        }
+
+        /* .ta {
+            width: 100px;
+            height: 100px;
+            background-color: crimson;
+            display: none;
+        }
+
+        .tas {
+            width: 200px;
+            height: 200px;
+            background-color: darkblue;
+        }
+
+        .tas:hover .ta {
+            display: block;
+        } */
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul class="nacv">
+            <li>
+                <a href="">链接</a>
+                <div>
+                    <ul class="meun animated fadeInDown faster">
+                        <li>一</li>
+                        <li>二</li>
+                        <li>三</li>
+                    </ul>
+                </div>
+
+            </li>
+        </ul>
+    </nav>
+    <div class="tas">
+        <div class="ta animated fadeInDown">
+
+        </div>
+    </div>
+</body>
+
+</html>

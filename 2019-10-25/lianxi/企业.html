@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* 公共类 */
+
+
+        body {
+            margin: 0;
+        }
+
+        /* 行内块 */
+        .inlineblack {
+            display: inline-block;
+            vertical-align: top;
+            font-size: 16px;
+        }
+
+        /* 版心公共样式 */
+        .conteiner {
+            width: 1300px;
+            margin: 0 auto;
+        }
+
+
+        header {
+            height: 60px;
+            background: chartreuse;
+
+        }
+
+        .logo {
+            height: 60px;
+            width: 60px;
+            background: coral;
+        }
+
+        header nav {
+            width: 1000px;
+            height: 60px;
+            background: cornflowerblue;
+            margin-left:100px ;
+        }
+
+        .head {
+            background: cyan;
+            font-size: 0;
+        }
+        .userinfo{
+            /* float:right; */
+            margin-left:80px ;
+            width: 60px;
+            height: 60px;
+            background: coral;
+        }
+        .banner{
+            height: 600px;
+            background: rosybrown;
+        }
+        main{
+            height: 800px;
+            background: rgb(20, 210, 243);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="head conteiner">
+            <div class="logo inlineblack">logo</div>
+            <nav class="inlineblack">菜单栏</nav>
+            <div class="userinfo inlineblack">头像</div>
+        </div>
+    </header>
+    <div class="banner">
+
+    </div>
+    <main class="conteiner">
+        <section></section>
+        <section></section>
+    </main>
+</body>
+
+</html>

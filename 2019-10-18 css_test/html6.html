@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>同级（兄弟）元素选择器</title>
+    <style>
+        #ssq+p {
+            color: coral;
+        }
+
+        #ssq~b {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="ssq">
+        你好！
+    </div>
+    <p>你好p1</p>
+    <p>你好p2</p>
+    <p>你好p3</p>
+    <b>你好b2</b>
+    <b>你好b3</b>
+    <b>你好b4</b>
+    <b>你好b5</b>
+</body>
+
+</html>

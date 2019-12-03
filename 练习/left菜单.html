@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .bigbox {
+            max-width: 200px;
+            min-height: 400px;
+            background: royalblue;
+        }
+
+        dl {
+            text-align: center;
+        }
+
+        dl>dt,
+        .erji>dd {
+            height: 40px;
+            line-height: 30px;
+            border: 1px solid white;
+        }
+
+        .erji {
+            display: none;
+        }
+
+        dt {
+            background-color: yellow;
+        }
+
+        dd {
+            margin: 0;
+            background-color: yellowgreen;
+        }
+
+        .zhankai {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bigbox">
+        <dl>
+            <dt class="yiji">第1节课</dt>
+            <div class="erji">
+                <dd>第1节课-1</dd>
+                <dd>第1节课-2</dd>
+                <dd>第1节课-3</dd>
+                <dd>第1节课-4</dd>
+                <dd>第1节课-5</dd>
+                <dd>第1节课-6</dd>
+                <dd>第1节课-7</dd>
+            </div>
+            <dt class="yiji">第2节课</dt>
+            <div class="erji">
+                <dd>第2节课-1</dd>
+                <dd>第2节课-2</dd>
+                <dd>第2节课-3</dd>
+                <dd>第2节课-4</dd>
+                <dd>第2节课-5</dd>
+                <dd>第2节课-6</dd>
+                <dd>第2节课-7</dd>
+            </div>
+            <dt class="yiji">第3节课</dt>
+            <div class="erji">
+                <dd>第3节课-1</dd>
+                <dd>第3节课-2</dd>
+                <dd>第3节课-3</dd>
+                <dd>第3节课-4</dd>
+                <dd>第3节课-5</dd>
+                <dd>第3节课-6</dd>
+                <dd>第3节课-7</dd>
+            </div>
+            <dt class="yiji">第4节课</dt>
+            <div class="erji">
+                <dd>第4节课-1</dd>
+                <dd>第4节课-2</dd>
+                <dd>第4节课-3</dd>
+                <dd>第4节课-4</dd>
+                <dd>第4节课-5</dd>
+                <dd>第4节课-6</dd>
+                <dd>第4节课-7</dd>
+            </div>
+            <dt class="yiji">第5节课</dt>
+            <div class="erji">
+                <dd>第5节课-1</dd>
+                <dd>第5节课-2</dd>
+                <dd>第5节课-3</dd>
+                <dd>第5节课-4</dd>
+                <dd>第5节课-5</dd>
+                <dd>第5节课-6</dd>
+                <dd>第5节课-7</dd>
+            </div>
+
+            <dt class="yiji">第6节课</dt>
+            <div class="erji">
+                <dd>第6节课-1</dd>
+                <dd>第6节课-2</dd>
+                <dd>第6节课-3</dd>
+                <dd>第6节课-4</dd>
+                <dd>第6节课-5</dd>
+                <dd>第6节课-6</dd>
+                <dd>第6节课-7</dd>
+            </div>
+            <dt class="yiji">第7节课</dt>
+            <div class="erji">
+                <dd>第7节课-1</dd>
+                <dd>第7节课-2</dd>
+                <dd>第7节课-3</dd>
+                <dd>第7节课-4</dd>
+                <dd>第7节课-5</dd>
+                <dd>第7节课-6</dd>
+            </div>
+        </dl>
+    </div>
+    <script>
+        var dtclick = document.getElementsByTagName("dt");
+        // var yijifun = document.getElementsByClassName("yiji");
+        for (var iterator of dtclick) {
+            iterator.onclick = function () {
+                var erji = iterator.nextElementSibling;
+                console.log(erji);
+                erji.classList.add("zhankai");
+            }
+        }
+
+    </script>
+</body>
+
+</html>

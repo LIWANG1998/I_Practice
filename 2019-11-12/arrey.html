@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var arrey = [1, 2, 3, 4, 5, 6];
+        // for (var i = 0; i < arrey.length; i++) {
+        //     arrey[i] = arrey[i] * 2;
+        // }
+        // console.log(arrey);
+
+
+        var people = { name: "liwang", age: 22, gender: "男" };
+        for (var i in people) {
+            console.log(i);
+        }
+
+        // Object.keys(people) 是 键
+        // Object.value(people) 是 值
+        // Object.entries(people) 是 键值对
+        for (var v of Object.entries(people)) {
+            console.log(v);
+        }
+    </script>
+</body>
+
+</html>

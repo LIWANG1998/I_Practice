@@ -1,0 +1,39 @@
+.p0 {
+    font-style: normal;
+}
+
+.p1 {
+    font-style: italic;
+}
+
+.p2 {
+    font-style: oblique;
+}
+
+.p3 {
+    font-weight: normal;
+}
+
+.p4 {
+    font-weight: bold;
+}
+
+.p5 {
+    font-weight: bolder;
+}
+
+.p6 {
+    font-weight: lighter;
+}
+
+.p7 {
+    font-weight: 100;
+}
+
+.p8 {
+    font-size: 15px;
+}
+
+.p9 {
+    font-family: "宋体";
+}

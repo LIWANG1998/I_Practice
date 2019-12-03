@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* 公共类 */
+        body {
+            margin: 0;
+            background: #F7F7F5;
+            /* height: 4000px; */
+        }
+
+        .cont {
+            margin: 0 auto;
+            width: 1200px;
+            height: 100%;
+            /* background: rgba(65, 184, 253, 0.3); */
+        }
+
+        .inline_block {
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        a {
+            text-decoration: none;
+            font-size: 12px;
+        }
+
+        a:link {
+            color: #ccc;
+        }
+
+        /* 未访问的链接 */
+        a:visited {
+            color: #ccc;
+        }
+
+        a:hover {
+            color: #848484;
+        }
+
+        /* ------------------------------------------------------ */
+        header {
+            height: 32px;
+            background: #333333;
+            line-height: 32px;
+
+        }
+
+        .head-left {
+            margin-left: 48px;
+        }
+
+        .head-right {
+            /* display: inline-block; */
+            /* 定位 */
+            position: absolute;
+            right: 0;
+            /*  */
+            padding-right: 48px;
+            height: 32px;
+
+        }
+
+        .head-right * {
+            line-height: 32px;
+        }
+
+
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-size: 0px;
+            height: 100%;
+        }
+
+        ul li {
+            font-size: 12px;
+            /* line-height: 32px; */
+            /* background: rgb(205, 50, 179); */
+            margin-right: 42px;
+        }
+
+
+        .gouwu {
+            margin-right: 42px;
+        }
+
+        .rlt {
+            margin: 0 18px;
+        }
+
+        /* ---------------------------------------------------------- */
+
+        .navs {
+            height: 68px;
+            background: #F7F7F5;
+        }
+
+        .logo {
+            height: 28px;
+            width: 106px;
+            padding: 16px 0 23px 0;
+        }
+
+        /* .neimu {
+            padding: 0 110px 0 172px;
+        } */
+
+        .neimu li>a {
+            line-height: 68px;
+            color: #000;
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .neimu ul>li {
+            padding: 0 22px ;
+            margin-right: 0px;
+        }
+        .neimu a:hover{
+            color:#415fff;
+        }
+        /* ------------------------------------------------------ */
+
+        .banner {
+            height: 523px;
+            margin-bottom: 10px;
+            background-image: url("https://shopstatic.vivo.com.cn/vivoshop/commodity/20191017/20191017184458506751_original.jpg");
+            background-size: auto 100%;
+
+
+        }
+
+        .zhuanqu {
+            height: 160px;
+            padding-bottom: 40px;
+            background: yellow;
+        }
+
+        .shangou {
+            height: 457px;
+            background: yellowgreen;
+        }
+
+        .zhengp {
+            height: 2372px;
+            background: rgba(86, 230, 255, 0.877);
+            padding-bottom: 40px;
+        }
+
+        .foot-top {
+            height: 89px;
+            padding: 30px 0 70px 0;
+            background: rgb(15, 253, 194);
+        }
+
+        .foot-bottom {
+            height: 399px;
+            background: rgb(252, 84, 201);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="head-left inline_block">
+            <ul>
+                <li class="inline_block"><a href="">品牌</a></li>
+                <li class="inline_block"><a href="">Funtouch OS</a></li>
+                <li class="inline_block"><a href="">体验店</a></li>
+                <li class="inline_block"><a href="">政企业务</a></li>
+                <li class="inline_block"><a href="">社区</a></li>
+            </ul>
+        </div>
+        <div class="head-right inline_block">
+            <a href="" class="gouwu">购物车</a>
+            <a href="">登录</a>
+            <i class="rlt">|</i>
+            <a href="">注册</a>
+        </div>
+    </header>
+    <div class="navs">
+        <nav class="cont">
+            <div class="logo inline_block">
+                VIVO
+            </div>
+            <div class="neimu inline_block">
+                <ul>
+                    <li class="inline_block"><a href="">iQOO专区</a></li>
+                    <li class="inline_block"><a href="">NEX系列</a></li>
+                    <li class="inline_block"><a href="">X系列</a></li>
+                    <li class="inline_block"><a href="">S系列</a></li>
+                    <li class="inline_block"><a href="">Z系列</a></li>
+                    <li class="inline_block"><a href="">Y系列</a></li>
+                    <li class="inline_block"><a href="">U系列</a></li>
+                    <li class="inline_block"><a href="">真无线耳机</a></li>
+                    <li class="inline_block"><a href="">商城</a></li>
+                    <li class="inline_block right_one"><a href="">服务</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <div class="banner">
+        <div class="cont"></div>
+    </div>
+    <main class="content cont">
+        <div class="zhuanqu"></div>
+        <div class="shangou"></div>
+        <div class="zhengp"></div>
+    </main>
+    <footer>
+        <div class="cont foot-top"></div>
+        <div class="cont foot-bottom"></div>
+    </footer>
+</body>
+
+</html>

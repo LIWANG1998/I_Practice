@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // -------------------- object -------------------------
+        let d1 = new Date();
+        console.log(d1);
+        console.log(typeof d1);
+        //距离1970-01-01 00:00:00 
+        let d2 = new Date(1000000000000);
+        console.log(d2);
+        console.log(typeof d2);
+        //字符串 还要是时间格式
+        let d3 = new Date("1997-5-2 12:00:00");
+        console.log(d3);
+        console.log(typeof d3);
+        //后面可以省略  月份从 0 开始的 0代表一月
+        let d4 = new Date(1997, 4, 2);
+        console.log(d4);
+        console.log(typeof d4);
+        //时间差 d5-d6 算出来的是毫秒数
+        let d5 = new Date(1997, 4, 2);
+        let d6 = new Date(1997, 4, 03);
+        console.log(d5 - d6);
+        // -------------------- object -------------------------
+        // 静态方法
+        // -------------------- number -------------------------
+        let d7 = Date.now();
+        console.log(d7);
+        console.log(typeof d7);
+        let d8 = window.performance.now();
+        console.log(d8);
+        console.log(typeof d8);
+        //解析时间字符串
+        let d9 = Date.parse("Tue Nov 26 2019 16:24:46 GMT+0800 (中国标准时间)");
+        console.log(d9);
+        console.log(typeof d9);
+        // -------------------- number -------------------------
+        // to 类
+        let tod1 = d1.toString();
+        console.log(tod1);
+        console.log(typeof tod1);
+        
+    </script>
+</body>
+
+</html>

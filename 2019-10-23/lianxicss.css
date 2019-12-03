@@ -1,0 +1,110 @@
+body {
+    margin: 0;
+    background: #F5F5F5;
+}
+
+.container {
+    width: 1226px;
+    /* height: 640px; */
+    margin: 0 auto;
+    /* background: rgb(51, 83, 1); */
+    font-size: 0px;
+    /* vertical-align: top; */
+}
+
+.line {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.left {
+    width: 234px;
+    height: 614px;
+    background: greenyellow;
+    margin-right: 14px;
+}
+
+.left:hover {
+    transform: translateY(-2px);
+    transition: all 0.5s;
+}
+
+.right {
+    height: 614px;
+    width: 978px;
+    /* background: hotpink; */
+    /* vertical-align: top; */
+    font-size: 0px;
+}
+
+.r2 {
+    margin-top: 14px;
+}
+
+.cell {
+    margin-right: 14px;
+    width: 234px;
+    height: 300px;
+    background: #FFFFFF;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 16px;
+    /* vertical-align: top; */
+}
+
+.tail {
+    margin-right: 0;
+}
+
+.cell img {
+    width: 160px;
+    margin: 3px 0 10px 0;
+}
+
+.cell h3 {
+    margin: 0 10px 2px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+}
+
+.cell .slh {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.cell .miaoshu {
+    margin: 0 10px 10px;
+    height: 18px;
+    font-size: 12px;
+    color: #b0b0b0;
+}
+
+.cell .jiage {
+    font-size: 14px;
+    margin: 0 10px 10px;
+    text-align: center;
+    color: #ff6700;
+}
+
+.cell a {
+    text-decoration: none;
+}
+
+.cell:hover {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, .1);
+    /* 以自身为基准向上移动2px */
+    /* transform: translateY(-2px); */
+    transform: translate3d(0, -2px, 0);
+    /* 设置动画过渡0.5s*/
+    transition: all 0.2s linear;
+}
+del{
+    color:rgb(173, 173, 173);
+}
+.delp{
+    text-decoration: line-through;
+    color:rgb(173, 173, 173);
+}

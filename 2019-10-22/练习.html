@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* 对齐方式 text-align 默认为 left  */
+        p {
+            border: 1px solid red;
+            background: rosybrown;
+        }
+
+        .p1 {
+            /* 文本默认就是左对齐 */
+            text-align: left;
+        }
+
+        .p2 {
+            /* 文本右对齐 */
+            text-align: right;
+        }
+
+        .p3 {
+            /* 文本居对齐 */
+            text-align: center;
+        }
+
+        .d1 {
+            border: 1px solid red;
+            background: rosybrown;
+            text-align: center;
+        }
+
+        .s1 {
+            border: 1px solid red;
+        }
+
+        .suo1 {
+            /* 这是首行缩进  text-indent */
+            text-indent: 2em;
+        }
+
+        .ps {
+            /* 这样可以一起设置样式和颜色 */
+            text-decoration: underline greenyellow;
+        }
+
+        .px {
+            /* 这样也行单独设置 划线位置 和颜色 */
+            text-decoration: overline;
+            text-decoration-color: greenyellow;
+        }
+
+        .pz {
+            text-decoration: line-through greenyellow;
+        }
+
+        .ps1 {
+            text-transform: capitalize;
+        }
+
+        .ps2 {
+            text-transform: uppercase;
+        }
+
+        .ps3 {
+            text-transform: lowercase;
+        }
+
+        .pt {
+
+            text-shadow: 2px 2px 2px rgb(240, 86, 120);
+        }
+
+        .hg {
+            /* 只写数值 默认单位为em 也就是 字体大小的倍数 */
+            /* line-height: 3em; */
+            /* 基于当前字体尺寸的百分比行间距。默认为100% */
+            /* line-height:200%; */
+            /* inherit	规定应该从父元素继承 line-height 属性的值。 */
+            /* line-height:initial; */
+            /* 设置固定的行间距。 px */
+            line-height: 50px;
+        }
+
+        .fjy {
+            height: 60px;
+            background: khaki;
+            /* line-height:60px; */
+        }
+
+        .hgs {
+            /* display: inline-block; */
+            /* line-height: inherit; */
+            height: 3em;
+        }
+
+        .dcjg {
+            word-spacing: 2em;
+        }
+
+        .zfjg {
+            letter-spacing: 2em;
+        }
+
+        .kgcl {
+            /*  默认normal  由浏览器处理空格和换行 */
+            white-space: normal;
+        }
+
+        .kgcl1 {
+            /*  pre 段落里所有的空格符和换行符都会被保留（类似于<pre>标签） */
+            white-space: pre;
+        }
+
+        .kgcl2 {
+            /*  nowrap 段落内的文本不会换行（类似于没有设置过换行的“notepad”） */
+            white-space: nowrap;
+        }
+
+        /* pre-wrap
+        段落里所有的空格符序列和换行符序列都会被保留，这点类似于pre
+        但是他不会去更改浏览器的默认行为（当内容的宽度小于了窗体的宽度时会出现滚动条的行为） */
+        .kgcl3 {
+            white-space: pre-wrap;
+        }
+
+        /* pre-line
+        保留换行符，但是多个空格还是会按照浏览器的默认行为处理（多个合并为一个） */
+        .kgcl4 {
+            white-space: pre-line;
+        }
+
+        .wenb {
+            direction: rtl;
+        }
+
+        .wenbyc1 {
+            height: 10rem;
+            width: 10rem;
+            border: 1px solid red;
+            overflow: hidden;
+            /* overflow: scroll; */
+            /* overflow: auto; */
+            /* overflow-x: hidden; */
+            /* overflow-y: scroll; */
+        }
+
+        .wenbyc2 {
+            height: 10rem;
+            width: 10rem;
+            border: 1px solid red;
+            /* overflow: hidden; */
+            overflow: scroll;
+            /* overflow: auto; */
+            /* overflow-x: hidden; */
+            /* overflow-y: scroll; */
+        }
+
+        .wenbyc3 {
+            height: 10rem;
+            width: 10rem;
+            border: 1px solid red;
+            /* overflow: hidden; */
+            /* overflow: scroll; */
+            overflow: auto;
+            /* overflow-x: hidden; */
+            /* overflow-y: scroll; */
+        }
+
+        .wenbyc4 {
+            height: 10rem;
+            width: 10rem;
+            border: 1px solid red;
+            /* overflow: hidden; */
+            /* overflow: scroll; */
+            /* overflow: auto; */
+            overflow-x: hidden;
+            overflow-y: scroll;
+        }
+
+        .wenbyc5 {
+            height: 10rem;
+            width: 10rem;
+            border: 1px solid red;
+            /* overflow: hidden; */
+            text-overflow: clip;
+        }
+
+        .wenbyc6 {
+            /* height: 10rem;
+            width: 10rem; */
+            border: 1px solid red;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .wenbyc7 {
+            border: 1px solid red;
+            display: -webkit-box;
+            /* 将对象作为弹性伸缩盒子模型显示 */
+            -webkit-box-orient: vertical;
+            /* 设置或检索伸缩盒对象的子元素的排列方式 */
+            -webkit-line-clamp: 3;
+            /*限制在一个块元素显示的文本的行数 */
+            overflow: hidden;
+            /*超出的内容就隐藏 */
+        }
+    </style>
+</head>
+
+<body>
+    <span>1.对齐方式 text-align 默认为 left</span>
+    <p class="p1">这是文本默认左对齐</p>
+    <p class="p2">这是文本右对齐</p>
+    <p class="p3">这是文本居中</p>
+    <span>这是行内标签，不能自己对齐自己</span>
+    <div class="d1"><span class="s1">这是行内标签，外面有个div标签，设置div对齐方式即可</span></div>
+    <span>2.这是首行缩进 text-indent</span>
+    <p class="suo1">该属性是用于设置 每个段落首行缩进数量值 的属性，如果是用于中文布局，一般会使用“2em”的数值和单位来为每个段落的首行缩进“两个字符”。</p>
+    <span>3.文本装饰线“text-decoration” 默认为none</span>
+    <p class="ps">这是下划线，该属性是为文本上添加一根装饰线，带"href"属性的&lt;a&gt;标签默认会带有一根下划线，就是由该属性的值“underline”设置的</p>
+    <p class="px">这是上划线，该属性是为文本上添加一根装饰线，带"href"属性的&lt;a&gt;标签默认会带有一根下划线，就是由该属性的值“underline”设置的</p>
+    <p class="pz">这是中划线，该属性是为文本上添加一根装饰线，带"href"属性的&lt;a&gt;标签默认会带有一根下划线，就是由该属性的值“underline”设置的</p>
+    <span>4.英文字母大小写转 text-transform</span>
+    <p class="ps1">hello world how are you</p>
+    <p class="ps2">hello world how are you</p>
+    <p class="ps3">HeLLo WorlD hOw ARe you</p>
+    <p class="ps1">hello world how are you</p>
+    <span>5.文本的阴影“text-shadow”</span>
+    <p class="pt">该属性的作用是给文本添加阴影效果。</p>
+    <span>6.段落文本行高“line-height”</span>
+    <p class="hg">该属性是用于设置“行内元素”中文本元素在一行中所占据的高度，（可实现单行文本垂直居中的效果）</p>
+    <div class="fjy">
+        <p class="hgs">该属性是用于设置“行内元素”中文本元素在一行中所占据的高</p>
+    </div>
+    <span>7.单词的间距“word-spacing”</span>
+    <p class="dcjg">hello world nihao ya 汉子 也 可以 的</p>
+    <span>9.字符的间距“letter-spacing”</span>
+    <p class="zfjg">hello world nihao ya 汉子也可以的</p>
+
+    <span>10.空格换行处理“white-space”</span>
+    <p class="kgcl">你说的都对吧 好呀好呀
+        打到卡电话卡手里的</p>
+    <p class="kgcl1">你说的都对吧 好呀好呀
+        打到卡电话卡手里的</p>
+    <p class="kgcl2">你说的都对吧 好呀好呀
+        打到卡电话卡手里的</p>
+    <p class="kgcl3">你说的都对吧 好呀好呀是多久啊是过了多久啊搞设计风格咖啡感觉啊叫开发商盖房咖啡馆dhaksjdgjad
+        啊师傅噶姐发个啊快点发噶打到卡电话卡手里的</p>
+    <p class="kgcl4">你说的都对吧 好呀好呀是多久啊是过了多久啊搞设计风格咖啡感觉啊叫开发商盖房咖啡馆nasdjadh
+        啊师傅噶姐发个啊快点发噶打到卡电话卡手里的</p>
+
+    <span>11.设置文本方向“direction”</span>
+    <P class="wenb">hello world how are you 你今天真好啊</P>
+
+    <span>12.设置文本溢出时的处理“overflow”</span>
+    <div class="wenbyc1">hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello
+        hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello
+        hello hello hello hello hello hello hello hello hello hello hello hello hello</div>
+    <div class="wenbyc2">hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello
+        hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello
+        hello hello hello hello hello hello hello hello hello hello hello hello hello</div>
+    <div class="wenbyc3">hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello
+        hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello
+        hello hello hello hello hello hello hello hello hello hello hello hello hello</div>
+    <div class="wenbyc4">hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello
+        hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello
+        hello hello hello hello hello hello hello hello hello hello hello hello hello</div>
+    <span>13.文本的裁切“text-overflow”</span>
+    <!-- <div class="wenbyc5">hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello
+        hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello
+        hello hello hello hello hello hello hello hello hello hello hello hello hello</div> -->
+    <div class="wenbyc6">hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello
+        hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello
+        hello hello hello hello hello hello hello hello hello hello hello hello hello</div>
+
+    <div class="wenbyc7">因使用了WebKit的CSS扩展属性，该方法适用于WebKit浏览器及移动端；注：-webkit-line-clamp用来限制在一个块元素显示的文本的行数。 为了实现该效果，它需要组合其他的WebKit属性。常见结合属性：display: -webkit-box; 必须结合的属性 ，将对象作为弹性伸缩盒子模型显示 。-webkit-box-orient 必须结合的属性 ，设置或检索伸缩盒对象的子元素的排列方式 。</div>
+</body>
+
+</html>

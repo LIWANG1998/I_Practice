@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <style type="text/css">
+        .icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+    </style>
+    <style>
+        body {
+            background: #DDDDDD;
+        }
+
+        .cont {
+            width: 1600px;
+            /* background: royalblue; */
+            height: 100%;
+            margin: 0 auto;
+        }
+
+        .clearbix::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        header {
+            height: 70px;
+            background: #414447;
+        }
+
+        .headnav>div {
+            float: left;
+        }
+
+        .headnav>div:nth-child(3) {
+            margin-top: 19px;
+            float: right;
+        }
+
+        .icona {
+            width: 200px;
+            height: 70px;
+        }
+
+        .navs {
+            color: white;
+            line-height: 70px;
+            margin-left: 280px;
+        }
+
+        .navs li {
+            float: left;
+            margin: 0 20px;
+
+        }
+
+        .navs li:hover {
+            cursor: pointer;
+            color: rgb(233, 130, 130);
+        }
+
+        .iconc {
+            width: 30px;
+            height: 30px;
+            vertical-align: middle;
+        }
+
+        .sousuo>div {
+            float: left;
+        }
+
+        .sousuo>.sousuokuang>input {
+            height: 28px;
+            width: 200px;
+            background: #000000;
+            border: 1px solid rgb(141, 141, 141);
+            border-radius: 5px;
+            outline: none;
+            color: white;
+
+        }
+
+        .sousuo>.anniu {
+            height: 30px;
+            width: 40px;
+            background: rgb(0, 166, 231);
+            border: 1px solid rgb(0, 166, 231);
+            border-radius: 2px;
+            text-align: center;
+        }
+
+        .iconb {
+            width: 20px;
+            height: 30px;
+        }
+
+
+
+
+        /* main {
+            height: 1000px;
+        } */
+
+        .mainboxs {
+            /* padding:100px; */
+            margin: 100px 100px 0;
+            height: 100%;
+            /* background: salmon; */
+        }
+
+        .cent li {
+            float: left;
+            background: #FEFEFE;
+            width: 450px;
+            height: 400px;
+            margin-right: 25px;
+            margin-top: 25px;
+        }
+
+        .cent:nth-child(1)>li {
+            margin-top: 0;
+        }
+
+        .cent :nth-child(3) {
+            margin-right: 0;
+
+        }
+
+        .item>.imgs {
+            margin: 0 auto;
+            margin-top: 5%;
+            width: 90%;
+        }
+
+        .item>.fonts {
+            margin: 0 auto;
+            /* margin-top: 5%; */
+            width: 90%;
+        }
+
+        .imgs>img {
+            width: 100%;
+        }
+
+        .fonts :nth-child(1) {
+            font-size: 14px;
+            color: rgb(148, 148, 148);
+        }
+
+        .fonts p:nth-child(1) {
+            margin-top: 10px;
+        }
+
+        .fonts p {
+            line-height: 2em;
+        }
+
+        .fanye {
+            line-height: 100px;
+        }
+
+        .fanyes {
+            float: right;
+            margin-right: 150px;
+        }
+
+        .fanyes button:nth-child(1) {
+            color: white;
+            background: black;
+        }
+
+
+
+
+
+        footer {
+            margin-top: 100px;
+            height: 120px;
+            background: #414447;
+        }
+
+        .footnavs {
+            padding: 30px 0;
+        }
+
+        .footnavs li {
+            float: left;
+            margin-right: 40px;
+            color: #0078B9;
+            font-weight: bold;
+        }
+
+        .banquan {
+            color: rgb(139, 139, 139);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="cont headnav">
+            <div class="logos">
+                <svg class="icon icona" aria-hidden="true">
+                    <use xlink:href="#icon-wegametubiao-copy"></use>
+                </svg>
+            </div>
+            <div class="navs">
+                <ul>
+                    <li>首页</li>
+                    <li>单车分类
+                        <svg class="icon iconc" aria-hidden="true">
+                            <use xlink:href="#icon-xialajiantou-copy"></use>
+                        </svg></li>
+                    <li>骑行装备
+                        <svg class="icon iconc" aria-hidden="true">
+                            <use xlink:href="#icon-xialajiantou-copy"></use>
+                        </svg></li>
+                    <li>单车生活</li>
+                    <li>行业资讯</li>
+                </ul>
+            </div>
+            <div class="sousuo">
+                <div class="sousuokuang">
+                    <input type="text" placeholder="在这里搜索……">
+                </div>
+                <div class="anniu">
+                    <svg class="icon iconb" aria-hidden="true">
+                        <use xlink:href="#icon-xingtaiduICON_sousuo--"></use>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="cont">
+            <div class="mainboxs clearbix">
+                <ul class="cent">
+                    <li class="item">
+                        <div class="imgs">
+                            <img src="tops.png" alt="">
+                        </div>
+                        <div class="fonts">
+                            <p>时间：2019-10-29</p>
+                            <p>我觉的你只最棒的一个咯我觉的你只最棒的一个咯我觉的你只最棒的一个咯</p>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="imgs">
+                            <img src="tops.png" alt="">
+                        </div>
+                        <div class="fonts">
+                            <p>时间：2019-10-29</p>
+                            <p>我觉的你只最棒的一个咯我觉的你只最棒的一个咯</p>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="imgs">
+                            <img src="tops.png" alt="">
+                        </div>
+                        <div class="fonts">
+                            <p>时间：2019-10-29</p>
+                            <p>我觉的你只最棒的一个咯我觉的你只最棒的一个咯我觉的你只最棒的一个咯</p>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="cent">
+                    <li class="item">
+                        <div class="imgs">
+                            <img src="tops.png" alt="">
+                        </div>
+                        <div class="fonts">
+                            <p>时间：2019-10-29</p>
+                            <p>我觉的你只最棒的一个咯我觉的你只最棒的一个咯</p>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="imgs">
+                            <img src="tops.png" alt="">
+                        </div>
+                        <div class="fonts">
+                            <p>时间：2019-10-29</p>
+                            <p>我觉的你只最棒的一个咯我觉的你只最棒的一个咯我觉的你只最棒的一个咯</p>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="imgs">
+                            <img src="tops.png" alt="">
+                        </div>
+                        <div class="fonts">
+                            <p>时间：2019-10-29</p>
+                            <p>我觉的你只最棒的一个咯我觉的你只最棒的一个咯</p>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="cent">
+                    <li class="item">
+                        <div class="imgs">
+                            <img src="tops.png" alt="">
+                        </div>
+                        <div class="fonts">
+                            <p>时间：2019-10-29</p>
+                            <p>我觉的你只最棒的一个咯我觉的你只最棒的一个咯我觉的你只最棒的一个咯</p>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="imgs">
+                            <img src="tops.png" alt="">
+                        </div>
+                        <div class="fonts">
+                            <p>时间：2019-10-29</p>
+                            <p>我觉的你只最棒的一个咯我觉的你只最棒的一个咯</p>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="imgs">
+                            <img src="tops.png" alt="">
+                        </div>
+                        <div class="fonts">
+                            <p>时间：2019-10-29</p>
+                            <p>我觉的你只最棒的一个咯我觉的你只最棒的一个咯我觉的你只最棒的一个咯</p>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="cent">
+                    <li class="item">
+                        <div class="imgs">
+                            <img src="tops.png" alt="">
+                        </div>
+                        <div class="fonts">
+                            <p>时间：2019-10-29</p>
+                            <p>我觉的你只最棒的一个咯我觉的你只最棒的一个咯</p>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="imgs">
+                            <img src="tops.png" alt="">
+                        </div>
+                        <div class="fonts">
+                            <p>时间：2019-10-29</p>
+                            <p>我觉的你只最棒的一个咯我觉的你只最棒的一个咯我觉的你只最棒的一个咯</p>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="imgs">
+                            <img src="tops.png" alt="">
+                        </div>
+                        <div class="fonts">
+                            <p>时间：2019-10-29</p>
+                            <p>我觉的你只最棒的一个咯我觉的你只最棒的一个咯我觉的你只最棒的一个咯</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="fanye">
+                <div class="fanyes">
+                    <button>1</button> <button>2</button> <button>下一页</button> <button>尾页</button> <span>共 3 页，什么</span>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="cont foots">
+            <div class="footnavs">
+                <ul class="clearbix">
+                    <li class="footitme">关于我们</li>
+                    <li class="footitme">联系我们</li>
+                    <li class="footitme">我们投稿</li>
+                    <li class="footitme">网易赞助</li>
+                </ul>
+            </div>
+            <div class="banquan">Copyright &copy; 2019-10-29.AllRights Reserved</div>
+        </div>
+    </footer>
+    <script src="iconfont.js"></script>
+</body>
+
+</html>

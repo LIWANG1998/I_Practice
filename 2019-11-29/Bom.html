@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            height: 900px;
+            position: relative;
+            outline: 1px solid red;
+        }
+
+        img {
+            display: block;
+            position: absolute;
+            /* top: 0; */
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: 0 auto;
+            transition: 1s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <!-- <img src="img/banner1.jpg" alt=""> -->
+    </div>
+    <div class="box">
+        <img src="img/banner1.jpg" alt="">
+    </div>
+    <div class="box">
+        <img src="img/banner2.jpg" alt="">
+    </div>
+    <div class="box">
+        <img src="img/banner3.jpg" alt="">
+    </div>
+    <script>
+        var img = document.querySelectorAll('img');
+        window.onscroll = () => {
+            // for (const key in object) {
+            // }
+            img.forEach(function (el) {
+                console.log(scrollY);
+                console.log(innerHeight);
+                console.log(el.offsetHeight);
+                console.log(el.parentElement.offsetTop + el.offsetTop);
+            });
+            // console.log("sss");
+        }
+    </script>
+</body>
+
+</html>

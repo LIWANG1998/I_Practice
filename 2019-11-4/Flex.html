@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .bigbox {
+            height: 300px;
+            width: 600px;
+            border: 1px solid red;
+            display: flex;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            flex-wrap: wrap;
+        }
+
+        .box {
+            width: 150px;
+            background-color: royalblue;
+            border: 1px solid blue;
+            box-sizing: border-box;
+            height: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bigbox">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+</body>
+
+</html>

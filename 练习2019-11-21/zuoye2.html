@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            background: black;
+        }
+
+        .bigbox {
+            position: absolute;
+            top: 10px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            border: 5px solid rgb(255, 255, 255);
+            width: 226px;
+            padding-left: 3px;
+            padding-bottom: 3px;
+            box-sizing: border-box;
+            background-color: rgb(255, 255, 255);
+            border-radius: 8px;
+        }
+
+        .cellone {
+            width: 156px;
+            height: 156px;
+            background: cadetblue;
+        }
+
+        .cell {
+            border-radius: 5px;
+            margin-top: 3px;
+            margin-right: 3px;
+            cursor: pointer;
+        }
+
+        .celltwo {
+            width: 50px;
+            height: 50px;
+            background: cadetblue;
+        }
+
+
+        .bigbox>div {
+            float: left;
+        }
+
+        .imgc {
+            height: 100%;
+            border: 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bigbox">
+    </div>
+    <script>
+        var bigboxhtml = '';
+        var bigbox = document.querySelector('.bigbox');
+        for (var i = 0; i < 12; i++) {
+            if (i == 0) {
+                bigboxhtml += `<div class="cell cellone"></div>`;
+            }
+            else {
+                bigboxhtml += `<div class="cell celltwo"></div>`;
+            }
+        }
+        bigbox.innerHTML = bigboxhtml;
+        var cellone = document.querySelector('.cellone');
+        var celltwo = document.querySelectorAll('.celltwo');
+
+        cellone.innerHTML = `<img class="imgc" src="img/big_1.jpg" alt="">`;
+        for (var j = 0; j < celltwo.length; j++) {
+            celltwo[j].innerHTML = `<img class="imgc" src="img/small_${Number(j) + 1}.jpg" alt="">`;
+        }
+        var imgc = document.querySelector('.imgc');
+        for (var cell of celltwo) {
+            cell.onmouseover = function () {
+                var src = this.children[0].getAttribute("src");
+                // console.log(imgc);
+                // console.log(src);
+                var srcs = src.replace("small", "big");
+                // console.log(srcs);
+                imgc.setAttribute('src', srcs);
+            }
+        }
+    </script>
+</body>
+
+</html>
